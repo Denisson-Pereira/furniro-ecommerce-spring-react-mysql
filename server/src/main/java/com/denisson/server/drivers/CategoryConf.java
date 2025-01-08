@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.denisson.server.domain.ports.IRepositoryCategory;
 import com.denisson.server.domain.useCases.category.CreateCategoryUseCase;
+import com.denisson.server.domain.useCases.category.DeleteCategoryByIdUseCase;
 import com.denisson.server.domain.useCases.category.GetAllCategoriesUseCase;
 import com.denisson.server.domain.useCases.category.GetCategoryByIdUseCase;
 
@@ -30,5 +31,10 @@ public class CategoryConf {
     @Bean
     public GetCategoryByIdUseCase getCategoryByIdUseCase() {
         return new GetCategoryByIdUseCase(repository);
+    }
+
+    @Bean
+    public DeleteCategoryByIdUseCase deleteCategoryByIdUseCase() {
+        return new DeleteCategoryByIdUseCase(repository);
     }
 }

@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.denisson.server.domain.entities.Category;
 import com.denisson.server.domain.exceptions.EntityNotValidException;
 import com.denisson.server.domain.useCases.category.CreateCategoryUseCase;
+import com.denisson.server.domain.useCases.category.DeleteCategoryByIdUseCase;
 import com.denisson.server.domain.useCases.category.GetAllCategoriesUseCase;
 import com.denisson.server.domain.useCases.category.GetCategoryByIdUseCase;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -32,6 +34,8 @@ public class CategoryController {
     GetAllCategoriesUseCase getAllCategoriesUseCase;
     @Autowired
     GetCategoryByIdUseCase getCategoryByIdUseCase;
+    @Autowired
+    DeleteCategoryByIdUseCase deleteCategoryByIdUseCase;
 
     @PostMapping()
     public ResponseEntity<?> postMethod(@RequestBody Category category) {
@@ -54,13 +58,22 @@ public class CategoryController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getMethodName(@PathVariable Long id) {
+    public ResponseEntity<Object> getMethodById(@PathVariable Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(getCategoryByIdUseCase.execute(id));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
         
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteMethod(@PathVariable Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(deleteCategoryByIdUseCase.execute(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
     
 

@@ -59,5 +59,11 @@ public class RepositoryCategoryImpl implements IRepositoryCategory {
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, id);
         return count != null && count > 0;
     }
+
+    @Override
+    public void delete(Long id) {
+        String sql = "DELETE FROM categories WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
     
 }
