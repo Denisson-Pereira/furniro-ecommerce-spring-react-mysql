@@ -1,6 +1,7 @@
 package com.denisson.server.interfaceAdapters.gateways;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -37,6 +38,26 @@ public class RepositoryCategoryImpl implements IRepositoryCategory {
         jdbcTemplate.update(sql, category.getName(), category.getDescription(), category.getImage());
 
         return category;
+    }
+
+    @Override
+    public boolean existsName(String name) {
+        String sql = "SELECT COUNT(*) FROM categories WHERE name = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class, name);
+        return count != null && count > 0;
+    }
+
+    @Override
+    public Optional<Category> findById(Long id) {
+        String sql = "SELECT * FROM categories WHERE id = ?";
+        return jdbcTemplate.query(sql, rowMapper, id).stream().findFirst();
+    }
+
+    @Override
+    public boolean existsId(Long id) {
+        String sql = "SELECT count(*) FROM categories WHERE id = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class, id);
+        return count != null && count > 0;
     }
     
 }
