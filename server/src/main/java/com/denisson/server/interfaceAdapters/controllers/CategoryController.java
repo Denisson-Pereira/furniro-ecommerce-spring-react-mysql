@@ -1,7 +1,6 @@
 package com.denisson.server.interfaceAdapters.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,13 +14,14 @@ import com.denisson.server.domain.useCases.category.CreateCategoryUseCase;
 import com.denisson.server.domain.useCases.category.DeleteCategoryByIdUseCase;
 import com.denisson.server.domain.useCases.category.GetAllCategoriesUseCase;
 import com.denisson.server.domain.useCases.category.GetCategoryByIdUseCase;
+import com.denisson.server.domain.useCases.category.UpdateCategoryUseCase;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 
 
 @RestController
@@ -34,6 +34,8 @@ public class CategoryController {
     GetAllCategoriesUseCase getAllCategoriesUseCase;
     @Autowired
     GetCategoryByIdUseCase getCategoryByIdUseCase;
+    @Autowired
+    UpdateCategoryUseCase updateCategoryUseCase;
     @Autowired
     DeleteCategoryByIdUseCase deleteCategoryByIdUseCase;
 
@@ -67,6 +69,15 @@ public class CategoryController {
         
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> postMethodName(@PathVariable Long id, @RequestBody Category category) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(updateCategoryUseCase.execute(id, category));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteMethod(@PathVariable Long id) {
         try {
@@ -75,7 +86,5 @@ public class CategoryController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
-    
-
     
 }

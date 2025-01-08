@@ -8,6 +8,7 @@ import com.denisson.server.domain.useCases.category.CreateCategoryUseCase;
 import com.denisson.server.domain.useCases.category.DeleteCategoryByIdUseCase;
 import com.denisson.server.domain.useCases.category.GetAllCategoriesUseCase;
 import com.denisson.server.domain.useCases.category.GetCategoryByIdUseCase;
+import com.denisson.server.domain.useCases.category.UpdateCategoryUseCase;
 
 @Configuration
 public class CategoryConf {
@@ -31,6 +32,11 @@ public class CategoryConf {
     @Bean
     public GetCategoryByIdUseCase getCategoryByIdUseCase() {
         return new GetCategoryByIdUseCase(repository);
+    }
+
+    @Bean
+    public UpdateCategoryUseCase updateCategoryUseCase() {
+        return new UpdateCategoryUseCase(repository);
     }
 
     @Bean

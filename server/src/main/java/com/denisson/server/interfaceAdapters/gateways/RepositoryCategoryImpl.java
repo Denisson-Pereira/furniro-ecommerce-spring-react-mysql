@@ -1,7 +1,6 @@
 package com.denisson.server.interfaceAdapters.gateways;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -34,9 +33,14 @@ public class RepositoryCategoryImpl implements IRepositoryCategory {
 
     @Override
     public Category save(Category category) {
-        String sql = "INSERT INTO categories (name, description, image) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, category.getName(), category.getDescription(), category.getImage());
-
+        if(category.getId() != null && existsId(category.getId())) {
+            String sql = "UPDATE categories SET name = ?, description = ?, image = ? WHERE id = ?";
+            jdbcTemplate.update(sql, category.getName(), category.getDescription(), category.getImage(), category.getId());
+        } else {
+            String sql = "INSERT INTO categories (name, description, image) VALUES (?, ?, ?)";
+            jdbcTemplate.update(sql, category.getName(), category.getDescription(), category.getImage());
+        }
+        
         return category;
     }
 
@@ -48,9 +52,12 @@ public class RepositoryCategoryImpl implements IRepositoryCategory {
     }
 
     @Override
-    public Optional<Category> findById(Long id) {
+    public Category findById(Long id) {
         String sql = "SELECT * FROM categories WHERE id = ?";
-        return jdbcTemplate.query(sql, rowMapper, id).stream().findFirst();
+        return jdbcTemplate.query(sql, rowMapper, id)
+            .stream()
+            .findFirst()
+            .orElseThrow(() -> new RuntimeException("Category not found for id: " + id));
     }
 
     @Override
