@@ -1,4 +1,4 @@
-package com.denisson.server.drivers;
+package com.denisson.server.drivers.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

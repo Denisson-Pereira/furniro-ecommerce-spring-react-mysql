@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping("products")
+@RequestMapping("private/products")
 public class ProductController {
 
     @Autowired
