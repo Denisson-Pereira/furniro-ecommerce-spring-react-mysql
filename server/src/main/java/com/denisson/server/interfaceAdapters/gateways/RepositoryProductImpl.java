@@ -36,7 +36,7 @@ public class RepositoryProductImpl implements IRepositoryProduct {
 
     @Override
     public Product findById(Long id) {
-        String sql = "SELECT * FROM products WITH id = ?";
+        String sql = "SELECT * FROM products WHERE id = ?";
         return jdbcTemplate.query(sql, rowMapper, id)
         .stream()
         .findFirst()
@@ -47,10 +47,10 @@ public class RepositoryProductImpl implements IRepositoryProduct {
     public Product save(Product product) {
         if (product.getId() != null && existsId(product.getId())) {
             String sql = "UPDATE products SET name = ?, description = ?, image = ?, category = ?, price = ? WHERE id = ?";
-            jdbcTemplate.update(sql, product.getName(), product.getDescription(), product.getImage(), product.getCategory(), product.getId());
+            jdbcTemplate.update(sql, product.getName(), product.getDescription(), product.getImage(), product.getCategory(), product.getPrice(), product.getId());
         } else {
             String sql = "INSERT INTO products (name, description, image, category, price) VALUES (?, ?, ?, ?, ?)";
-            jdbcTemplate.update(sql, product.getName(), product.getDescription(), product.getImage(), product.getCategory());
+            jdbcTemplate.update(sql, product.getName(), product.getDescription(), product.getImage(), product.getCategory(), product.getPrice());
         }
 
         return product;
@@ -71,7 +71,7 @@ public class RepositoryProductImpl implements IRepositoryProduct {
 
     @Override
     public boolean existsId(Long id) {
-        String sql = "SELECT count(*) FROM products WHERE id = ?";
+        String sql = "SELECT COUNT(*) FROM products WHERE id = ?";
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, id);
         return count != null && count > 0;
     }
