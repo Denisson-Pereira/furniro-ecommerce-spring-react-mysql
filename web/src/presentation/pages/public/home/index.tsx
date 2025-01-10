@@ -1,7 +1,10 @@
+import { NavScroll } from '../../../components'
 import './home.styles.sass'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div className="home_container">
+      <NavScroll />
+    </div>
   )
 }
