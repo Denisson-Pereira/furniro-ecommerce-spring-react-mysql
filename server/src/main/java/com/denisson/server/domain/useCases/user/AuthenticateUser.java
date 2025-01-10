@@ -9,6 +9,7 @@ import com.denisson.server.domain.entities.User;
 import com.denisson.server.domain.ports.IRepositoryUser;
 import com.denisson.server.drivers.jwt.JwtService;
 import com.denisson.server.interfaceAdapters.dtos.LoginDTO;
+import com.denisson.server.interfaceAdapters.dtos.LoginReturnDTO;
 
 @Component
 public class AuthenticateUser {
@@ -22,7 +23,7 @@ public class AuthenticateUser {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public String authenticate(LoginDTO loginDTO) {
+    public LoginReturnDTO authenticate(LoginDTO loginDTO) {
         User user = userRepository.findByEmail(loginDTO.email())
             .orElseThrow(() -> new UsernameNotFoundException("Invalid e-mail!"));
 
@@ -30,7 +31,9 @@ public class AuthenticateUser {
             throw new BadCredentialsException("Invalid password");
         }
 
-        return jwtService.generateToken(user);
+        String token = jwtService.generateToken(user);
+
+        return new LoginReturnDTO(user, token);
     }
     
 }

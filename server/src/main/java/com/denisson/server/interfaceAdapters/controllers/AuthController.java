@@ -9,6 +9,7 @@ import com.denisson.server.domain.useCases.user.RegisterUser;
 import com.denisson.server.interfaceAdapters.dtos.LoginDTO;
 import com.denisson.server.interfaceAdapters.dtos.RegisterDTO;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,9 +27,13 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO) {
-        String token = authenticateUser.authenticate(loginDTO);
-        return ResponseEntity.ok(token);
+    public ResponseEntity<Object> login(@RequestBody LoginDTO loginDTO) {
+        try {
+            Object result = authenticateUser.authenticate(loginDTO);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage()); 
+        }
     }
 
     @PostMapping("/register")
