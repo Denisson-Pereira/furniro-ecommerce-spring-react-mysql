@@ -1,5 +1,5 @@
 import { NavScroll } from '../../../components'
-import { Header } from './components'
+import { Browse, Header } from './components'
 import './home.styles.sass'
 
 export const Home = () => {
@@ -7,6 +7,7 @@ export const Home = () => {
     <div className="home_container">
       <NavScroll />
       <Header />
+      <Browse />
     </div>
   )
 }
