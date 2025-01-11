@@ -4,14 +4,29 @@
 .browse_container
     @include mixins.center
     flex-direction: column
-    margin-top: 2vh
 
 .browse_title
-    @include mixins.margem
+    margin-top: 6vh
+    margin-bottom: 8vh
     p
-        @include mixins.margem
         font-size: 5vh
         font-weight: 600
     span
-        @include mixins.margem
         font-size: 2vh
+
+.browse_categories
+    @include mixins.center
+    gap: 5vh
+    
+.browse_container_img
+    @include mixins.margem
+    @include mixins.center
+    flex-direction: column
+    
+    img
+        width: 45vh
+        border-radius: 20px
+    p
+        font-size: 3vh
+        margin: 1vh
+        font-weight: 500

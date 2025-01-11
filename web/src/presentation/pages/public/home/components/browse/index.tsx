@@ -2,9 +2,10 @@ import { useEffect, useState } from "react"
 import { ICategory } from "../../../../../../core/models/ICategory"
 import { GetAllCategoriesUseCase } from "../../../../../../core/useCases/getAllCategories/getAllCategoriesUseCase";
 import { GetAllCategoriesRepositoryImpl } from "../../../../../../gateways/GetAllCategoriesRepositoryImpl";
+import { SpinnerComponent } from "../../../../../components";
 
 import './browse.styles.sass'
-import { SpinnerComponent } from "../../../../../components";
+import './browserResponsive.styles.sass'
 
 const categoriesRepository = new GetAllCategoriesRepositoryImpl();
 const categoriesUseCase = new GetAllCategoriesUseCase(categoriesRepository);
@@ -37,13 +38,14 @@ export const Browse = () => {
             {loading ? (
                 <SpinnerComponent />
             ) : (
-                <>
+                <div className="browse_categories">
                     {categories.map((item) => (
-                        <div key={item.id}>
-                            {item.name}
+                        <div key={item.id} className="browse_container_img">
+                            <img src={item.image} alt={item.name} />
+                            <p>{item.name}</p>
                         </div>
                     ))}
-                </>
+                </div>
             )}
         </div>
     )
