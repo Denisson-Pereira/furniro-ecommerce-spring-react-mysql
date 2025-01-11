@@ -33,9 +33,9 @@
         color: variables.$white
         font-weight: 700
         &:hover
-            background-color: #e4af33 
+            background-color: #e4af33
         &:active
-            background-color: #fcd987  
+            background-color: #fcd987
 
 .header_title1
     @include mixins.remover_margens
@@ -54,6 +54,32 @@
     font-size: 2.5vh
     font-weight: 500
 
+@media (max-width: 600px)
+    .header_discover
+        padding: 3vh
+        gap: 0vh
+        background-color: #dadada00
+        @include mixins.center
+        
+
+    .header_container
+        background-size: cover
+        justify-content: center
+        align-items: flex-start
+
+    .header_title1
+        font-size: 2vh
+        margin-bottom: 5vh
+
+    .header_title2
+        font-size: 6vh
+        font-weight: 600
+
+    .header_txt
+        margin-top: 5vh
+        font-size: 2vh
+        font-weight: 400
+        text-align: justify
 
 @media (max-width: 1500px)
     .header_discover
