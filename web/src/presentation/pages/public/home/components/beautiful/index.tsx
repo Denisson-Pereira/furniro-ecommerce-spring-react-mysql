@@ -2,7 +2,6 @@ import Room from '../../../../../../assets/room.png'
 import Home from '../../../../../../assets/home.png'
 
 import './beautiful.styles.sass'
-import './beautifulResponsive.styles.sass'
 
 export const Beautiful = () => {
   return (

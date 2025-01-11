@@ -1,5 +1,4 @@
 import './header.styles.sass'
-import './headerResponsive.styles.sass'
 
 export const Header = () => {
   return (

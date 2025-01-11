@@ -1,5 +1,4 @@
 import './funiro.styles.sass'
-import './funiroResponsive.styles.sass'
 
 export const Funiro = () => {
   return (

@@ -5,7 +5,6 @@ import { GetAllCategoriesRepositoryImpl } from "../../../../../../gateways/GetAl
 import { SpinnerComponent } from "../../../../../components";
 
 import './browse.styles.sass'
-import './browserResponsive.styles.sass'
 
 const categoriesRepository = new GetAllCategoriesRepositoryImpl();
 const categoriesUseCase = new GetAllCategoriesUseCase(categoriesRepository);
