@@ -2,11 +2,12 @@ import Room from '../../../../../../assets/room.png'
 import Home from '../../../../../../assets/home.png'
 
 import './beautiful.styles.sass'
+import './beautifulResponsive.styles.sass'
 
 export const Beautiful = () => {
   return (
     <div className="beautiful_container">
-        <div className="beautiful_box1">
+        <div className="beautiful_box1 fade-in">
             <p>50+ Beautiful rooms inspiration</p>
             <span>Our designer already made a lot of beautiful prototipe of rooms that inspire you</span>
             <button>Explore More</button>
