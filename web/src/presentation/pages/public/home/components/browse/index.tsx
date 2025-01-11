@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react"
 import { ICategory } from "../../../../../../core/models/ICategory"
-import { GetAllCategoriesUseCase } from "../../../../../../core/useCases/getAllCategories/getAllCategoriesUseCase";
-import { GetAllCategoriesRepositoryImpl } from "../../../../../../gateways/GetAllCategoriesRepositoryImpl";
 import { SpinnerComponent } from "../../../../../components";
+import { categoriesServiceLocator } from "../../../../../../infra/services/categoriesServiceLocator";
 
 import './browse.styles.sass'
-
-const categoriesRepository = new GetAllCategoriesRepositoryImpl();
-const categoriesUseCase = new GetAllCategoriesUseCase(categoriesRepository);
 
 export const Browse = () => {
     const [categories, setCategories] = useState<ICategory[]>([]);
@@ -17,7 +13,7 @@ export const Browse = () => {
         async function fetchCategories() {
             setLoading(true);
             try {
-                const response = await categoriesUseCase.execute('categories');
+                const response = await categoriesServiceLocator.categoriesUseCase.execute('categories');
                 setCategories(response);
             } catch (error) {
                 console.error('Error fetching categories: ', error);
