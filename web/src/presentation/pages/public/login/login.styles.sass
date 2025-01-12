@@ -1,2 +1,62 @@
 @use '../../../sass/mixins'
 @use '../../../sass/variables'
+
+.login_container
+    @include mixins.flex
+    
+.login_left
+    width: 60%
+    height: 100vh
+
+.login_right
+    width: 40%
+    height: 100vh
+
+.login_form
+    @include mixins.flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100vh
+
+.login_form_img
+    @include mixins.center
+    img
+        width: 15vh
+        @include mixins.remover_margens
+    p
+        font-size: 12vh
+        @include mixins.remover_margens
+
+.login_form_reg
+    @include mixins.flex
+    justify-content: center
+    align-items: center
+    gap: 1vh
+
+    p
+        @include mixins.remover_margens
+        color: variables.$default
+
+    button    
+        @include mixins.remover_margens
+        border: none
+        background-color: variables.$white
+        border-bottom: 1px solid variables.$greyDark
+        color: variables.$default
+
+.login_form_contact
+    @include mixins.flex
+    flex-direction: column
+    padding: 1vh
+    gap: .5vh
+
+.login_form_email
+    @include mixins.flex
+    align-items: center
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+    svg
+        color: variables.$greyDark
+      

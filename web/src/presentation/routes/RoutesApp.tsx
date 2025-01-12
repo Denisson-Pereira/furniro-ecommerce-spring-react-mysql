@@ -8,7 +8,7 @@ export const RoutesApp = () => {
   const { user } = useAuthContext();
   return (
     <BrowserRouter>
-      {user ? <IsUser /> : <NotUser />}
+      {user.id ? <IsUser /> : <NotUser />}
     </BrowserRouter>
   )
 }

@@ -1,4 +1,4 @@
-import { GetAllCategoriesUseCase } from "../../core/useCases/getAllCategories/getAllCategoriesUseCase";
+import { GetAllCategoriesUseCase } from "../../core/useCases/getAllCategoriesUseCase/GetAllCategoriesUseCase";
 import { GetAllCategoriesRepositoryImpl } from "../gateways/GetAllCategoriesRepositoryImpl";
 
 const categoriesRepository = new GetAllCategoriesRepositoryImpl();
