@@ -12,6 +12,17 @@
     border-radius: 50%
     width: 5vh
     height: 5vh
+    cursor: pointer
 
     svg
         color: variables.$primary
+
+    &:hover
+        border: 2px solid variables.$hover
+        svg
+            color: variables.$hover
+    &:active
+        border: 2px solid variables.$active
+        svg
+            color: variables.$active
+        
