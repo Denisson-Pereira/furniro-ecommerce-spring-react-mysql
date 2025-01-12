@@ -14,14 +14,14 @@ export async function login(email: string, password: string) {
             throw new Error('Login failed');
         }
 
-        const { data } = await response.json();
+        const { user, token } = await response.json();
 
-        localStorage.setItem('@FurniroWeb:userStore', JSON.stringify(data.user));
-        localStorage.setItem('@FurniroWeb:tokenStore', JSON.stringify(data.token)); 
+        localStorage.setItem('@FurniroWeb:userStore', JSON.stringify(user));
+        localStorage.setItem('@FurniroWeb:tokenStore', JSON.stringify(token)); 
 
-        return data;
+        return user;
     } catch (error) {
         console.log(error);
-        return;
+        throw new Error('Login failed');
     }
 }
