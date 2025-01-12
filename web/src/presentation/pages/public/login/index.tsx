@@ -29,12 +29,16 @@ export const Login = () => {
             <img src={Logo} alt="logo" />
             <p>Furniro</p>
           </div>
-          <div className="login_form_cond">
-            {login ? <LoginForm /> : <RegisterForm />}
-          </div>
-          <div className="login_form_reg">
-            <p>{login ? 'No account yet?' : 'Already a user?'}</p>
-            <button onClick={changeForm}>{login ? 'SIGN IN' : 'SIGN UP'}</button>
+          <div className="login_form_container2">
+            <div className="login_form_container3">
+              <div className="login_form_cond">
+                {login ? <LoginForm /> : <RegisterForm />}
+              </div>
+              <div className="login_form_reg">
+                <p>{login ? 'No account yet?' : 'Already a user?'}</p>
+                <button onClick={changeForm}>{login ? 'SIGN IN' : 'SIGN UP'}</button>
+              </div>
+            </div>
           </div>
           <div className="login_form_contact">
             <div className="login_form_email">
