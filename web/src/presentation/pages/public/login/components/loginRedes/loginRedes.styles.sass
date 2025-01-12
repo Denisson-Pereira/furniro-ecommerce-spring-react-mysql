@@ -1,0 +1,17 @@
+@use '../../../../../sass/mixins'
+@use '../../../../../sass/variables'
+
+.loginRedes_container
+    @include mixins.center
+    gap: 2vh
+
+.loginRedes_icons
+    @include mixins.center
+    border: 2px solid variables.$primary
+    padding: 1vh
+    border-radius: 50%
+    width: 5vh
+    height: 5vh
+
+    svg
+        color: variables.$primary

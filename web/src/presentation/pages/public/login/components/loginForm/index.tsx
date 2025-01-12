@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { LoginRedes } from ".."
+import { LoginFormOr, LoginRedes } from ".."
 import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
 
@@ -42,13 +42,7 @@ export const LoginForm = () => {
                 <div className="loginForm_btn">
                     <button>SIGN UP</button>
                 </div>
-                <div className="loginForm_or">
-                    <div className="loginForm_line"></div>
-                    <div className="loginForm_txt_or">
-                        <p>OR</p>
-                    </div>
-                    <div className="loginForm_line"></div>
-                </div>
+                <LoginFormOr />
                 <LoginRedes />
             </div>
         </div>

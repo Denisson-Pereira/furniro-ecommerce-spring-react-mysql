@@ -2,6 +2,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
 
+import './loginRedes.styles.sass'
 
 export const LoginRedes = () => {
     return (
