@@ -8,7 +8,7 @@ import { useAuthContext } from "../../../../../context/authContext";
 import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
-    const { setUser } = useAuthContext();
+    const { setUser, loading, setLoading } = useAuthContext();
     const navigate = useNavigate();
     const [visible, setVisible] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
@@ -19,6 +19,7 @@ export const LoginForm = () => {
     };
 
     async function handleLogin() {
+        setLoading(true)
         try {
             const response = await loginServiceLocator.loginUseCase.execute(email, password);
             if (response) {
@@ -28,12 +29,14 @@ export const LoginForm = () => {
         } catch (error) {
             console.error('Login failed:', error);
             alert("Login failed. Please check your credentials.");
+        } finally {
+            setLoading(false);
         }
     }
 
 
     return (
-        <div className="loginForm_container">
+        <form className="loginForm_container">
             <p className="loginForm_title">SIGN UP</p>
             <div className="loginForm_form">
                 <div className="loginForm_email">
@@ -65,12 +68,16 @@ export const LoginForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className="loginForm_btn">
-                    <button onClick={handleLogin}>SIGN UP</button>
-                </div>
+                {loading ? (
+                    <div className="spinner"></div>
+                ) : (
+                    <div className="loginForm_btn">
+                        <button onClick={handleLogin}>SIGN UP</button>
+                    </div>
+                )}
                 <LoginFormOr />
                 <LoginRedes />
             </div>
-        </div>
+        </form>
     );
 };

@@ -59,4 +59,19 @@
             background-color: #e4af33
         &:active
             background-color: #fcd987
-        
+
+.spinner
+    border: 10px solid variables.$white
+    border-top: 10px solid variables.$primary
+    border-radius: 50%
+    width: 8vh
+    height: 8vh
+    animation: spin 1s linear infinite
+    margin: 0 auto
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)

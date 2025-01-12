@@ -6,6 +6,8 @@ interface AuthContextType {
     setUser: (user: IUser) => void;
     token: string;
     setToken: (token: string) => void
+    loading: boolean;
+    setLoading: (loading: boolean) => void
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
@@ -18,6 +20,7 @@ export const AuthContextProvider = ({ children }: Props) => {
 
     const [user, setUser] = useState<IUser>({} as IUser);
     const [token, setToken] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const loaderUser = async () => {
@@ -35,7 +38,7 @@ export const AuthContextProvider = ({ children }: Props) => {
         loaderUser();
     }, [])
 
-    const values = { user, token, setUser, setToken };
+    const values = { user, token, setUser, setToken, loading, setLoading };
 
     return (
         <AuthContext.Provider value={values}>
