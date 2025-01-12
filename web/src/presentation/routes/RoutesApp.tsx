@@ -1,13 +1,14 @@
-import { useGlobalFurniroContext } from '../context'
+
 import { BrowserRouter } from 'react-router-dom';
 import { IsUser } from './IsUser';
 import { NotUser } from './NotUser';
+import { useAuthContext } from '../context/authContext';
 
 export const RoutesApp = () => {
-  const { usuario } = useGlobalFurniroContext();
+  const { user } = useAuthContext();
   return (
     <BrowserRouter>
-      {usuario ? <IsUser /> : <NotUser />}
+      {user ? <IsUser /> : <NotUser />}
     </BrowserRouter>
   )
 }

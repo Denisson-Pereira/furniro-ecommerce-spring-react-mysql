@@ -1,11 +1,11 @@
-import { FurniroProvider } from './presentation/context'
+import { AuthContextProvider } from './presentation/context/authContext'
 import { RoutesApp } from './presentation/routes/RoutesApp'
 
 function App() {
   return (
-    <FurniroProvider>
+    <AuthContextProvider>
       <RoutesApp />
-    </FurniroProvider>
+    </AuthContextProvider>
   )
 }
 

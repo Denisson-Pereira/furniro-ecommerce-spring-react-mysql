@@ -15,6 +15,7 @@ export const Browse = () => {
             try {
                 const response = await categoriesServiceLocator.categoriesUseCase.execute('categories');
                 setCategories(response);
+                console.log('chamou api');
             } catch (error) {
                 console.error('Error fetching categories: ', error);
             } finally {
