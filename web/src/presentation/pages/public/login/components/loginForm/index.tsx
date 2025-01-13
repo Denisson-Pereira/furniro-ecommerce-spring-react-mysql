@@ -14,10 +14,6 @@ export const LoginForm = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-    const handleIcon = () => {
-        setVisible(!visible);
-    };
-
     async function handleLogin() {
         setLoading(true)
         try {
@@ -33,7 +29,6 @@ export const LoginForm = () => {
             setLoading(false);
         }
     }
-
 
     return (
         <form className="loginForm_container">
@@ -63,7 +58,7 @@ export const LoginForm = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <div className="loginForm_icon_eye" onClick={handleIcon}>
+                        <div className="loginForm_icon_eye" onClick={() => setVisible((prev) => !prev)}>
                             {visible ? <IoMdEye /> : <FaEyeSlash />}
                         </div>
                     </div>
