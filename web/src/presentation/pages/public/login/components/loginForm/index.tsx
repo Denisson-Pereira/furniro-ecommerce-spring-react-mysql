@@ -17,7 +17,7 @@ export const LoginForm = () => {
     async function handleLogin() {
         setLoading(true)
         try {
-            const response = await loginServiceLocator.loginUseCase.execute(email, password);
+            const response = await loginServiceLocator.loginUseCase.execute({ email, password });
             if (response) {
                 setUser(response);
                 navigate('/shop');

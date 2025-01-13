@@ -1,13 +1,17 @@
+import { ILoginDTO } from "../../dtos/ILoginDTO";
 import { serveConnection } from "../connection";
 
-export async function login(email: string, password: string) {
+export async function login(data: ILoginDTO) {
     try {
         const response = await fetch(`${serveConnection}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 
             },
-            body: JSON.stringify({ email, password }), 
+            body: JSON.stringify({ 
+                email: data.email,
+                password: data.password
+             }), 
         });
 
         if (!response.ok) {
