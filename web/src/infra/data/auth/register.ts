@@ -8,7 +8,12 @@ export async function register(data: IRegisterDTO) {
             headers: {
                 'Content-Type': 'application/json', 
             },
-            body: JSON.stringify({ data }),
+            body: JSON.stringify({ 
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
+                password: data.password
+             }),
         });
 
         if (!response.ok) {

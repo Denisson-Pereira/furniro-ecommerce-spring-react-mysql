@@ -32,7 +32,7 @@ export const LoginForm = () => {
 
     return (
         <form className="loginForm_container">
-            <p className="loginForm_title">SIGN UP</p>
+            <p className="loginForm_title">SIGN IN</p>
             <div className="loginForm_form">
                 <div className="loginForm_email">
                     <p>Email</p>
@@ -67,7 +67,7 @@ export const LoginForm = () => {
                     <div className="spinner"></div>
                 ) : (
                     <div className="loginForm_btn">
-                        <button onClick={handleLogin}>SIGN UP</button>
+                        <button onClick={handleLogin}>SIGN IN</button>
                     </div>
                 )}
                 <LoginFormOr />

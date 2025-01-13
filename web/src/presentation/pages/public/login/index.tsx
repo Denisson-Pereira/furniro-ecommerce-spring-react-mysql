@@ -36,7 +36,7 @@ export const Login = () => {
               </div>
               <div className="login_form_reg">
                 <p>{login ? 'No account yet?' : 'Already a user?'}</p>
-                <button onClick={changeForm}>{login ? 'SIGN IN' : 'SIGN UP'}</button>
+                <button onClick={changeForm}>{login ? 'SIGN UP' : 'SIGN IN'}</button>
               </div>
             </div>
           </div>
