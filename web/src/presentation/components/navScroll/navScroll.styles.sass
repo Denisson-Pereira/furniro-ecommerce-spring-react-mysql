@@ -1,3 +1,6 @@
+@use '../../sass/mixins'
+@use '../../sass/variables'
+
 .bootstrap_img
     display: flex
     justify-content: center
@@ -20,6 +23,10 @@
     font-size: 3vh
     margin-right: 5vh
     color: black
+    &:hover
+        color: variables.$primary
+    &:active
+        color: variables.$active
 
 .container_icons
     margin-left: 5vh
@@ -28,6 +35,21 @@
     justify-content: center
     align-items: center
 
+.navbar_user
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    p
+        font-size: 2vh
+        margin: 0
+        color: black
+        text-decoration: underline
+        &:hover
+            color: variables.$primary
+        &:active
+            color: variables.$active
+
 @media (max-width: 600px)
     .container_icons, .bootstrap_img, .icon_react
         margin: 0
@@ -35,7 +57,6 @@
 @media (max-width: 900px)
     .container_icons, .bootstrap_img, .icon_react
         margin: 0
-
 
 @media (max-width: 1200px)
     .container_icons, .bootstrap_img, .icon_react
