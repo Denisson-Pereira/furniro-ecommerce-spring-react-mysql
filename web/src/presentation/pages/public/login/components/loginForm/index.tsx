@@ -8,6 +8,7 @@ import { useAuthContext } from "../../../../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { getCredentials } from "../../cache/getCredentials";
 import { setCredentials } from "../../cache/setCredentials";
+import { getCheck } from "../../cache/getCheck";
 
 export const LoginForm = () => {
     const { setUser, loading, setLoading } = useAuthContext();
@@ -15,6 +16,7 @@ export const LoginForm = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [check, setCheck] = useState<boolean>(false);
 
     async function handleDate() {
         try {
@@ -28,14 +30,26 @@ export const LoginForm = () => {
         }
     }
 
+    async function loadCheck() {
+        const savedCheck = await getCheck();
+        setCheck(savedCheck === 'true');
+    }
+
     useLayoutEffect(() => {
+        loadCheck();
         handleDate();
     }, []);
 
-    const handleCache = () => {
-        setCredentials(email, password);
-    }
-
+    const handleCache = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const isChecked = e.target.checked;
+        if (isChecked) {
+            setCredentials(email, password);
+        } else {
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userPassword");
+        }
+        setCheck(isChecked); 
+    };
 
     async function handleLogin() {
         setLoading(true)
@@ -101,7 +115,11 @@ export const LoginForm = () => {
                             type="checkbox" 
                             name="check_login" 
                             id="check_login" 
-                            onClick={handleCache}
+                            checked={check}
+                            onChange={(e) => {
+                                setCheck(e.target.checked);
+                                handleCache(e);
+                            }}
                         />
                         <p>Remember me</p>
                     </div>
