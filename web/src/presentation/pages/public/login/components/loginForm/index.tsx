@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { LoginFormOr, LoginRedes } from "..";
 import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
@@ -6,6 +6,8 @@ import "./loginForm.styles.sass";
 import { loginServiceLocator } from "../../../../../../infra/services/loginServiceLocator";
 import { useAuthContext } from "../../../../../context/authContext";
 import { useNavigate } from "react-router-dom";
+import { getCredentials } from "../../cache/getCredentials";
+import { setCredentials } from "../../cache/setCredentials";
 
 export const LoginForm = () => {
     const { setUser, loading, setLoading } = useAuthContext();
@@ -13,6 +15,27 @@ export const LoginForm = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+
+    async function handleDate() {
+        try {
+            const response = await getCredentials();
+            if (response) {
+                setEmail(response.email || '');
+                setPassword(response.password || '');
+            }
+        } catch (error) {
+            console.log("Failed to load credentials from cache:", error);
+        }
+    }
+
+    useLayoutEffect(() => {
+        handleDate();
+    }, []);
+
+    const handleCache = () => {
+        setCredentials(email, password);
+    }
+
 
     async function handleLogin() {
         setLoading(true)
@@ -78,6 +101,7 @@ export const LoginForm = () => {
                             type="checkbox" 
                             name="check_login" 
                             id="check_login" 
+                            onClick={handleCache}
                         />
                         <p>Remember me</p>
                     </div>
