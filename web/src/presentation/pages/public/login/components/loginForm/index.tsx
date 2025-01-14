@@ -51,6 +51,7 @@ export const LoginForm = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
+                            autoComplete="email"
                         />
                     </div>
                 </div>
@@ -69,6 +70,19 @@ export const LoginForm = () => {
                         <div className="loginForm_icon_eye" onClick={() => setVisible((prev) => !prev)}>
                             {visible ? <IoMdEye /> : <FaEyeSlash />}
                         </div>
+                    </div>
+                </div>
+                <div className="loginForm_check_box">
+                    <div className="loginForm_check">
+                        <input 
+                            type="checkbox" 
+                            name="check_login" 
+                            id="check_login" 
+                        />
+                        <p>Remember me</p>
+                    </div>
+                    <div className="loginForm_forgot">
+                        <a>Forgot password?</a>
                     </div>
                 </div>
                 {loading ? (

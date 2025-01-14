@@ -75,3 +75,19 @@
 
     100%
         transform: rotate(360deg)
+
+.loginForm_check_box
+    @include mixins.flex
+    justify-content: space-between
+    padding: 0vh 1vh 1vh 1vh
+    
+.loginForm_check
+    @include mixins.flex
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+        
+.loginForm_forgot
+    color: variables.$greyDark
+    cursor: pointer
