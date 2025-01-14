@@ -45,6 +45,7 @@ export const RegisterForm = () => {
               placeholder="Enter Your Email"
               name="email_register_input"
               id="email_register_input"
+              autoComplete='email'
             />
           </div>
         </div>
