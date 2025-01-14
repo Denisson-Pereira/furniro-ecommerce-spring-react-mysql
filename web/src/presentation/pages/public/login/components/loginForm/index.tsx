@@ -31,7 +31,13 @@ export const LoginForm = () => {
     }
 
     return (
-        <form className="loginForm_container">
+        <form 
+            className="loginForm_container"
+            onSubmit={(e) => {
+                e.preventDefault();
+                handleLogin();
+            }}
+        >
             <p className="loginForm_title">SIGN IN</p>
             <div className="loginForm_form">
                 <div className="loginForm_email">
@@ -44,6 +50,7 @@ export const LoginForm = () => {
                             id="email_input"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                 </div>
@@ -57,6 +64,7 @@ export const LoginForm = () => {
                             id="password_input"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                         <div className="loginForm_icon_eye" onClick={() => setVisible((prev) => !prev)}>
                             {visible ? <IoMdEye /> : <FaEyeSlash />}
@@ -67,7 +75,7 @@ export const LoginForm = () => {
                     <div className="spinner"></div>
                 ) : (
                     <div className="loginForm_btn">
-                        <button onClick={handleLogin}>SIGN IN</button>
+                        <button type="submit">SIGN IN</button>
                     </div>
                 )}
                 <LoginFormOr />

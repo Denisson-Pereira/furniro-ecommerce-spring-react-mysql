@@ -4,13 +4,41 @@ import { IoMdEye } from 'react-icons/io';
 import { FaEyeSlash } from 'react-icons/fa';
 import { useAuthContext } from '../../../../../context/authContext';
 import { LoginFormOr, LoginRedes } from '..';
+import { registerServiceLocator } from '../../../../../../infra/services/registerServiceLocator';
 
 export const RegisterForm = () => {
-  const { loading } = useAuthContext();
+  const { loading, setLoading } = useAuthContext();
   const [visible, setVisible] = useState<boolean>(false);
 
+  const [first_name, setFirst_name] = useState<string>('')
+  const [last_name, setLast_name] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
+  async function handleRegister() {
+    setLoading(true);
+    try {
+      const respose = await registerServiceLocator.regsterUseCase.execute({ first_name, last_name, email, password });
+      if (respose) {
+        alert("User created successfully!");
+        location.reload();
+      }
+    } catch (error) {
+      console.error('Sign up failed:', error);
+      alert("Sign up. Please check your credentials.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <form className="registerForm_container">
+    <form 
+      className="registerForm_container"
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleRegister();
+      }}
+    >
       <p className='registerForm_title'>SIGN UP</p>
       <div className="registerForm_form">
         <div className="loginForm_name">
@@ -22,6 +50,9 @@ export const RegisterForm = () => {
                 placeholder='Name Here'
                 name='first_name'
                 id='first_name'
+                value={first_name}
+                onChange={(e) => setFirst_name(e.target.value)}
+                required
               />
             </div>
           </div>
@@ -33,6 +64,9 @@ export const RegisterForm = () => {
                 placeholder='Last Name'
                 name='last_name'
                 id='last_name'
+                value={last_name}
+                onChange={(e) => setLast_name(e.target.value)}
+                required
               />
             </div>
           </div>
@@ -46,6 +80,9 @@ export const RegisterForm = () => {
               name="email_register_input"
               id="email_register_input"
               autoComplete='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -57,6 +94,9 @@ export const RegisterForm = () => {
               placeholder="******"
               name="password_register_input"
               id="password_register_input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <div className="registerForm_icon_eye" onClick={() => setVisible((prev) => !prev)}>
               {visible ? <IoMdEye /> : <FaEyeSlash />}
@@ -67,7 +107,7 @@ export const RegisterForm = () => {
           <div className="spinner_register"></div>
         ) : (
           <div className="registerForm_btn">
-            <button>SIGN UP</button>
+            <button type='submit'>SIGN UP</button>
           </div>
         )}
         <LoginFormOr />
