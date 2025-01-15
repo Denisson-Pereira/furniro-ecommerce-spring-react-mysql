@@ -1,5 +1,5 @@
-import Room from '../../../../../../assets/room.png'
-import Home from '../../../../../../assets/home.png'
+import Room from '../../../../../../assets//images/room.png'
+import Home from '../../../../../../assets/images/home.png'
 
 import './beautiful.styles.sass'
 

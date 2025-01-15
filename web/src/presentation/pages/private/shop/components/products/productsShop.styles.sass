@@ -1,2 +1,32 @@
 @use '../../../../../sass/mixins'
 @use '../../../../../sass/variables'
+
+.products_container
+    @include mixins.center
+    
+.products_filter
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    padding: 2vh 5vh 2vh 5vh
+    background-color: variables.$secundary
+    width: 100%
+    img
+        width: 4vh
+        @include mixins.remover_margens
+    
+.products_box
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+    
+.products_traco
+    background-color: variables.$greyDark
+    width: 2px
+    height: 5vh
+
+.products_p_list
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+        width: 20vh

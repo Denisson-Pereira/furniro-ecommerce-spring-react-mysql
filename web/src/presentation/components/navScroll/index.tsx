@@ -5,7 +5,7 @@ import { TbUserExclamation } from "react-icons/tb";
 import { IoCartOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
-import Logo from '../../../assets/logo.png'
+import Logo from '../../../assets/images/logo.png'
 
 import './navScroll.styles.sass'
 import { useAuthContext } from '../../context/authContext';

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ImageLogin, LoginForm, RegisterForm } from './components'
 import { FaSquarePhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import Logo from '../../../../assets/logo.png'
+import Logo from '../../../../assets/images/logo.png'
 
 import './login.styles.sass'
 
