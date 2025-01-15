@@ -1,5 +1,5 @@
 import { NavScroll } from '../../../components'
-import { HeaderShop } from './components'
+import { HeaderShop, Products } from './components'
 import './shop.styles.sass'
 
 export const Shop = () => {
@@ -7,6 +7,7 @@ export const Shop = () => {
     <div className="shop_container">
       <NavScroll />
       <HeaderShop />
+      <Products />
     </div>
   )
 }

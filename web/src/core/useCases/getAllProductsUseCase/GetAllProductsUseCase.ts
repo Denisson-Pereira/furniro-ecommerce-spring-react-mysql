@@ -5,7 +5,7 @@ import { IProduct } from "../../models/IProduct";
 export class GetAllProductsUseCase {
     constructor(private readonly repository: IGetAllProductsRepository) {}
 
-    execute(): Promise<IProduct[]> {
+    async execute(): Promise<IProduct[]> {
         try {
             return this.repository.getAll();
         } catch (error) {

@@ -1,12 +1,10 @@
-import { serveConnection } from "../connection";
+import { serveConnection, setAuthToken } from "../connection";
 
 export const getAllProducts = async () => {
     try {
         const response = await fetch(`${serveConnection}/private/products`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
+            headers: setAuthToken()
         });
 
         if (!response.ok) {
