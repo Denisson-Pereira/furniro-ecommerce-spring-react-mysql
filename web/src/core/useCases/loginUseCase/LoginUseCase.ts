@@ -5,7 +5,7 @@ import { IUser } from "../../models/IUser";
 export class LoginUseCase {
     constructor(private readonly repository: ILoginRepository) {}
 
-    async execute(data: ILoginDTO): Promise<IUser | undefined> {
+    execute(data: ILoginDTO): Promise<IUser | undefined> {
         return this.repository.login(data);
     }
 }

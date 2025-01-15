@@ -5,11 +5,9 @@ import { ICategory } from "../../models/ICategory";
 export class GetAllCategoriesUseCase {
     constructor(private readonly repository: IGetAllCategoriesRepository) {}
 
-    async execute(rota: string): Promise<ICategory[]> {
+    execute(rota: string): Promise<ICategory[]> {
         try {
-            const response = await this.repository.api(rota);
-            return response;
-            
+            return this.repository.api(rota);
         } catch (error) {
             throw new CategoryExeptions();
         }
