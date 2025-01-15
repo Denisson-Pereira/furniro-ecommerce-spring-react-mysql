@@ -16,14 +16,17 @@
         @include mixins.remover_margens
     
 .products_box
-    @include mixins.center
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
     p
         @include mixins.remover_margens
     
 .products_traco
     background-color: variables.$greyDark
-    width: 2px
+    width: 2vh
     height: 5vh
+    margin-right: 5vh
 
 .products_p_list
     @include mixins.center

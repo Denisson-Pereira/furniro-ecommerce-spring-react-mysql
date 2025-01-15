@@ -12,6 +12,8 @@ export const Products = () => {
     const { loading, setLoading } = useAuthContext();
 
     const [products, setProducts] = useState<IProduct[]>([]);
+    const [filter, setFilter] = useState<IProduct[]>([]);
+    const [size, setSize] = useState<string>('8');
 
     useEffect(() => {
         setLoading(true);
@@ -28,6 +30,11 @@ export const Products = () => {
         fetchProducts();
 
     }, [])
+
+    const handleFilter = (size: number) => {
+        const date = products.slice(0, size -1)
+        setFilter(date);
+    }
 
     return (
         <div className="products_container">
@@ -51,11 +58,16 @@ export const Products = () => {
                 <div className="products_box">
                     <p>Show</p>
                     <div className="products_box_show">
-                        <p>16</p>
+                        <input 
+                            type="number" 
+                            name='filter_input'
+                            id='filter_input'
+                            value={size}
+                            onChange={(e) => setSize(e.target.value)}
+                        />
                     </div>
-                    <p>Short by</p>
                     <div className="products_box_show_default">
-                        <p>Default</p>
+                        <button onClick={() => handleFilter(parseInt(size))}>Apply</button>
                     </div>
                 </div>
             </div>
@@ -63,7 +75,9 @@ export const Products = () => {
                 <div className="products_spinner"></div>
             ) : (
                 <div className="products_map">
-
+                    {filter.map((product) => (
+                        <div key={product.id}>{product.name}</div>
+                    ))}
                 </div>
             )}
         </div>
