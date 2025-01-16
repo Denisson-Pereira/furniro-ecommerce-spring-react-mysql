@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../../../context/authContext'
 import { IProduct } from '../../../../../../core/models/IProduct';
 import { getAllProductsServiceLocator } from '../../../../../../infra/services/getAllProductsServiceLocator';
-import Filter from '../../../../../../assets/icons/filter.png'
 import Grid from '../../../../../../assets/icons/grid.png'
 import List from '../../../../../../assets/icons/list.png'
 
@@ -15,6 +14,7 @@ export const Products = () => {
     const filterStart = products.slice(0, 7);
     const [filter, setFilter] = useState<IProduct[]>(filterStart);
     const [size, setSize] = useState<string>('');
+    const [productsList, setProductsList] = useState<boolean>(false);
 
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const Products = () => {
             try {
                 const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
                 setProducts(response);
-                setFilter(response.slice(0, 7));
+                setFilter(response.slice(0, 8));
             } catch (error) {
                 console.error('Error fetching products: ', error);
             } finally {
@@ -43,29 +43,35 @@ export const Products = () => {
         <div className="products_container">
             <div className="products_filter">
                 <div className="products_box">
-                    <div className="products_filter">
-                        <img src={Filter} alt="filter" />
-                    </div>
                     <p>Filter</p>
-                    <div className="products_filter">
+                    <div
+                        className="products_filter_click"
+                        onClick={() => setProductsList(false)}
+                        title='grid format'
+                    >
                         <img src={Grid} alt="grid" />
                     </div>
-                    <div className="products_filter">
+                    <div
+                        className="products_filter_click"
+                        onClick={() => setProductsList(true)}
+                        title='format in lines'
+                    >
                         <img src={List} alt="list" />
                     </div>
                     <div className="products_traco"></div>
                     <div className="products_p_list">
-                        <p>Showing 1-16 of 32 results</p>
+                        <p>Showing 1-{filter.length} of {products.length} results</p>
                     </div>
                 </div>
                 <div className="products_box">
                     <p>Show</p>
                     <div className="products_box_show">
-                        <input 
-                            type="number" 
+                        <input
+                            type="text"
                             name='filter_input'
                             id='filter_input'
                             value={size}
+                            placeholder='8'
                             onChange={(e) => setSize(e.target.value)}
                         />
                     </div>
@@ -77,9 +83,19 @@ export const Products = () => {
             {loading ? (
                 <div className="products_spinner"></div>
             ) : (
-                <div className="products_map">
+                <div className={productsList ? "products_map_row" : "products_map_column"}>
                     {filter.map((product) => (
-                        <div key={product.id}>{product.name}</div>
+                        <div key={product.id} className='products_card'>
+                            <img src={product.image} />
+                            <div className="product_info">
+                                <p>{product.name}</p>
+                                <span>Styllish cafe chair</span>
+                                <div className="product_info_price">
+                                    <p>Rp {product.price}</p>
+                                    <span>Rp {parseFloat(product.price) + 1000}</span>
+                                </div>
+                            </div>
+                        </div>
                     ))}
                 </div>
             )}
