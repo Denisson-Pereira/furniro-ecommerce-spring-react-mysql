@@ -1,4 +1,4 @@
-import { IGetAllProductsRepository } from "../../contracts/IGetAllProductsRepository";
+import { IGetAllProductsRepository } from "../../contracts/IGetProductsRepository";
 import { ProductExeptions } from "../../exeptions/ProductExeptions";
 import { IProduct } from "../../models/IProduct";
 

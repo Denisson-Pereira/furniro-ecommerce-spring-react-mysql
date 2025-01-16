@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../../../context/authContext'
 import { IProduct } from '../../../../../../core/models/IProduct';
-import { getAllProductsServiceLocator } from '../../../../../../infra/services/getAllProductsServiceLocator';
-
-import Grid from '../../../../../../assets/icons/grid.png';
-import List from '../../../../../../assets/icons/list.png';
-
-import './productsShop.styles.sass';
 import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
 import { promotionValue } from '../../../../../../utils/promotionValue';
 import { useHandlePage } from '../../../../../hooks/useHandlePage';
 import { HighQuality } from '../../../../../components';
+import { getAllProductsServiceLocator } from '../../../../../../infra/services/getProductsServiceLocator';
+import Grid from '../../../../../../assets/icons/grid.png';
+import List from '../../../../../../assets/icons/list.png';
+
+import './productsShop.styles.sass';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
