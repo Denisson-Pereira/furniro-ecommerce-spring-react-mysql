@@ -32,18 +32,20 @@
     @include mixins.center
     p
         @include mixins.remover_margens
-        width: 20vh
+        width: 30vh
 
 .products_box
     gap: 1vh
-    input
+    select
         border: none
         height: 5vh
-        width: 5vh
+        width: 7vh
         text-align: center
+        background-color: variables.$white
     button
         border: none
         padding: 1vh
+        height: 5vh
         background-color: variables.$white
         &:active
             background-color: variables.$secundary
@@ -160,9 +162,29 @@
         color: variables.$white
         font-size: 2vh
 
+.products_pagination
+    @include mixins.center
+    gap: 3vh
+    margin-bottom: 7vh
+
+.products_pagination_numbers
+    @include mixins.center
+    background-color: variables.$secundary
+    width: 5vh
+    height: 5vh
+    border-radius: 10px
+    cursor: pointer
+    transition: .5s
+    p
+        @include mixins.remover_margens
+        
+.active
+    background-color: variables.$primary
+    color: variables.$white
+
 @media (max-width: 1400px)
     .products_card
-        width: 30vw
+        width: 40vw
     .products_map_column
         display: grid
         grid-template-columns: repeat(2, 1fr)
@@ -189,13 +211,20 @@
             width: 2vh
             @include mixins.remover_margens
     .products_box
+        @include mixins.center
         p
-            font-size: 1.5vh
-            width: 10vh
+            font-size: 1.2vh
+            width: 8vh
+            @include mixins.remover_margens
         button
             font-size: 1.5vh
-        input
+        select
             width: 4vh
             height: 4vh
+            font-size: .8vh
     .products_traco
         width: 1vh
+    .product_info_price
+        flex-direction: column-reverse
+        span
+            font-size: 1.5vh
