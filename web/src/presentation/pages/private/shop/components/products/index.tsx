@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../../../context/authContext'
 import { IProduct } from '../../../../../../core/models/IProduct';
 import { getAllProductsServiceLocator } from '../../../../../../infra/services/getAllProductsServiceLocator';
+
 import Grid from '../../../../../../assets/icons/grid.png'
 import List from '../../../../../../assets/icons/list.png'
 

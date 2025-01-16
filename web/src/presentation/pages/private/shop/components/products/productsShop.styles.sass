@@ -4,7 +4,7 @@
 .products_container
     @include mixins.center
     flex-direction: column
-    
+
 .products_filter, .products_filter_click
     @include mixins.flex
     justify-content: space-between
@@ -15,19 +15,18 @@
     img
         width: 4vh
         @include mixins.remover_margens
-    
+
 .products_box
     @include mixins.flex
     justify-content: space-between
     align-items: center
     p
         @include mixins.remover_margens
-    
+
 .products_traco
     background-color: variables.$greyDark
     width: 2vh
     height: 5vh
-
 
 .products_p_list
     @include mixins.center
@@ -60,6 +59,7 @@
     @include mixins.center
     flex-direction: column
     margin-top: 5vh
+    gap: 5vh
 
 .products_filter_click
     @include mixins.remover_margens
@@ -83,7 +83,6 @@
         height: 50vh
         object-fit: cover
         object-position: top
-
 
 .product_info
     @include mixins.flex
@@ -124,16 +123,32 @@
     span
         font-size: 2vh
         text-decoration: line-through
-        
+
 .product_info_price_row
     @include mixins.flex
     justify-content: space-between
     align-items: center
     @include mixins.remover_margens
-    
+
     gap: 5vh
     p
         font-size: 3.5vh
     span
         font-size: 3vh
-        text-decoration: line-through    
+        text-decoration: line-through
+
+@media (max-width: 1400px)
+    .products_card
+        width: 30vw
+    .products_map_column
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 5vh
+        margin-top: 5vh
+    .products_card_row
+        padding: 1vh
+        img
+            width: 30vw
+            height: 30vh
+            object-fit: cover
+            object-position: top
