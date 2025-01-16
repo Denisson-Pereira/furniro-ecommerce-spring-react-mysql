@@ -15,6 +15,7 @@ import { HighQuality } from '../../../../../components';
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
 
+    const [allProducts, setAllProducts] = useState<IProduct[]>([]);
     const [products, setProducts] = useState<IProduct[]>([]);
     const [size, setSize] = useState<string>('8'); 
     const [productsList, setProductsList] = useState<boolean>(false);
@@ -25,23 +26,12 @@ export const Products = () => {
     const handlePage = useHandlePage();
 
     useEffect(() => {
-        setLoading(true);
         async function fetchProducts() {
+            setLoading(true);
             try {
                 const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
-                switch (selecFilter) {
-                    case "featured":
-                        setProducts(response);
-                        break;
-                    case "highest":
-                        setProducts(response.sort((a,b) => parseFloat(b.price) - parseFloat(a.price)));
-                        break;
-                    case "lowest":
-                        setProducts(response.sort((a,b) => parseFloat(a.price) - parseFloat(b.price)));
-                        break;
-                    default:
-                        console.log('Error when filtering products');
-                }
+                setAllProducts(response);
+                applyFilter(response, selecFilter); 
                 const initialSize = parseInt(size);
                 setPages(Array.from({ length: Math.ceil(response.length / initialSize) }, (_, index) => index + 1));
             } catch (error) {
@@ -51,7 +41,28 @@ export const Products = () => {
             }
         }
         fetchProducts();
+    }, [size]);
+
+    useEffect(() => {
+        applyFilter(allProducts, selecFilter);
     }, [selecFilter]);
+
+    const applyFilter = (products: IProduct[], selecFilter: string) => {
+        let filteredProducts = [...products];
+        switch (selecFilter) {
+            case 'featured':
+                break; 
+            case 'highest':
+                filteredProducts.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+                break;
+            case 'lowest':
+                filteredProducts.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+                break;
+            default:
+                console.log('Error when filtering products');
+        }
+        setProducts(filteredProducts);
+    };
 
     useEffect(() => {
         const parsedSize = parseInt(size);
