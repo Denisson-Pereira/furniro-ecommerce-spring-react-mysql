@@ -1,0 +1,39 @@
+@use '../../sass/mixins'
+@use '../../sass/variables'
+
+.highQuality_container
+    @include mixins.flex
+    justify-content: space-around
+    align-items: center
+    background-color: variables.$secundary
+    width: 100%
+    height: 25vh
+
+.highQuality_box
+    @include mixins.flex
+    align-items: center
+    gap: 1vh
+    img
+        width: 5vh
+        height: 5vh
+        object-fit: contain
+
+.highQuality_box_txt
+    @include mixins.flex
+    flex-direction: column
+    p
+        @include mixins.remover_margens
+        text-align: start
+        font-size: 2vh
+        font-weight: 600
+    span
+        text-align: start
+        font-size: 1.5vh
+        color: variables.$greyDark
+        font-weight: 500
+
+@media (max-width: 600px)
+    .highQuality_container
+        display: grid
+        grid-template-columns: 2fr 2fr
+        padding: 1vh

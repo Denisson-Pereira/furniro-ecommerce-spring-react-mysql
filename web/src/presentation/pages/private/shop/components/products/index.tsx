@@ -10,6 +10,7 @@ import './productsShop.styles.sass';
 import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
 import { promotionValue } from '../../../../../../utils/promotionValue';
 import { useHandlePage } from '../../../../../hooks/useHandlePage';
+import { HighQuality } from '../../../../../components';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
@@ -144,6 +145,7 @@ export const Products = () => {
                     </div>
                 ))}
             </div>
+            <HighQuality />
         </div>
     );
 };
