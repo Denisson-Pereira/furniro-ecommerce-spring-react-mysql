@@ -12,8 +12,10 @@ export const Products = () => {
     const { loading, setLoading } = useAuthContext();
 
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [filter, setFilter] = useState<IProduct[]>([]);
-    const [size, setSize] = useState<string>('8');
+    const filterStart = products.slice(0, 7);
+    const [filter, setFilter] = useState<IProduct[]>(filterStart);
+    const [size, setSize] = useState<string>('');
+
 
     useEffect(() => {
         setLoading(true);
@@ -21,6 +23,7 @@ export const Products = () => {
             try {
                 const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
                 setProducts(response);
+                setFilter(response.slice(0, 7));
             } catch (error) {
                 console.error('Error fetching products: ', error);
             } finally {
@@ -32,7 +35,7 @@ export const Products = () => {
     }, [])
 
     const handleFilter = (size: number) => {
-        const date = products.slice(0, size -1)
+        const date = products.slice(0, size)
         setFilter(date);
     }
 
