@@ -20,6 +20,7 @@ export const Products = () => {
     const [productsList, setProductsList] = useState<boolean>(false);
     const [pages, setPages] = useState<number[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
+    const [selecFilter, setSelectFilter] = useState<string>('featured');
 
     const handlePage = useHandlePage();
 
@@ -28,7 +29,19 @@ export const Products = () => {
         async function fetchProducts() {
             try {
                 const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
-                setProducts(response);
+                switch (selecFilter) {
+                    case "featured":
+                        setProducts(response);
+                        break;
+                    case "highest":
+                        setProducts(response.sort((a,b) => parseFloat(b.price) - parseFloat(a.price)));
+                        break;
+                    case "lowest":
+                        setProducts(response.sort((a,b) => parseFloat(a.price) - parseFloat(b.price)));
+                        break;
+                    default:
+                        console.log('Error when filtering products');
+                }
                 const initialSize = parseInt(size);
                 setPages(Array.from({ length: Math.ceil(response.length / initialSize) }, (_, index) => index + 1));
             } catch (error) {
@@ -38,7 +51,7 @@ export const Products = () => {
             }
         }
         fetchProducts();
-    }, []);
+    }, [selecFilter]);
 
     useEffect(() => {
         const parsedSize = parseInt(size);
@@ -61,7 +74,16 @@ export const Products = () => {
         <div className="products_container">
             <div className="products_filter">
                 <div className="products_box">
-                    <p>Filter</p>
+                    <select 
+                        name="selec_filter" 
+                        id="selec_filter"
+                        value={selecFilter}
+                        onChange={(e) => setSelectFilter(e.target.value)}
+                    >
+                        <option value="featured">Featured</option>
+                        <option value="highest">Highest Price</option>
+                        <option value="lowest">Lowest Price</option>
+                    </select>
                     <div
                         className="products_filter_click"
                         onClick={() => setProductsList(false)}
