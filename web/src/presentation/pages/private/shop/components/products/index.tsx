@@ -85,12 +85,12 @@ export const Products = () => {
             ) : (
                 <div className={productsList ? "products_map_row" : "products_map_column"}>
                     {filter.map((product) => (
-                        <div key={product.id} className='products_card'>
+                        <div key={product.id} className={productsList ? 'products_card_row' :  'products_card'}>
                             <img src={product.image} />
-                            <div className="product_info">
+                            <div className={productsList ? "product_info_row" : "product_info"}>
                                 <p>{product.name}</p>
                                 <span>Styllish cafe chair</span>
-                                <div className="product_info_price">
+                                <div className={productsList ? "product_info_price_row" : "product_info_price"}>
                                     <p>Rp {product.price}</p>
                                     <span>Rp {parseFloat(product.price) + 1000}</span>
                                 </div>

@@ -56,6 +56,11 @@
     gap: 5vh
     margin-top: 5vh
 
+.products_map_row
+    @include mixins.center
+    flex-direction: column
+    margin-top: 5vh
+
 .products_filter_click
     @include mixins.remover_margens
     cursor: pointer
@@ -68,6 +73,17 @@
     width: 30vh
     img
         width: 100%
+
+.products_card_row
+    @include mixins.center
+    background-color: variables.$grey
+    padding: 2vh
+    img
+        width: 100vh
+        height: 50vh
+        object-fit: cover
+        object-position: top
+
 
 .product_info
     @include mixins.flex
@@ -84,6 +100,21 @@
     span
         color: variables.$greyDark
 
+.product_info_row
+    @include mixins.flex
+    flex-direction: column
+    gap: 2vh
+    padding: 1vh
+    background-color: variables.$grey
+    text-align: start
+    p
+        @include mixins.remover_margens
+        font-size: 5vh
+        font-weight: 500
+    span
+        font-size: 2vh
+        color: variables.$greyDark
+
 .product_info_price
     @include mixins.flex
     justify-content: space-between
@@ -94,4 +125,15 @@
         font-size: 2vh
         text-decoration: line-through
         
-        
+.product_info_price_row
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    @include mixins.remover_margens
+    
+    gap: 5vh
+    p
+        font-size: 3.5vh
+    span
+        font-size: 3vh
+        text-decoration: line-through    
