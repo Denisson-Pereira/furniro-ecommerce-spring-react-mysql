@@ -53,12 +53,14 @@
     display: grid
     grid-template-columns: repeat(4, 1fr)
     gap: 5vh
-    margin-top: 5vh
+    margin-top: 7vh
+    margin-bottom: 7vh
 
 .products_map_row
     @include mixins.center
     flex-direction: column
-    margin-top: 5vh
+    margin-top: 7vh
+    margin-bottom: 7vh
     gap: 5vh
 
 .products_filter_click
@@ -152,3 +154,26 @@
             height: 30vh
             object-fit: cover
             object-position: top
+
+@media (max-width: 700px)
+    .products_filter, .products_filter_click
+        @include mixins.flex
+        @include mixins.remover_margens
+        justify-content: space-around
+        align-items: center
+        background-color: variables.$secundary
+        width: 100%
+        img
+            width: 2vh
+            @include mixins.remover_margens
+    .products_box
+        p
+            font-size: 1.5vh
+            width: 10vh
+        button
+            font-size: 1.5vh
+        input
+            width: 4vh
+            height: 4vh
+    .products_traco
+        width: 1vh
