@@ -79,6 +79,7 @@ export const Products = () => {
                         id="selec_filter"
                         value={selecFilter}
                         onChange={(e) => setSelectFilter(e.target.value)}
+                        style={{ width: '15vh' }}
                     >
                         <option value="featured">Featured</option>
                         <option value="highest">Highest Price</option>
