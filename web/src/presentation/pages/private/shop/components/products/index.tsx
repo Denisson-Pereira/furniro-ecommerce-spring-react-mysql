@@ -7,6 +7,8 @@ import Grid from '../../../../../../assets/icons/grid.png'
 import List from '../../../../../../assets/icons/list.png'
 
 import './productsShop.styles.sass'
+import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
+import { promotionValue } from '../../../../../../utils/promotionValue';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
@@ -86,14 +88,17 @@ export const Products = () => {
             ) : (
                 <div className={productsList ? "products_map_row" : "products_map_column"}>
                     {filter.map((product) => (
-                        <div key={product.id} className={productsList ? 'products_card_row' :  'products_card'}>
+                        <div key={product.id} className={productsList ? 'products_card_row' : 'products_card'}>
                             <img src={product.image} />
+                            <div className="products_promotion">
+                                <p>-20%</p>
+                            </div>
                             <div className={productsList ? "product_info_row" : "product_info"}>
                                 <p>{product.name}</p>
                                 <span>Styllish cafe chair</span>
                                 <div className={productsList ? "product_info_price_row" : "product_info_price"}>
-                                    <p>Rp {product.price}</p>
-                                    <span>Rp {parseFloat(product.price) + 1000}</span>
+                                    <p>{monetaryUnit(promotionValue(20, product.price))}</p>
+                                    <span>{monetaryUnit(product.price)}</span>
                                 </div>
                             </div>
                         </div>

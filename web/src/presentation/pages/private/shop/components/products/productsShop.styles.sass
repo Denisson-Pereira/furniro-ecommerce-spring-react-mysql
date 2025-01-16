@@ -73,6 +73,7 @@
     @include mixins.center
     flex-direction: column
     width: 30vh
+    position: relative
     img
         width: 100%
 
@@ -80,6 +81,7 @@
     @include mixins.center
     background-color: variables.$grey
     padding: 2vh
+    position: relative
     img
         width: 100vh
         height: 50vh
@@ -139,6 +141,20 @@
         font-size: 3vh
         text-decoration: line-through
 
+.products_promotion
+    position: absolute
+    top: 2vh
+    right: 2vh
+    background-color: variables.$green
+    @include mixins.center
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    p
+        @include mixins.remover_margens
+        color: variables.$white
+        font-size: 2vh
+
 @media (max-width: 1400px)
     .products_card
         width: 30vw
@@ -154,6 +170,7 @@
             height: 30vh
             object-fit: cover
             object-position: top
+
 
 @media (max-width: 700px)
     .products_filter, .products_filter_click
