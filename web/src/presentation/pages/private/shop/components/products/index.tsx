@@ -9,6 +9,7 @@ import List from '../../../../../../assets/icons/list.png'
 import './productsShop.styles.sass'
 import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
 import { promotionValue } from '../../../../../../utils/promotionValue';
+import { useHandlePage } from '../../../../../hooks/useHandlePage';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
@@ -19,6 +20,7 @@ export const Products = () => {
     const [size, setSize] = useState<string>('');
     const [productsList, setProductsList] = useState<boolean>(false);
 
+    const handlePage = useHandlePage();
 
     useEffect(() => {
         setLoading(true);
@@ -88,7 +90,11 @@ export const Products = () => {
             ) : (
                 <div className={productsList ? "products_map_row" : "products_map_column"}>
                     {filter.map((product) => (
-                        <div key={product.id} className={productsList ? 'products_card_row' : 'products_card'}>
+                        <div 
+                            key={product.id} 
+                            className={productsList ? 'products_card_row' : 'products_card'}
+                            onClick={() => handlePage(product.id)}
+                        >
                             <img src={product.image} />
                             <div className="products_promotion">
                                 <p>-20%</p>
