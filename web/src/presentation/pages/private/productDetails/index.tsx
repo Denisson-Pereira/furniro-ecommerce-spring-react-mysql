@@ -10,6 +10,7 @@ import { IoIosStar } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { Info, TracoComponent } from './components';
 
 
 
@@ -138,6 +139,9 @@ export const ProductDetails = () => {
               </div>
             </div>
           </div>
+          <TracoComponent />
+          <Info />
+          <TracoComponent />
         </div>
       )}
     </div>

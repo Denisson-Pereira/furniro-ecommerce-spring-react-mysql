@@ -1,0 +1,29 @@
+@use '../../../../../sass/mixins'
+@use '../../../../../sass/variables'
+
+.descriptionComponent_container
+    @include mixins.flex
+    justify-content: space-between
+    flex-direction: column
+    align-items: center
+    gap: 3vh
+
+.descriptionComponent_txt
+    @include mixins.flex
+    flex-direction: column
+    gap: 3vh
+    padding-left: 50vh
+    padding-right: 50vh
+    margin-top: 2vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+        font-size: 2vh
+
+.descriptionComponent_imgs
+    @include mixins.flex
+    padding-left: 40vh
+    padding-right: 40vh
+    gap: 2vh
+    img
+        width: 50%
