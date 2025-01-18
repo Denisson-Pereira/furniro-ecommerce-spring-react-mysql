@@ -182,6 +182,71 @@
     background-color: variables.$primary
     color: variables.$white
 
+.products_search_container
+    @include mixins.center
+    flex-direction: column
+    margin-block: 5vh
+    padding-inline: 20vh
+    width: 90%
+    
+.products_search
+    @include mixins.flex
+    width: 100%
+    gap: 1vh
+    border: 1px solid variables.$greyDark
+    padding: 1vh
+    border-radius: 1vh
+    svg
+        font-size: 4vh
+        color: variables.$greyDark
+    input
+        width: 100%
+        border: none
+        outline: none
+
+.products_search_response
+    @include mixins.center
+    flex-direction: column
+    
+.products_search_info_box
+    @include mixins.flex
+    @include mixins.remover_margens
+    justify-content: space-between
+    width: 100vh
+    height: 30vh
+    background-color: #e9e9e92a
+    margin-block: 1vh
+    img
+        width: 30vh
+        object-fit: contain
+        @include mixins.remover_margens
+
+.products_search_info
+    @include mixins.center
+    flex-direction: column
+
+.products_search_txt_1
+    @include mixins.flex
+    justify-content: space-between
+    width: 100%
+    padding: 1vh
+    align-items: center
+    p
+        text-align: start
+        font-size: 4vh
+        font-weight: 600
+    span
+        font-size: 3vh
+        color: variables.$greyDark
+        font-weight: 500
+
+.products_search_txt_2
+    padding: 1vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+
+
 @media (max-width: 1400px)
     .products_card
         width: 40vw

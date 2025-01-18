@@ -10,16 +10,20 @@ import Grid from '../../../../../../assets/icons/grid.png';
 import List from '../../../../../../assets/icons/list.png';
 
 import './productsShop.styles.sass';
+import { CiSearch } from 'react-icons/ci';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
 
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [size, setSize] = useState<string>('8'); 
+    const [size, setSize] = useState<string>('8');
     const [productsList, setProductsList] = useState<boolean>(false);
     const [pages, setPages] = useState<number[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [selecFilter, setSelectFilter] = useState<string>('featured');
+
+    const [productsSearch, setProductsSearch] = useState<IProduct[]>([]);
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     const handlePage = useHandlePage();
 
@@ -33,10 +37,10 @@ export const Products = () => {
                         setProducts(response);
                         break;
                     case "highest":
-                        setProducts(response.sort((a,b) => parseFloat(b.price) - parseFloat(a.price)));
+                        setProducts(response.sort((a, b) => parseFloat(b.price) - parseFloat(a.price)));
                         break;
                     case "lowest":
-                        setProducts(response.sort((a,b) => parseFloat(a.price) - parseFloat(b.price)));
+                        setProducts(response.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)));
                         break;
                     default:
                         console.log('Error when filtering products');
@@ -51,6 +55,21 @@ export const Products = () => {
         }
         fetchProducts();
     }, [selecFilter]);
+
+    useEffect(() => {
+        if (searchTerm === "") {
+            setProductsSearch([]);
+        } else {
+            setProductsSearch(
+                products.filter(products =>
+                    products.name
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase())
+
+                )
+            );
+        }
+    }, [searchTerm, products])
 
     useEffect(() => {
         const parsedSize = parseInt(size);
@@ -73,8 +92,8 @@ export const Products = () => {
         <div className="products_container">
             <div className="products_filter">
                 <div className="products_box">
-                    <select 
-                        name="selec_filter" 
+                    <select
+                        name="selec_filter"
                         id="selec_filter"
                         value={selecFilter}
                         onChange={(e) => setSelectFilter(e.target.value)}
@@ -122,6 +141,46 @@ export const Products = () => {
                     </div>
                 </div>
             </div>
+            <div className="products_search_container">
+                <div className="products_search">
+                    <CiSearch />
+                    <input
+                        type="text"
+                        name='input_search'
+                        id='input_search'
+                        placeholder='Search products'
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+                <div className="products_search_response">
+                    {searchTerm !== "" && productsSearch.length > 0 ? (
+                        productsSearch.map((item) => (
+                            <div
+                                className="products_search_info_box"
+                                key={item.id}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt="img_search"
+                                    title={item.name}
+                                />
+                                <div className="products_search_info">
+                                    <div className="products_search_txt_1">
+                                        <p>{item.name}</p>
+                                        <span>{monetaryUnit(item.price)}</span>
+                                    </div>
+                                    <div className="products_search_txt_2">
+                                        <p>{item.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        searchTerm !== "" && <p>No products found</p>
+                    )}
+                </div>
+            </div>
             {loading ? (
                 <div className="products_spinner"></div>
             ) : (
@@ -158,9 +217,8 @@ export const Products = () => {
                 {pages.map((numero) => (
                     <div
                         key={numero}
-                        className={`products_pagination_numbers ${
-                            currentPage === numero ? 'active' : ''
-                        }`}
+                        className={`products_pagination_numbers ${currentPage === numero ? 'active' : ''
+                            }`}
                         onClick={() => setCurrentPage(numero)}
                     >
                         <p>{numero}</p>
