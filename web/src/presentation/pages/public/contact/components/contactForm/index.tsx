@@ -3,8 +3,40 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdAccessTimeFilled } from "react-icons/md";
 
 import './contactForm.styles.sass'
+import { useEffect, useState } from "react";
+import { useAuthContext } from "../../../../../context/authContext";
+import { SpinnerComponent } from "../../../../../components";
+import { createContactServiceLocator } from "../../../../../../infra/services/createContactServiceLocator";
 
 export const ContactForm = () => {
+
+  const { loading, setLoading } = useAuthContext();
+
+  const [your_name, setYourName] = useState<string>('');
+  const [email_address, setEmail_address] = useState<string>('');
+  const [subject, setSubject] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  async function handleDate() {
+    setLoading(true);
+    try {
+      const response = await createContactServiceLocator.createContactUseCase.execute({ your_name, email_address, subject, message });
+      if (response) {
+        alert('Message sent successfully!');
+        setSubject('');
+        setMessage('');
+      }
+    } catch (error) {
+      console.log("Failed: ", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    handleDate();
+  }, [])
+
   return (
     <div className="contactForm_container">
       <div className="contactForm_info">
@@ -33,7 +65,13 @@ export const ContactForm = () => {
         </div>
       </div>
       <div className="contactForm_form">
-        <form action="" method="post" className="contactForm_form_itens">
+        <form
+          className="contactForm_form_itens"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleDate();
+          }}
+        >
           <div className="contactForm_box">
             <p>Your name</p>
             <div className="contactForm_input">
@@ -42,6 +80,9 @@ export const ContactForm = () => {
                 name="your_name_contact"
                 id="your_name_contact"
                 placeholder="Abc"
+                value={your_name}
+                onChange={(e) => setYourName(e.target.value)}
+                required
               />
             </div>
           </div>
@@ -53,6 +94,9 @@ export const ContactForm = () => {
                 name="your_email_contact"
                 id="your_email_contact"
                 placeholder="abc@email.com"
+                value={email_address}
+                onChange={(e) => setEmail_address(e.target.value)}
+                required
               />
             </div>
           </div>
@@ -64,19 +108,30 @@ export const ContactForm = () => {
                 name="your_subject_contact"
                 id="your_subject_contact"
                 placeholder="This is an optional"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
               />
             </div>
           </div>
           <div className="contactForm_box">
             <p>Message</p>
             <div className="contactForm_input">
-              <textarea name="txt_area"
-                placeholder="Hi! i'd like to ask about" id="txt_area"></textarea>
+              <textarea 
+                name="txt_area"
+                placeholder="Hi! i'd like to ask about" id="txt_area"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              ></textarea>
             </div>
           </div>
-          <div className="contactForm_btn">
-            <button>Submit</button>
-          </div>
+          {loading ? (
+            <SpinnerComponent />
+          ) : (
+            <div className="contactForm_btn">
+              <button type="submit">Submit</button>
+            </div>
+          )}
         </form>
       </div>
     </div>
