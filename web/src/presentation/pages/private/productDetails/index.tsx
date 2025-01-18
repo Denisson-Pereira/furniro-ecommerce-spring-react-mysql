@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import { IProduct } from '../../../../core/models/IProduct';
 import { useAuthContext } from '../../../context/authContext';
 import { getProductByIdServiceLocator } from '../../../../infra/services/getProductsServiceLocator';
-import { NavScroll } from '../../../components';
+import { Footer, NavScroll } from '../../../components';
 import { monetaryUnit } from '../../../../utils/monetaryUnit';
 import { IoIosStar } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { Info, RelatedProducts, TracoComponent } from './components';
+import { promotionValue } from '../../../../utils/promotionValue';
 
 
 
@@ -65,7 +66,7 @@ export const ProductDetails = () => {
             <div className="productsDetails_info">
               <p>{product?.name}</p>
               {product?.price && (
-                <span>{monetaryUnit(product?.price)}</span>
+                <span>{monetaryUnit(promotionValue(20, product.price))}</span>
               )}
               <div className="productsDetails_info_starts">
                 <div className="productsDetails_start">
@@ -143,6 +144,7 @@ export const ProductDetails = () => {
           <Info />
           <TracoComponent />
           <RelatedProducts />
+          <Footer />
         </div>
       )}
     </div>

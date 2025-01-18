@@ -1,2 +1,14 @@
 @use '../../../../../sass/mixins'
 @use '../../../../../sass/variables'
+
+.reviews_container
+    @include mixins.flex
+    flex-direction: column
+    gap: 3vh
+    padding-left: 50vh
+    padding-right: 50vh
+    margin-top: 2vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+        font-size: 2vh
