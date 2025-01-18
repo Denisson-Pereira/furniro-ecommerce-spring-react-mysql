@@ -28,26 +28,13 @@ export function NavScroll() {
             <Nav.Link as={Link} to={"/shop"} className='text-dark'>Shop</Nav.Link>
             <Nav.Link  as={Link} to={"/about"} className='text-dark'>About</Nav.Link>
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Contact</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto pt-2 gap-2 container_icons">
-            <Nav.Link href="#home" className='navbar_user'>
-              {user.id ? (
-                <p>{user.first_name}</p>
-              ) : (
-                <TbUserExclamation className='icon_react' />
-              )}
-            </Nav.Link>
-            <Nav.Link href="#link">
-              <IoIosSearch className='icon_react' />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              <IoMdHeartEmpty className='icon_react' />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              <IoCartOutline className='icon_react' />
-            </Nav.Link>
+            <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Favorities</Nav.Link>
+            <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Cart</Nav.Link>
+            {user ? (
+              <Nav.Link  as={Link} to={"/profile"} className='text-dark'>{user.first_name}</Nav.Link>
+            ) : (
+              <Nav.Link  as={Link} to={"/profile"} className='text-dark'>Profile</Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
