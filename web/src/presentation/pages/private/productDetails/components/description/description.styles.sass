@@ -27,3 +27,18 @@
     gap: 2vh
     img
         width: 50%
+
+@media (max-width: 1000px)
+    .descriptionComponent_txt
+        @include mixins.remover_margens
+        padding: 1vh
+        width: 50vh
+        gap: 0
+        p
+            font-size: 1vh
+    .descriptionComponent_imgs
+        @include mixins.remover_margens
+        @include mixins.center
+        
+        img
+            width: 40%

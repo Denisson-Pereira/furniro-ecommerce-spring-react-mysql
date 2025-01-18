@@ -12,3 +12,12 @@
         text-align: justify
         color: variables.$greyDark
         font-size: 2vh
+
+@media (max-width: 1000px)
+    .additional_container
+        @include mixins.remover_margens
+        padding: 1vh
+        width: 50vh
+        gap: 0
+        p
+            font-size: 1vh

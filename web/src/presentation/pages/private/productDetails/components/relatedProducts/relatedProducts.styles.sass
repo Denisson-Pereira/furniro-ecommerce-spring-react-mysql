@@ -79,3 +79,12 @@
         &:active
             color: variables.$active
             border: 1px solid variables.$active
+
+@media (max-width: 1000px)
+    .relatedProducts_info_box
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        padding: 1vh
+
+    .relatedProducts_cards
+        width: 25vh

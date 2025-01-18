@@ -92,7 +92,7 @@
         font-size: 1.8vh
         text-align: justify
         font-weight: 400
-    
+
 .productsDetails_info_size
     @include mixins.flex
     flex-direction: column
@@ -122,7 +122,7 @@
     p
         @include mixins.remover_margens
         font-size: 2vh
-        color: variables.$greyDark       
+        color: variables.$greyDark
 
 .productsDetails_colors_row
     @include mixins.flex
@@ -132,7 +132,7 @@
     @include mixins.flex
     flex-direction: row
     gap: 2vh
-    
+
 .products_color_1, .products_color_2, .products_color_3
     width: 4vh
     height: 4vh
@@ -140,7 +140,6 @@
     cursor: pointer
     &:active
         background-color: variables.$white
-    
 
 .products_color_1
     background-color: #816DFA
@@ -193,3 +192,26 @@
     gap: 1vh
     svg
         font-size: 2.5vh
+
+@media (max-width: 1000px)
+    .productsDetails_nav
+        @include mixins.remover_margens
+        @include mixins.center
+        margin-bottom: 5vh
+    .productsDetail_info_container
+        @include mixins.remover_margens
+        @include mixins.center
+        flex-direction: column
+        margin-top: 3vh
+        gap: 2vh
+    .productsDetails_info
+        padding: 2vh
+    .productsDetails_size
+        @include mixins.center
+    .productsDetails_colors_row
+        @include mixins.center
+
+@media (max-width: 1400px)
+    .productsDetail_info_container
+        @include mixins.remover_margens
+        padding: 2vh
