@@ -1,5 +1,5 @@
-import { NavScroll } from '../../../components'
-import { GetInTouch, HeaderContact } from './components'
+import { Footer, HighQuality, NavScroll } from '../../../components'
+import { ContactForm, GetInTouch, HeaderContact } from './components'
 import './contact.styles.sass'
 
 export const Contact = () => {
@@ -8,6 +8,9 @@ export const Contact = () => {
       <NavScroll />
       <HeaderContact />
       <GetInTouch />
+      <ContactForm />
+      <HighQuality />
+      <Footer />
     </div>
   )
 }

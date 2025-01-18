@@ -1,2 +1,31 @@
 @use '../../../../../sass/mixins'
 @use '../../../../../sass/variables'
+
+.contactForm_container
+    @include mixins.center
+    margin-block: 8vh
+    
+.contactForm_icons
+    @include mixins.flex
+    svg
+        font-size: 2vh
+        color: variables.$default
+    
+.contactForm_icons_txt
+    @include mixins.flex
+    flex-direction: column
+    justify-content: start
+    align-items: center
+    span
+        @include mixins.remover_margens
+        font-size: 2vh
+        font-weight: 500
+    p
+        @include mixins.remover_margens
+        width: 30vh
+        text-align: start
+
+.contactForm_p
+    font-size: 3vh
+    @include mixins.remover_margens
+    font-weight: 500
