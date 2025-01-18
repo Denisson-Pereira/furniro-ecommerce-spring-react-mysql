@@ -2,13 +2,22 @@
 @use '../../../../../sass/variables'
 
 .contactForm_container
-    @include mixins.center
+    @include mixins.flex
+    justify-content: center
     margin-block: 8vh
+    gap: 5vh
+
+.contactForm_info
+    @include mixins.flex
+    flex-direction: column
+    gap: 8vh
     
 .contactForm_icons
-    @include mixins.flex
+    @include mixins.center
+    gap: 2vh
     svg
-        font-size: 2vh
+        @include mixins.remover_margens
+        font-size: 3vh
         color: variables.$default
     
 .contactForm_icons_txt
@@ -22,10 +31,63 @@
         font-weight: 500
     p
         @include mixins.remover_margens
-        width: 30vh
+        width: 25vh
         text-align: start
 
 .contactForm_p
     font-size: 3vh
     @include mixins.remover_margens
     font-weight: 500
+
+.contactForm_form_itens
+    @include mixins.center
+    flex-direction: column
+    gap: 3vh
+
+.contactForm_box
+    @include mixins.flex
+    flex-direction: column
+    p
+        text-align: start
+        font-size: 2vh
+        font-weight: 500
+    
+.contactForm_input
+    border: 1px solid variables.$greyDark
+    border-radius: 2vh
+    padding: 1vh
+
+.contactForm_input
+    input
+        width: 40vh
+        height: 6vh
+        border: none
+        outline: none
+        font-size: 2.5vh
+        outline: none
+    textarea
+        width: 40vh
+        height: 15vh
+        border: none
+        outline: none
+        font-size: 2.5vh
+        outline: none
+
+.contactForm_btn
+    display: flex
+    justify-content: start
+    align-items: center
+    width: 100%
+    button
+        font-size: 2vh
+        width: 25vh
+        height: 6vh
+        border: none
+        background-color: variables.$primary
+        color: variables.$white
+        font-weight: 500
+        border-radius: .5vh
+        &:active
+            background-color: variables.$active
+        &:hover
+            background-color: variables.$hover

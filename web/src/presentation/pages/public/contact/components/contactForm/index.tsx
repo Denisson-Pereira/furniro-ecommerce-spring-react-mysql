@@ -33,45 +33,45 @@ export const ContactForm = () => {
         </div>
       </div>
       <div className="contactForm_form">
-        <form action="" method="post">
+        <form action="" method="post" className="contactForm_form_itens">
           <div className="contactForm_box">
             <p>Your name</p>
-            <div className="contactForm_input1">
-              <input 
-                type="text" 
-                name="your_name_contact" 
-                id="your_name_contact" 
+            <div className="contactForm_input">
+              <input
+                type="text"
+                name="your_name_contact"
+                id="your_name_contact"
+                placeholder="Abc"
               />
             </div>
           </div>
           <div className="contactForm_box">
             <p>Email address</p>
-            <div className="contactForm_input1">
-              <input 
-                type="email" 
-                name="your_email_contact" 
-                id="your_email_contact" 
+            <div className="contactForm_input">
+              <input
+                type="email"
+                name="your_email_contact"
+                id="your_email_contact"
+                placeholder="abc@email.com"
               />
             </div>
           </div>
           <div className="contactForm_box">
             <p>Subject</p>
-            <div className="contactForm_input1">
-              <input 
-                type="text" 
-                name="your_subject_contact" 
-                id="your_subject_contact" 
+            <div className="contactForm_input">
+              <input
+                type="text"
+                name="your_subject_contact"
+                id="your_subject_contact"
+                placeholder="This is an optional"
               />
             </div>
           </div>
           <div className="contactForm_box">
             <p>Message</p>
-            <div className="contactForm_input2">
-              <input 
-                type="text" 
-                name="your_message_contact" 
-                id="your_message_contact" 
-              />
+            <div className="contactForm_input">
+              <textarea name="txt_area"
+                placeholder="Hi! i'd like to ask about" id="txt_area"></textarea>
             </div>
           </div>
           <div className="contactForm_btn">
