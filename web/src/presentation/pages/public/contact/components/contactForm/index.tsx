@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdAccessTimeFilled } from "react-icons/md";
 
 import './contactForm.styles.sass'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuthContext } from "../../../../../context/authContext";
 import { SpinnerComponent } from "../../../../../components";
 import { createContactServiceLocator } from "../../../../../../infra/services/createContactServiceLocator";
@@ -32,10 +32,6 @@ export const ContactForm = () => {
       setLoading(false);
     }
   }
-
-  useEffect(() => {
-    handleDate();
-  }, [])
 
   return (
     <div className="contactForm_container">
