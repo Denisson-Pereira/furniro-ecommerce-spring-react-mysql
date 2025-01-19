@@ -42,7 +42,7 @@ export const AuthContextProvider = ({ children }: Props) => {
 
     return (
         <AuthContext.Provider value={values}>
-            {children}
+            { children }
         </AuthContext.Provider>
     );
 };
