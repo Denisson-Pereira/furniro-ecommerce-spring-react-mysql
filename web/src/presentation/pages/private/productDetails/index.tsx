@@ -14,12 +14,12 @@ import { Info, RelatedProducts, TracoComponent } from './components';
 import { promotionValue } from '../../../../utils/promotionValue';
 import { CiHeart } from 'react-icons/ci';
 import { useFavoritiesContext } from '../../../context/favoritiesContext';
-
-
+import { useCartContext } from '../../../context/cartContext';
 
 export const ProductDetails = () => {
   const { id } = useParams();
   const { loading, setLoading } = useAuthContext();
+  const { addCart } = useCartContext();
   const { isFavorite, addFavorite } = useFavoritiesContext();
 
   const [product, setProduct] = useState<IProduct>();
@@ -125,7 +125,14 @@ export const ProductDetails = () => {
                 </div>
               </div>
               <div className="productsDetails_btn">
-                <button>Add To Cart</button>
+                <button 
+                  onClick={() => {
+                    product && addCart(product)
+                    alert('Product successfully added to shopping cart!')
+                  }}
+                >
+                  Add To Cart
+                </button>
               </div>
               <div className="productsDetails_redes_traco"></div>
               <div className="productsDetails_info_redes">

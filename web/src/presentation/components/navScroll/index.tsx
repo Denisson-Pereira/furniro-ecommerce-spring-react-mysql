@@ -1,23 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { TbUserExclamation } from "react-icons/tb";
-import { IoCartOutline } from "react-icons/io5";
-import { IoIosSearch } from "react-icons/io";
-import { IoMdHeartEmpty } from "react-icons/io";
 import Logo from '../../../assets/images/logo.png'
 
 import './navScroll.styles.sass'
 import { useAuthContext } from '../../context/authContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function NavScroll() {
   const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   return (
     <Navbar expand="lg" className="bg-white">
       <Container>
-        <div className="bootstrap_img">
+        <div className="bootstrap_img" onClick={() => navigate('/')}>
           <img src={Logo} alt="logo" />
           <p>Furniro</p>
         </div>
@@ -26,7 +23,6 @@ export function NavScroll() {
         <Nav className="me-auto pt-2 fs-4 gap-5">
             <Nav.Link as={Link} to={"/"} className='text-dark'>Home</Nav.Link>
             <Nav.Link as={Link} to={"/shop"} className='text-dark'>Shop</Nav.Link>
-            <Nav.Link  as={Link} to={"/about"} className='text-dark'>About</Nav.Link>
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Contact</Nav.Link>
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Favorities</Nav.Link>
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Cart</Nav.Link>
