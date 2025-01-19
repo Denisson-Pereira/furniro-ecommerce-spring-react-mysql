@@ -5,10 +5,9 @@ interface FavoritiesContextType {
     favorities: IProduct[];
     isFavorite: (product: IProduct) => boolean;
     addFavorite: (product: IProduct) => void;
-    removeFavorite: (product: IProduct) => void;
 }
 
-const FavoritiesContext = createContext<FavoritiesContextType | null>(null);
+const FavoritiesContext = createContext<FavoritiesContextType>({} as FavoritiesContextType);
 
 interface Props {
     children: ReactNode;
@@ -33,18 +32,14 @@ export const FavoritiesContextProvider = ({ children }: Props) => {
     }
 
     function addFavorite(product: IProduct) {
-        if (!isFavorite(product)) {
+        if(isFavorite(product)) {
+            setFavorities(favorities.filter(item => item.id !== product.id));
+        } else {
             setFavorities([...favorities, product]);
         }
     }
 
-    function removeFavorite(product: IProduct) {
-        if (isFavorite(product)) {
-            setFavorities(favorities.filter(item => item.id !== product.id));
-        }
-    }
-
-    const values = { isFavorite, addFavorite, removeFavorite, favorities };
+    const values = { isFavorite, addFavorite, favorities };
 
     return (
         <FavoritiesContext.Provider value={values}>

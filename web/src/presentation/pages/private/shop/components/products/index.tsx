@@ -8,12 +8,14 @@ import { HighQuality } from '../../../../../components';
 import { getAllProductsServiceLocator } from '../../../../../../infra/services/getProductsServiceLocator';
 import Grid from '../../../../../../assets/icons/grid.png';
 import List from '../../../../../../assets/icons/list.png';
-
+import { FaHeart } from "react-icons/fa";
 import './productsShop.styles.sass';
-import { CiSearch } from 'react-icons/ci';
+import { CiHeart, CiSearch } from 'react-icons/ci';
+import { useFavoritiesContext } from '../../../../../context/favoritiesContext';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
+    const { isFavorite, addFavorite } = useFavoritiesContext();
 
     const [products, setProducts] = useState<IProduct[]>([]);
     const [size, setSize] = useState<string>('8');
@@ -189,13 +191,36 @@ export const Products = () => {
                         <div
                             key={product.id}
                             className={productsList ? 'products_card_row' : 'products_card'}
-                            onClick={() => handlePage(product.id)}
                         >
-                            <img src={product.image} alt={product.name} />
+                            <img 
+                                src={product.image} 
+                                alt={product.name} 
+                                onClick={() => handlePage(product.id)}
+                            />
                             <div className="products_promotion">
                                 <p>-20%</p>
                             </div>
-                            <div className={productsList ? "product_info_row" : "product_info"}>
+                            <div className="products_favorities">
+                                {isFavorite(product) ? (
+                                    <div 
+                                        className="products_favorities_icon"
+                                        onClick={() => addFavorite(product)}
+                                    >
+                                        <FaHeart />
+                                    </div>
+                                ) : (
+                                    <div 
+                                        className="products_favorities_icon"
+                                        onClick={() => addFavorite(product)}
+                                    >
+                                        <CiHeart />
+                                    </div>
+                                )}
+                            </div>
+                            <div 
+                                className={productsList ? "product_info_row" : "product_info"}
+                                onClick={() => handlePage(product.id)}
+                            >
                                 <p>{product.name}</p>
                                 <span>Styllish cafe chair</span>
                                 <div

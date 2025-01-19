@@ -152,7 +152,7 @@
     position: absolute
     top: 2vh
     right: 2vh
-    background-color: variables.$red
+    background-color: variables.$green
     @include mixins.center
     width: 5vh
     height: 5vh
@@ -161,6 +161,21 @@
         @include mixins.remover_margens
         color: variables.$white
         font-size: 2vh
+
+.products_favorities
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
+
 
 .products_pagination
     @include mixins.center
