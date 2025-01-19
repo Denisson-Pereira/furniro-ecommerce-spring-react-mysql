@@ -1,5 +1,5 @@
 import { Footer, HighQuality, NavScroll } from '../../../components'
-import { FavoritiesProducts, HeaderFavorities } from './components'
+import { FavoritiesProducts, HeaderFavorities, SearchFavorities } from './components'
 import './favorities.styles.sass'
 
 export const Favorities = () => {
@@ -7,6 +7,7 @@ export const Favorities = () => {
     <div className="favorities_container">
         <NavScroll />
         <HeaderFavorities />
+        <SearchFavorities />
         <FavoritiesProducts />
         <HighQuality />
         <Footer />
