@@ -1,5 +1,5 @@
 import { Footer, HighQuality, NavScroll } from "../../../components"
-import { HeaderCart } from "./components"
+import { Check, HeaderCart } from "./components"
 
 
 export const Cart = () => {
@@ -7,6 +7,7 @@ export const Cart = () => {
     <div className="cart_container">
         <NavScroll />
         <HeaderCart />
+        <Check />
         <HighQuality />
         <Footer />
     </div>

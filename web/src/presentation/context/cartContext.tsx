@@ -4,7 +4,8 @@ import { monetaryUnit } from "../../utils/monetaryUnit";
 import { promotionValue } from "../../utils/promotionValue";
 
 interface CartContextType {
-    totalValueCart: string
+    totalValue: string
+    totalValuePromo: string
     cart: IProduct[]
     addCart: (product: IProduct) => void
     removeCart: (product: IProduct) => void
@@ -18,7 +19,8 @@ interface Props {
 
 export const CartContextProvider = ({ children }: Props) => {
     const [cart, setCart] = useState<IProduct[]>([]);
-    const [totalValueCart, setTotalValueCart] = useState<string>('');
+    const [totalValue, setTotalValue] = useState<string>('');
+    const [totalValuePromo, setTotalValuePromo] = useState<string>('');
     const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
@@ -34,7 +36,8 @@ export const CartContextProvider = ({ children }: Props) => {
             localStorage.setItem("cart", JSON.stringify(cart));
             const array = cart.filter(item => item.price);
             const sum = array.reduce((acc, current) => acc + parseFloat(current.price), 0);
-            setTotalValueCart(monetaryUnit(promotionValue(20, sum.toString())));
+            setTotalValuePromo(monetaryUnit(promotionValue(20, sum.toString())));
+            setTotalValue(sum.toString());
         }
     }, [cart, isInitialized]);
 
@@ -46,7 +49,7 @@ export const CartContextProvider = ({ children }: Props) => {
         setCart(cart.filter(item => item !== product));
     }
 
-    const values = { cart, addCart, removeCart, totalValueCart }
+    const values = { cart, addCart, removeCart, totalValue, totalValuePromo }
 
     return (
         <CartContext.Provider value={values}>
