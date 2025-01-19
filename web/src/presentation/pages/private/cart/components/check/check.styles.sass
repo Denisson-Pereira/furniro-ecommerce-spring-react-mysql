@@ -24,18 +24,21 @@
         font-weight: 500
 
 .check_left_products
+    display: flex
+    flex-direction: column
     justify-content: space-between
     width: 100%
+    gap: 1vh
     
 .check_left_row
     @include mixins.flex
     justify-content: space-between
     align-items: center
-
     
 .check_left_product
     @include mixins.center
     gap: 2vh
+    cursor: pointer
     img
         width: 8vh
         object-fit: contain
@@ -91,9 +94,11 @@
 .check_subtotal
     @include mixins.flex
     justify-content: space-between
+    align-items: center
     width: 60%
     margin-top: 4vh
     p
+        @include mixins.remover_margens
         font-size: 2vh
         color: variables.$default
         font-weight: 500
@@ -106,7 +111,9 @@
     justify-content: space-between
     width: 60%
     margin-bottom: 4vh
+    align-items: center
     p
+        @include mixins.remover_margens
         font-size: 2vh
         color: variables.$default
         font-weight: 500
@@ -131,3 +138,13 @@
         &:active
             border: 1px solid variables.$active
             color: variables.$active
+
+@media (max-width: 1100px)
+    .check_container
+        @include mixins.center
+        flex-direction: column
+    .check_left
+        width: 100%
+        padding: 1vh
+    .check_right
+        width: 90%

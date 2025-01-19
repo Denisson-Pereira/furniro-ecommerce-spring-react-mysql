@@ -4,9 +4,11 @@ import { useCartContext } from "../../../../../context/cartContext"
 import './check.styles.sass'
 import { monetaryUnit } from "../../../../../../utils/monetaryUnit";
 import { promotionValue } from "../../../../../../utils/promotionValue";
+import { useHandlePage } from "../../../../../hooks/useHandlePage";
 
 export const Check = () => {
-    const { cart, totalValue, totalValuePromo } = useCartContext();
+    const { cart, totalValue, totalValuePromo, removeCart } = useCartContext();
+    const handlePage = useHandlePage();
 
   return (
     <div className="check_container">
@@ -20,8 +22,14 @@ export const Check = () => {
                 {cart.length > 0 ? (
                     <div className="check_left_products">
                         {cart.map((item) => (
-                            <div className="check_left_row" key={item.id}>
-                                <div className="check_left_product">
+                            <div 
+                                className="check_left_row" 
+                                key={item.id}
+                            >
+                                <div 
+                                    className="check_left_product"
+                                    onClick={() => handlePage(item.id)}
+                                >
                                     <img src={item.image} alt="img" />
                                     <p>{item.name}</p>
                                 </div>
@@ -30,7 +38,7 @@ export const Check = () => {
                                 </div>
                                 <div className="check_left_subtotal">
                                     <p>{monetaryUnit(promotionValue(20, item.price))}</p>
-                                    <FaTrash />
+                                    <FaTrash onClick={() => removeCart(item)} />
                                 </div>
                             </div>
                         ))}
