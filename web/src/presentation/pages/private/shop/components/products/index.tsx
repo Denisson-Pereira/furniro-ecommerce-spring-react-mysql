@@ -177,7 +177,7 @@ export const Products = () => {
                             </div>
                         ))
                     ) : (
-                        searchTerm !== "" && <p>No products found</p>
+                        searchTerm !== "" && <p id='products_not_fount'>Product not found</p>
                     )}
                 </div>
             </div>

@@ -246,6 +246,10 @@
         text-align: justify
         color: variables.$greyDark
 
+#products_not_fount
+    margin-top: 5vh
+    color: variables.$greyDark
+
 
 @media (max-width: 1400px)
     .products_card
@@ -264,7 +268,7 @@
             object-position: top
 
 
-@media (max-width: 700px)
+@media (max-width: 1000px)
     .products_filter, .products_filter_click
         @include mixins.flex
         @include mixins.remover_margens
@@ -292,4 +296,24 @@
     .product_info_price
         flex-direction: column-reverse
         span
+            font-size: 1.5vh
+    .products_search_container
+        width: 100%
+    .products_search_container
+        @include mixins.remover_margens
+        padding: 2vh
+    .products_search_info_box
+        width: 100%
+        height: 20vh
+        img
+            width: 20vh
+    .products_search_txt_1
+        p
+            @include mixins.remover_margens
+            font-size: 2vh
+        span
+            font-size: 2vh
+    .products_search_txt_2
+        p
+            @include mixins.remover_margens
             font-size: 1.5vh
