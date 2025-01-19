@@ -65,26 +65,25 @@ export const ProductDetails = () => {
                 alt="image"
                 title={product?.name}
               />
-            </div>
-            <div className="productsDetails_favorities">
-              {product ? (
-                isFavorite(product) ? (
-                  <div
-                    className="productsDetails_favorities_icon"
-                    onClick={() => addFavorite(product)}
-                  >
-                    <FaHeart />
-                  </div>
-                ) : (
-                  <div
-                    className="productsDetails_favorities_icon"
-                    onClick={() => addFavorite(product)}
-                  >
-                    <CiHeart />
-                  </div>
-                )
-              ) : null}
-
+              <div className="productsDetails_favorities">
+                {product ? (
+                  isFavorite(product) ? (
+                    <div
+                      className="productsDetails_favorities_icon"
+                      onClick={() => addFavorite(product)}
+                    >
+                      <FaHeart />
+                    </div>
+                  ) : (
+                    <div
+                      className="productsDetails_favorities_icon"
+                      onClick={() => addFavorite(product)}
+                    >
+                      <CiHeart />
+                    </div>
+                  )
+                ) : null}
+              </div>
             </div>
             <div className="productsDetails_info">
               <p>{product?.name}</p>

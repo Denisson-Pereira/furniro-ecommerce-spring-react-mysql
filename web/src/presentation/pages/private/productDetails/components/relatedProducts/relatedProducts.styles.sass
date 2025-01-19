@@ -80,6 +80,20 @@
             color: variables.$active
             border: 1px solid variables.$active
 
+.relatedProducts_favorities_box
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
+
 @media (max-width: 1000px)
     .relatedProducts_info_box
         display: grid
