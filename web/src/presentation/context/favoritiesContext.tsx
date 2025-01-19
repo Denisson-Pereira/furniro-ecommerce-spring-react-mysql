@@ -15,24 +15,28 @@ interface Props {
 
 export const FavoritiesContextProvider = ({ children }: Props) => {
     const [favorities, setFavorities] = useState<IProduct[]>([]);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
         const storedFavorities = localStorage.getItem("favorities");
         if (storedFavorities) {
             setFavorities(JSON.parse(storedFavorities));
         }
+        setIsInitialized(true); 
     }, []);
 
     useEffect(() => {
-        localStorage.setItem("favorities", JSON.stringify(favorities));
-    }, [favorities]);
+        if (isInitialized) {
+            localStorage.setItem("favorities", JSON.stringify(favorities));
+        }
+    }, [favorities, isInitialized]);
 
     function isFavorite(product: IProduct) {
         return favorities.some(item => item.id === product.id);
     }
 
     function addFavorite(product: IProduct) {
-        if(isFavorite(product)) {
+        if (isFavorite(product)) {
             setFavorities(favorities.filter(item => item.id !== product.id));
         } else {
             setFavorities([...favorities, product]);

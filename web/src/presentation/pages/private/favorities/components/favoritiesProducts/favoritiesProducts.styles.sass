@@ -1,0 +1,75 @@
+@use '../../../../../sass/mixins'
+@use '../../../../../sass/variables'
+
+.favoritiesProducts_container
+    @include mixins.center
+    flex-direction: column,
+    margin-block: 5vh
+    gap: 5vh
+    p
+        @include mixins.remover_margens
+        font-size: 3vh
+        font-weight: 500
+
+.favoritiesProducts_box
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 3vh
+
+.favoritiesProducts_card
+    width: 30vh
+    position: relative
+    cursor: pointer
+    img
+        width: 100%
+    &:hover
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06)
+        transition: transform 0.2s ease, box-shadow 0.2s ease 
+
+.favoritiesProducts_favorities_box
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
+
+.favoritiesProducts_icon
+
+
+.favoritiesProducts_info
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    background-color: variables.$grey
+    padding: 1vh
+    width: 100%
+    text-align: start
+    p
+        @include mixins.remover_margens
+        font-size: 3vh
+        font-weight: 500
+    span
+        color: variables.$greyDark
+
+.favoritiesProducts_info_price
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    p
+        font-size: 2.5vh
+    span
+        font-size: 2vh
+        text-decoration: line-through
+
+@media (max-width: 1000px)
+    .favoritiesProducts_box
+        grid-template-columns: repeat(2, 1fr)
+    .favoritiesProducts_card
+        width: 25vh
