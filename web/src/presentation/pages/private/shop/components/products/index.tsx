@@ -161,6 +161,7 @@ export const Products = () => {
                             <div
                                 className="products_search_info_box"
                                 key={item.id}
+                                onClick={() => handlePage(item.id)}
                             >
                                 <img
                                     src={item.image}

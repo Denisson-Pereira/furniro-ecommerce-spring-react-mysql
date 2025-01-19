@@ -7,17 +7,20 @@ import { getProductByIdServiceLocator } from '../../../../infra/services/getProd
 import { Footer, NavScroll } from '../../../components';
 import { monetaryUnit } from '../../../../utils/monetaryUnit';
 import { IoIosStar } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaHeart } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { Info, RelatedProducts, TracoComponent } from './components';
 import { promotionValue } from '../../../../utils/promotionValue';
+import { CiHeart } from 'react-icons/ci';
+import { useFavoritiesContext } from '../../../context/favoritiesContext';
 
 
 
 export const ProductDetails = () => {
   const { id } = useParams();
   const { loading, setLoading } = useAuthContext();
+  const { isFavorite, addFavorite } = useFavoritiesContext();
 
   const [product, setProduct] = useState<IProduct>();
 
@@ -62,6 +65,26 @@ export const ProductDetails = () => {
                 alt="image"
                 title={product?.name}
               />
+            </div>
+            <div className="productsDetails_favorities">
+              {product ? (
+                isFavorite(product) ? (
+                  <div
+                    className="productsDetails_favorities_icon"
+                    onClick={() => addFavorite(product)}
+                  >
+                    <FaHeart />
+                  </div>
+                ) : (
+                  <div
+                    className="productsDetails_favorities_icon"
+                    onClick={() => addFavorite(product)}
+                  >
+                    <CiHeart />
+                  </div>
+                )
+              ) : null}
+
             </div>
             <div className="productsDetails_info">
               <p>{product?.name}</p>

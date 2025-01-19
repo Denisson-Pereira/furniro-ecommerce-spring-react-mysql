@@ -54,9 +54,24 @@
     gap: 10vh
 
 .productsDetails_info_img
+    position: relative
     img
         width: 50vh
         border-radius: 2vh
+
+.productsDetails_favorities
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
 
 .productsDetails_info
     @include mixins.flex
@@ -66,7 +81,7 @@
         font-size: 5vh
         font-weight: 500
         @include mixins.remover_margens
-        
+
     span
         font-size: 4vh
         color: variables.$greyDark
