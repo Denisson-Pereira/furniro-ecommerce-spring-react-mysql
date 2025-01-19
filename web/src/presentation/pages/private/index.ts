@@ -1,3 +1,5 @@
 export * from './productDetails'
 export * from './profile'
 export * from './shop'
+export * from './cart'
+export * from './favorities'

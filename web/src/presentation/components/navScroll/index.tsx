@@ -25,7 +25,7 @@ export function NavScroll() {
             <Nav.Link as={Link} to={"/shop"} className='text-dark'>Shop</Nav.Link>
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Contact</Nav.Link>
             <Nav.Link  as={Link} to={"/favorities"} className='text-dark'>Favorities</Nav.Link>
-            <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Cart</Nav.Link>
+            <Nav.Link  as={Link} to={"/cart"} className='text-dark'>Cart</Nav.Link>
             {user ? (
               <Nav.Link  as={Link} to={"/profile"} className='text-dark'>{user.first_name}</Nav.Link>
             ) : (

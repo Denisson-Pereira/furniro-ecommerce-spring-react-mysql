@@ -19,20 +19,24 @@ interface Props {
 export const CartContextProvider = ({ children }: Props) => {
     const [cart, setCart] = useState<IProduct[]>([]);
     const [totalValueCart, setTotalValueCart] = useState<string>('');
+    const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
         const storedCart = localStorage.getItem("cart");
         if (storedCart) {
             setCart(JSON.parse(storedCart));
         }
+        setIsInitialized(true);
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart));
-        const array = cart.filter(item => item.price);
-        const sum = array.reduce((acc, current) => acc + parseFloat(current.price), 0);
-        setTotalValueCart(monetaryUnit(promotionValue(20, sum.toString())));
-    }, [cart]);
+        if (isInitialized) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            const array = cart.filter(item => item.price);
+            const sum = array.reduce((acc, current) => acc + parseFloat(current.price), 0);
+            setTotalValueCart(monetaryUnit(promotionValue(20, sum.toString())));
+        }
+    }, [cart, isInitialized]);
 
     function addCart(product: IProduct) {
         setCart([...cart, product]);
