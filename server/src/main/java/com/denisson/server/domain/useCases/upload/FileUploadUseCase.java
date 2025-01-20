@@ -14,6 +14,6 @@ public class FileUploadUseCase {
     }
 
     public String execute(MultipartFile file) throws IOException {
-        return repository.upload(file);  // Passa o MultipartFile para o método de upload
+        return repository.upload(file);  
     }
 }
