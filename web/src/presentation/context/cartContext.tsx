@@ -46,8 +46,14 @@ export const CartContextProvider = ({ children }: Props) => {
     }
 
     function removeCart(product: IProduct) {
-        setCart(cart.filter(item => item !== product));
+        const index = cart.findIndex(item => item.id === product.id);
+        if (index !== -1) {
+            const newCart = [...cart];
+            newCart.splice(index, 1); 
+            setCart(newCart);
+        }
     }
+    
 
     const values = { cart, addCart, removeCart, totalValue, totalValuePromo }
 
