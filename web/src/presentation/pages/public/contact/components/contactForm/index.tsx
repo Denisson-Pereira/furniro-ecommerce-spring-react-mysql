@@ -17,6 +17,9 @@ export const ContactForm = () => {
   const [subject, setSubject] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
+  const [img, setImg] = useState<File | null>(null);
+  const [uploadedImgPath, setUploadedImgPath] = useState<string>("");
+
   async function handleDate() {
     setLoading(true);
     try {
@@ -32,6 +35,49 @@ export const ContactForm = () => {
       setLoading(false);
     }
   }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setUploadedImgPath(reader.result as string); 
+      };
+      reader.readAsDataURL(file); 
+      setImg(file); 
+    }
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!img) {
+      alert("Por favor, selecione uma imagem antes de enviar.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", img);
+
+    try {
+      const response = await fetch('http://localhost:8080/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUploadedImgPath(data.path);
+        alert("Imagem enviada com sucesso!");
+        handleDate(); 
+      } else {
+        throw new Error("Erro ao enviar a imagem.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar a imagem:", error);
+      alert("Erro ao enviar a imagem!");
+    }
+  };
 
   return (
     <div className="contactForm_container">
@@ -63,10 +109,8 @@ export const ContactForm = () => {
       <div className="contactForm_form">
         <form
           className="contactForm_form_itens"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleDate();
-          }}
+          encType="multipart/form-data"
+          onSubmit={handleFormSubmit} 
         >
           <div className="contactForm_box">
             <p>Your name</p>
@@ -112,15 +156,33 @@ export const ContactForm = () => {
           <div className="contactForm_box">
             <p>Message</p>
             <div className="contactForm_input">
-              <textarea 
+              <textarea
                 name="txt_area"
-                placeholder="Hi! i'd like to ask about" id="txt_area"
+                placeholder="Hi! I'd like to ask about" id="txt_area"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>
           </div>
+          <div className="contactForm_upload">
+            <p>Upload</p>
+            <input
+              type="file"
+              accept="image/png"
+              onChange={handleFileChange}
+            />
+          </div>
+          {uploadedImgPath && (
+            <div className="contactForm_upload_img">
+              <h2>Imagem carregada:</h2>
+              <img
+                src={uploadedImgPath}  
+                alt="Imagem carregada"
+                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+              />
+            </div>
+          )}
           {loading ? (
             <SpinnerComponent />
           ) : (
@@ -131,5 +193,5 @@ export const ContactForm = () => {
         </form>
       </div>
     </div>
-  )
+  );
 }
