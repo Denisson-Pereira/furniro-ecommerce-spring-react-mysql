@@ -17,7 +17,6 @@ export const HeaderProfile = () => {
         <p>&gt;</p>
         <p>{capitalizeWord(user.first_name)}'s profile</p>
       </div>
-
     </div>
   )
 }

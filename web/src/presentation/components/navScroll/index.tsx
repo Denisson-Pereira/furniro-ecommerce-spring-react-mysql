@@ -6,6 +6,7 @@ import Logo from '../../../assets/svg/logo.svg'
 import './navScroll.styles.sass'
 import { useAuthContext } from '../../context/authContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { capitalizeWord } from '../../../utils/capitalizeWord';
 
 export function NavScroll() {
   const { user } = useAuthContext();
@@ -26,8 +27,8 @@ export function NavScroll() {
             <Nav.Link  as={Link} to={"/contact"} className='text-dark'>Contact</Nav.Link>
             <Nav.Link  as={Link} to={"/favorities"} className='text-dark'>Favorities</Nav.Link>
             <Nav.Link  as={Link} to={"/cart"} className='text-dark'>Cart</Nav.Link>
-            {user ? (
-              <Nav.Link  as={Link} to={"/profile"} className='text-dark'>{user.first_name}</Nav.Link>
+            {user.first_name ? (
+              <Nav.Link  as={Link} to={"/profile"} className='text-dark'>{capitalizeWord(user.first_name)}</Nav.Link>
             ) : (
               <Nav.Link  as={Link} to={"/profile"} className='text-dark'>Profile</Nav.Link>
             )}
