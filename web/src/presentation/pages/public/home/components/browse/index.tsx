@@ -4,10 +4,13 @@ import { SpinnerComponent } from "../../../../../components";
 import { categoriesServiceLocator } from "../../../../../../infra/services/categoriesServiceLocator";
 
 import './browse.styles.sass'
+import { useHandleCategory } from "../../../../../hooks/useHandleCategory";
 
 export const Browse = () => {
     const [categories, setCategories] = useState<ICategory[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+
+    const handleCategory = useHandleCategory();
 
     useEffect(() => {
         async function fetchCategories() {
@@ -35,7 +38,11 @@ export const Browse = () => {
             ) : (
                 <div className="browse_categories">
                     {categories.map((item) => (
-                        <div key={item.id} className="browse_container_img">
+                        <div 
+                            key={item.id} 
+                            className="browse_container_img"
+                            onClick={() => handleCategory(item.name)}
+                        >
                             <img src={item.image} alt={item.name} />
                             <p>{item.name}</p>
                         </div>

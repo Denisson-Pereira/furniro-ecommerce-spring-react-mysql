@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Cart, Contact, ErrorPage, Favorities, Home, ProductDetails, Profile, Shop } from "../pages"
+import { Cart, CategoryDetails, Contact, ErrorPage, Favorities, Home, ProductDetails, Profile, Shop } from "../pages"
 
 
 export const IsUser = () => {
@@ -10,6 +10,7 @@ export const IsUser = () => {
       <Route path="contact" element={<Contact />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/productDetails/:id" element={<ProductDetails />} />
+      <Route path="/categoryDetails/:category" element={<CategoryDetails />} />
       <Route path="/favorities" element={<Favorities />}/>
       <Route path="/cart" element={<Cart />}/>
 
