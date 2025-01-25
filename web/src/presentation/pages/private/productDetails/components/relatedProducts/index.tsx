@@ -9,8 +9,10 @@ import { FaHeart } from 'react-icons/fa'
 import { CiHeart } from 'react-icons/ci'
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext'
 import { useHandlePage } from '../../../../../hooks/useHandlePage'
+import { useNavigate } from 'react-router-dom'
 
 export const RelatedProducts = () => {
+    const navigate = useNavigate();
     const { isFavorite, addFavorite } = useFavoritiesContext();
     const handlePage = useHandlePage();
     const [products, setProducts] = useState<IProduct[]>([])
@@ -87,7 +89,10 @@ export const RelatedProducts = () => {
                     ))}
                 </div>
             )}
-            <div className="relatedProducts_btn">
+            <div 
+                className="relatedProducts_btn"
+                onClick={() => navigate('/shop')}
+            >
                 <button>Show More</button>
             </div>
         </div>
