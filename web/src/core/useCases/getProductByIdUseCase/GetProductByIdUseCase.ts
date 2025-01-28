@@ -1,4 +1,4 @@
-import { IGetProductsRepository } from "../../repository/IGetProductsRepository";
+import { IGetProductsRepository } from "../../contracts/IGetProductsRepository";
 import { IProduct } from "../../models/IProduct";
 
 export class GetProductByIdUseCase {

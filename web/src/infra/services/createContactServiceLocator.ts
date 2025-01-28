@@ -1,5 +1,5 @@
 import { CreateContactUseCase } from "../../core/useCases/createContactUseCase/CreateContactUseCase";
-import { CreateContactRepositoryImpl } from "../gateways/CreateContactRepositoryImpl";
+import { CreateContactRepositoryImpl } from "../repositories/CreateContactRepositoryImpl";
 
 
 const createContactRepository = new CreateContactRepositoryImpl();

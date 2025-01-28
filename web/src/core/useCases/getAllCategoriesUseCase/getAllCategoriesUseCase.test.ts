@@ -1,7 +1,7 @@
 import { describe, vi } from "vitest";
 import { ICategory } from "../../models/ICategory";
 import { GetAllCategoriesUseCase } from "./GetAllCategoriesUseCase";
-import { IGetAllCategoriesRepository } from "../../repository/IGetAllCategoriesRepository";
+import { IGetAllCategoriesRepository } from "../../contracts/IGetAllCategoriesRepository";
 
 describe("GetAllCategories", () => {
     let mockRepository: { api: ReturnType<typeof vi.fn> } & IGetAllCategoriesRepository; 

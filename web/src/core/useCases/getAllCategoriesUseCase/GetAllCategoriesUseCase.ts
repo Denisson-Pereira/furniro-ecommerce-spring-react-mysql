@@ -1,4 +1,4 @@
-import { IGetAllCategoriesRepository } from "../../repository/IGetAllCategoriesRepository";
+import { IGetAllCategoriesRepository } from "../../contracts/IGetAllCategoriesRepository";
 import { CategoryExeptions } from "../../exeptions/CategoryExeptions";
 import { ICategory } from "../../models/ICategory";
 

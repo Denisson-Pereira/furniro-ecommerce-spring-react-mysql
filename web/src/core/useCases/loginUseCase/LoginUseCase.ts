@@ -1,5 +1,5 @@
 import { ILoginDTO } from "../../../infra/dtos/ILoginDTO";
-import { ILoginRepository } from "../../repository/ILoginRepository";
+import { ILoginRepository } from "../../contracts/ILoginRepository";
 import { IUser } from "../../models/IUser";
 
 export class LoginUseCase {

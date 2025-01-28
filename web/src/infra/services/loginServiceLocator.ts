@@ -1,6 +1,6 @@
 import { LoginUseCase } from "../../core/useCases/loginUseCase/LoginUseCase";
 import { LogoutUseCase } from "../../core/useCases/logoutUseCase/LogoutUseCase";
-import { LoginRepositoryImpl } from "../gateways/LoginRepositoryImpl";
+import { LoginRepositoryImpl } from "../repositories/LoginRepositoryImpl";
 
 const loginRepository = new LoginRepositoryImpl();
 const loginUseCase = new LoginUseCase(loginRepository);

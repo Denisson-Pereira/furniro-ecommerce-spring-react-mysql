@@ -1,5 +1,5 @@
 import { IRegisterDTO } from "../../../infra/dtos/IRegisterDTO";
-import { ILoginRepository } from "../../repository/ILoginRepository";
+import { ILoginRepository } from "../../contracts/ILoginRepository";
 import { IUser } from "../../models/IUser";
 
 export class RegisterUseCase {
