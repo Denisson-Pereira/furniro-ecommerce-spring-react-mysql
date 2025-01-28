@@ -12,6 +12,7 @@ import { FaHeart } from "react-icons/fa";
 import './productsShop.styles.sass';
 import { CiHeart, CiSearch } from 'react-icons/ci';
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext';
+import { FiltersProductsEnums } from '../../../../../../shared/enums/filtersProductsEnums';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
@@ -35,13 +36,13 @@ export const Products = () => {
             try {
                 const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
                 switch (selecFilter) {
-                    case "featured":
+                    case FiltersProductsEnums.featured:
                         setProducts(response);
                         break;
-                    case "highest":
+                    case FiltersProductsEnums.highest:
                         setProducts(response.sort((a, b) => parseFloat(b.price) - parseFloat(a.price)));
                         break;
-                    case "lowest":
+                    case FiltersProductsEnums.lowest:
                         setProducts(response.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)));
                         break;
                     default:
