@@ -4,6 +4,7 @@ import User from '../../../../../../assets/svg/user.svg'
 import './infoProfile.styles.sass';
 import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord';
 import { loginServiceLocator } from '../../../../../../infra/services/loginServiceLocator';
+import { ButtonCustom } from '../../../../../components/customs';
 
 export const InfoProfile = () => {
     const { user } = useAuthContext();
@@ -23,14 +24,18 @@ export const InfoProfile = () => {
             <div
                 className="infoProfile_logout"
             >
-                <button
+                <div
                     onClick={() => {
                         loginServiceLocator.logoutUseCase.execute();
                         window.location.reload();
                     }}
                 >
-                    Logout
-                </button>
+                    <ButtonCustom 
+                        text='Logout'
+                        sizeText={18}
+                        type='button'
+                    />
+                </div>
             </div>
         </div>
     );
