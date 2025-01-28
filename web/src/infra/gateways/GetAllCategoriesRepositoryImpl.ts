@@ -1,4 +1,4 @@
-import { IGetAllCategoriesRepository } from "../../core/contracts/IGetAllCategoriesRepository";
+import { IGetAllCategoriesRepository } from "../../core/repository/IGetAllCategoriesRepository";
 import { ICategory } from "../../core/models/ICategory";
 import { getCategories } from "../data/api/getCategories";
 

@@ -1,3 +1,4 @@
+import { Storage } from "../../../shared/constants";
 import { ILoginDTO } from "../../dtos/ILoginDTO";
 import { serveConnection } from "../connection";
 
@@ -20,8 +21,8 @@ export async function login(data: ILoginDTO) {
 
         const { user, token } = await response.json();
 
-        localStorage.setItem('@FurniroWeb:userStore', JSON.stringify(user));
-        localStorage.setItem('@FurniroWeb:tokenStore', JSON.stringify(token)); 
+        localStorage.setItem(Storage.USER, JSON.stringify(user));
+        localStorage.setItem(Storage.TOKEN, JSON.stringify(token)); 
 
         return user;
     } catch (error) {

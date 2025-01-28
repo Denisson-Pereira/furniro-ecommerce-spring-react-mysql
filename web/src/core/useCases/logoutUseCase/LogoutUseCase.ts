@@ -1,4 +1,4 @@
-import { ILoginRepository } from "../../contracts/ILoginRepository";
+import { ILoginRepository } from "../../repository/ILoginRepository";
 
 export class LogoutUseCase {
     constructor(private readonly repository: ILoginRepository) {}

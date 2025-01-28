@@ -1,4 +1,4 @@
-import { IContactRepository } from "../../core/contracts/IContactRepository";
+import { IContactRepository } from "../../core/repository/IContactRepository";
 import { IContact } from "../../core/models/IContact";
 import { createContact } from "../data/api/createContact";
 import { IContactDTO } from "../dtos/IContactDTO";

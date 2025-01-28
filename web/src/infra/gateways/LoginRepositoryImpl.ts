@@ -1,4 +1,4 @@
-import { ILoginRepository } from "../../core/contracts/ILoginRepository";
+import { ILoginRepository } from "../../core/repository/ILoginRepository";
 import { IUser } from "../../core/models/IUser";
 import { login } from "../data/auth/login";
 import { logout } from "../data/auth/logout";

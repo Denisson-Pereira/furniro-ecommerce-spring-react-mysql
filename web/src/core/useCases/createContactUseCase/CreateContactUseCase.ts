@@ -1,5 +1,5 @@
 import { IContactDTO } from "../../../infra/dtos/IContactDTO";
-import { IContactRepository } from "../../contracts/IContactRepository";
+import { IContactRepository } from "../../repository/IContactRepository";
 import { ContactExeptions } from "../../exeptions/ContactExeptions";
 import { IContact } from "../../models/IContact";
 

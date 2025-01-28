@@ -1,4 +1,4 @@
-import { IGetProductsRepository } from "../../core/contracts/IGetProductsRepository";
+import { IGetProductsRepository } from "../../core/repository/IGetProductsRepository";
 import { IProduct } from "../../core/models/IProduct";
 import { getAllProducts } from "../data/api/getAllProducts";
 import { getProductById } from "../data/api/getProductById";

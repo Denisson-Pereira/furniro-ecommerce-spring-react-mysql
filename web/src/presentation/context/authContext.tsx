@@ -1,5 +1,6 @@
 import { createContext, useState, ReactNode, useEffect, useContext } from "react";
 import { IUser } from "../../core/models/IUser";
+import { Storage } from "../../shared/constants";
 
 interface AuthContextType {
     user: IUser;
@@ -24,10 +25,10 @@ export const AuthContextProvider = ({ children }: Props) => {
 
     useEffect(() => {
         const loaderUser = async () => {
-            const getUserStore = localStorage.getItem("@FurniroWeb:userStore");
+            const getUserStore = localStorage.getItem(Storage.USER);
             const userStore: IUser = getUserStore ? JSON.parse(getUserStore) : undefined;
     
-            const getTokenStore = localStorage.getItem("@FurniroWeb:tokenStore");
+            const getTokenStore = localStorage.getItem(Storage.TOKEN);
     
             if (userStore && userStore.id && getTokenStore) {
                 setUser(userStore);
