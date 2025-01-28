@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../../../../context/authContext";
 import { SpinnerComponent } from "../../../../../components";
 import { createContactServiceLocator } from "../../../../../../infra/services/createContactServiceLocator";
+import { ButtonCustom } from "../../../../../components/customs";
 
 export const ContactForm = () => {
 
@@ -187,7 +188,11 @@ export const ContactForm = () => {
             <SpinnerComponent />
           ) : (
             <div className="contactForm_btn">
-              <button type="submit">Submit</button>
+              <ButtonCustom
+                text="Submit"
+                sizeText={18}
+                type='submit'
+              />
             </div>
           )}
         </form>

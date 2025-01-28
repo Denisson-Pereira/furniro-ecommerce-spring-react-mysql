@@ -1,5 +1,7 @@
 import { useSpring, animated } from '@react-spring/web';
 import './header.styles.sass';
+import { ButtonCustom } from '../../../../../components/customs';
+import { useNavigate } from 'react-router-dom';
 
 export const Header = () => {
   const props = useSpring({
@@ -8,6 +10,8 @@ export const Header = () => {
     delay: 200,
     config: { duration: 1000 }, 
   });
+
+  const navigate = useNavigate();
 
   return (
     <div className="header_container">
@@ -19,8 +23,15 @@ export const Header = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
           luctus nec ullamcorper mattis.
         </p>
-        <div className="header_btn">
-          <button>BUY NOW</button>
+        <div 
+          className="header_btn" 
+          onClick={() => navigate('/shop')}
+        >
+          <ButtonCustom 
+            text='BUY NOW'
+            sizeText={24}
+            type='button'
+          />
         </div>
       </animated.div>
     </div>
