@@ -4,7 +4,7 @@ import { getAllProducts } from "../data/api/getAllProducts";
 import { getProductById } from "../data/api/getProductById";
 
 export class GetProductRepositoryImpl implements IGetProductsRepository {
-    getyId(id: number): Promise<IProduct> {
+    getById(id: number): Promise<IProduct> {
         return getProductById(id);
     }
     getAll(): Promise<IProduct[]> {

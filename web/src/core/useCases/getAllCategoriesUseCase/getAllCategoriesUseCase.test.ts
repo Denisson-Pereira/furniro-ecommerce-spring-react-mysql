@@ -4,7 +4,7 @@ import { GetAllCategoriesUseCase } from "./GetAllCategoriesUseCase";
 import { IGetAllCategoriesRepository } from "../../contracts/IGetAllCategoriesRepository";
 
 describe("GetAllCategories", () => {
-    let mockRepository: { api: ReturnType<typeof vi.fn> } & IGetAllCategoriesRepository; 
+    let mockRepository: IGetAllCategoriesRepository; 
     let getAllCategories: GetAllCategoriesUseCase;
 
     beforeEach(() => {
@@ -31,7 +31,7 @@ describe("GetAllCategories", () => {
             }
         ];
 
-        mockRepository.api.mockResolvedValue(category);
+        (mockRepository.api as any).mockResolvedValue(category);
 
         const result = await getAllCategories.execute("route");
 
