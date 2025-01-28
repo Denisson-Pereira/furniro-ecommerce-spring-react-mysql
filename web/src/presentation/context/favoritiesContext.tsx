@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { IProduct } from "../../core/models/IProduct";
+import { Props } from "../@types/props";
 
 interface FavoritiesContextType {
     favorities: IProduct[];
@@ -8,10 +9,6 @@ interface FavoritiesContextType {
 }
 
 const FavoritiesContext = createContext<FavoritiesContextType>({} as FavoritiesContextType);
-
-interface Props {
-    children: ReactNode;
-}
 
 export const FavoritiesContextProvider = ({ children }: Props) => {
     const [favorities, setFavorities] = useState<IProduct[]>([]);

@@ -1,6 +1,7 @@
-import { createContext, useState, ReactNode, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { IUser } from "../../core/models/IUser";
 import { Storage } from "../../shared/constants";
+import { Props } from "../@types/props";
 
 interface AuthContextType {
     user: IUser;
@@ -12,10 +13,6 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
-
-interface Props {
-    children: ReactNode;
-}
 
 export const AuthContextProvider = ({ children }: Props) => {
 

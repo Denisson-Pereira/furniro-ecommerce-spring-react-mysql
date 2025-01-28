@@ -1,7 +1,8 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { IProduct } from "../../core/models/IProduct";
 import { monetaryUnit } from "../../shared/utils/monetaryUnit";
 import { promotionValue } from "../../shared/utils/promotionValue";
+import { Props } from "../@types/props";
 
 interface CartContextType {
     totalValue: string
@@ -12,10 +13,6 @@ interface CartContextType {
 }
 
 const CartContext = createContext<CartContextType>({} as CartContextType);
-
-interface Props {
-    children: ReactNode;
-}
 
 export const CartContextProvider = ({ children }: Props) => {
     const [cart, setCart] = useState<IProduct[]>([]);
