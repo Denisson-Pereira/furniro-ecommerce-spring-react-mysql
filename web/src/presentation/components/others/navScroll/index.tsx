@@ -1,12 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Logo from '../../../assets/svg/logo.svg'
+import Logo from '../../../../assets/svg/logo.svg'
 
 import './navScroll.styles.sass'
-import { useAuthContext } from '../../context/authContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { capitalizeWord } from '../../../shared/utils/capitalizeWord';
+import { useAuthContext } from '../../../context/authContext';
+import { capitalizeWord } from '../../../../shared/utils/capitalizeWord';
 
 export function NavScroll() {
   const { user } = useAuthContext();

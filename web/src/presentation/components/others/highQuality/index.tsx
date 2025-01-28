@@ -1,7 +1,7 @@
-import High from '../../../assets/icons/high.png'
-import Warranty from '../../../assets/icons/warranty.png'
-import Free from '../../../assets/icons/free.png'
-import Image from '../../../assets/icons/24.png'
+import High from '../../../../assets/icons/high.png'
+import Warranty from '../../../../assets/icons/warranty.png'
+import Free from '../../../../assets/icons/free.png'
+import Image from '../../../../assets/icons/24.png'
 
 import './highQuality.styles.sass'
 

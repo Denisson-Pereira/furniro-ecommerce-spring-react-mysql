@@ -1,4 +1,2 @@
-export * from './navScroll'
-export * from './spinner'
-export * from './footer'
-export * from './highQuality'
+export * from './customs'
+export * from './others'

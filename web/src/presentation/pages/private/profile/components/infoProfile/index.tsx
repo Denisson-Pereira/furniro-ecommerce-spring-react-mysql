@@ -4,7 +4,7 @@ import User from '../../../../../../assets/svg/user.svg'
 import './infoProfile.styles.sass';
 import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord';
 import { loginServiceLocator } from '../../../../../../infra/services/loginServiceLocator';
-import { ButtonCustom } from '../../../../../components/customs';
+import { ButtonCustom } from '../../../../../components';
 
 export const InfoProfile = () => {
     const { user } = useAuthContext();

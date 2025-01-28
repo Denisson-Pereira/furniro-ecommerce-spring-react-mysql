@@ -1,6 +1,6 @@
 import Room from '../../../../../../assets//images/room.png'
 import Home from '../../../../../../assets/images/home.png'
-import { ButtonCustom } from '../../../../../components/customs'
+import { ButtonCustom } from '../../../../../components'
 
 import './beautiful.styles.sass'
 

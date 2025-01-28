@@ -1,7 +1,7 @@
 import { useSpring, animated } from '@react-spring/web';
 import './header.styles.sass';
-import { ButtonCustom } from '../../../../../components/customs';
 import { useNavigate } from 'react-router-dom';
+import { ButtonCustom } from '../../../../../components';
 
 export const Header = () => {
   const props = useSpring({
