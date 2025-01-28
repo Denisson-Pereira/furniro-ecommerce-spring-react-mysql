@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../../../context/authContext'
 import { IProduct } from '../../../../../../core/models/IProduct';
-import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
-import { promotionValue } from '../../../../../../utils/promotionValue';
+import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit';
+import { promotionValue } from '../../../../../../shared/utils/promotionValue';
 import { useHandlePage } from '../../../../../hooks/useHandlePage';
 import { HighQuality } from '../../../../../components';
 import { getAllProductsServiceLocator } from '../../../../../../infra/services/getProductsServiceLocator';

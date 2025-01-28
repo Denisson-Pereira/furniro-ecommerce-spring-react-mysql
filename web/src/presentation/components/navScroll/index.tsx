@@ -6,7 +6,7 @@ import Logo from '../../../assets/svg/logo.svg'
 import './navScroll.styles.sass'
 import { useAuthContext } from '../../context/authContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { capitalizeWord } from '../../../utils/capitalizeWord';
+import { capitalizeWord } from '../../../shared/utils/capitalizeWord';
 
 export function NavScroll() {
   const { user } = useAuthContext();

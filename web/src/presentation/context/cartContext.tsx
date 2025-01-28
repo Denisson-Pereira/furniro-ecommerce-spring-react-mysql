@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 import { IProduct } from "../../core/models/IProduct";
-import { monetaryUnit } from "../../utils/monetaryUnit";
-import { promotionValue } from "../../utils/promotionValue";
+import { monetaryUnit } from "../../shared/utils/monetaryUnit";
+import { promotionValue } from "../../shared/utils/promotionValue";
 
 interface CartContextType {
     totalValue: string

@@ -2,8 +2,8 @@ import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../../../../../context/cartContext"
 
 import './check.styles.sass'
-import { monetaryUnit } from "../../../../../../utils/monetaryUnit";
-import { promotionValue } from "../../../../../../utils/promotionValue";
+import { monetaryUnit } from "../../../../../../shared/utils/monetaryUnit";
+import { promotionValue } from "../../../../../../shared/utils/promotionValue";
 import { useHandlePage } from "../../../../../hooks/useHandlePage";
 
 export const Check = () => {

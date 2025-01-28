@@ -3,7 +3,7 @@ import Logo from '../../../../../../assets/images/logo.png'
 
 import './headerPrfole.styles.sass'
 import { useAuthContext } from '../../../../../context/authContext'
-import { capitalizeWord } from '../../../../../../utils/capitalizeWord'
+import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord'
 
 export const HeaderProfile = () => {
   const { user } = useAuthContext();

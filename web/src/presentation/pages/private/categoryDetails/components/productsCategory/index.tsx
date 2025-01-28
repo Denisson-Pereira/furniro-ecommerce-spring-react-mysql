@@ -6,8 +6,8 @@ import { getAllProductsServiceLocator } from '../../../../../../infra/services/g
 import { IProduct } from '../../../../../../core/models/IProduct';
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext';
 import { FaHeart } from 'react-icons/fa';
-import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
-import { promotionValue } from '../../../../../../utils/promotionValue';
+import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit';
+import { promotionValue } from '../../../../../../shared/utils/promotionValue';
 import { useHandlePage } from '../../../../../hooks/useHandlePage';
 import { CiHeart } from 'react-icons/ci';
 

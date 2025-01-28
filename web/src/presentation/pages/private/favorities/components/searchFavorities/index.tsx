@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext'
 import './searchFavorities.styles.sass'
 import { IProduct } from '../../../../../../core/models/IProduct';
-import { monetaryUnit } from '../../../../../../utils/monetaryUnit';
+import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit';
 import { CiSearch } from 'react-icons/ci';
 
 export const SearchFavorities = () => {
