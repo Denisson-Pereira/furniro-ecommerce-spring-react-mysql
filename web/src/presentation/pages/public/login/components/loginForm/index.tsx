@@ -127,6 +127,15 @@ export const LoginForm = () => {
                         <a>Forgot password?</a>
                     </div>
                 </div>
+                <div className="loginfForm_terms">
+                    <a 
+                        href="/src/assets/pdfs/terms.pdf"
+                        target="_blank"
+                        id="link_pdf"
+                    >
+                        I agree to the Terms of Use and Privacy Policy
+                    </a>
+                </div>
                 {loading ? (
                     <div className="spinner"></div>
                 ) : (
