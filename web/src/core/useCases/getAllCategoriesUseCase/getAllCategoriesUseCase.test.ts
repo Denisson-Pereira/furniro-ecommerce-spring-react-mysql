@@ -1,20 +1,21 @@
-import { IGetAllCategoriesRepository } from "../../contracts/IGetAllCategoriesRepository"
+import { describe, vi } from "vitest";
 import { ICategory } from "../../models/ICategory";
 import { GetAllCategoriesUseCase } from "./GetAllCategoriesUseCase";
+import { IGetAllCategoriesRepository } from "../../contracts/IGetAllCategoriesRepository";
 
 describe("GetAllCategories", () => {
-    let mockRepository: jest.Mocked<IGetAllCategoriesRepository>;
+    let mockRepository: { api: ReturnType<typeof vi.fn> } & IGetAllCategoriesRepository; 
     let getAllCategories: GetAllCategoriesUseCase;
 
     beforeEach(() => {
         mockRepository = {
-            api: jest.fn()
+            api: vi.fn() 
         };
 
         getAllCategories = new GetAllCategoriesUseCase(mockRepository);
     })
 
-    it("Should sucessffully fetch all categories", async () => {
+    it("Should successfully fetch all categories", async () => {
         const category: ICategory[] = [
             {
                 id: 1,
@@ -28,7 +29,7 @@ describe("GetAllCategories", () => {
                 description: "B category description",
                 image: "B category image"
             }
-        ]
+        ];
 
         mockRepository.api.mockResolvedValue(category);
 
@@ -36,6 +37,5 @@ describe("GetAllCategories", () => {
 
         expect(mockRepository.api).toHaveBeenCalledTimes(1);
         expect(result).toEqual(category);
-
-    })
-})
+    });
+});
