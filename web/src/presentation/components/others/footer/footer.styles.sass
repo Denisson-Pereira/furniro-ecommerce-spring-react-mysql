@@ -1,6 +1,12 @@
 @use '../../../sass/mixins'
 @use '../../../sass/variables'
 
+@font-face 
+    font-family: 'Autografo'
+    src: url('../../../../assets/fonts/Autography.otf') format('opentype')
+    font-weight: normal
+    font-style: normal
+
 .footer_container
     @include mixins.flex
     flex-direction: column
@@ -71,6 +77,25 @@
 .footer_line
     background-color: #e0e0e0
     height: 2px
+
+.footer_signature
+    @include mixins.center
+    flex-direction: column
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+
+.footer_signature_box
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+    span
+        font-family: 'Autografo', sans-serif
+        color: variables.$greyDark
+        font-size: 3vh
+        padding-top: .5vh
+        
 
 @media (max-width: 600px)
     .footer_container_box1

@@ -41,6 +41,13 @@ export const Footer = () => {
         <div className="footer_container_box2">
             <p>2023 furino. All rights reverved</p>
         </div>
+        <div className="footer_signature">
+            <p>This website is a creation for learning purposes. It does not represent a real entity.</p>
+            <div className="footer_signature_box">
+                <p>&copy; 2025.</p>
+                <span>Denisson Pereira.</span>
+            </div>
+        </div>
     </div>
   )
 }
