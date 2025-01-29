@@ -1,6 +1,6 @@
 import { Storage } from "../../../shared/constants";
 
-export const serveConnection: string = "http://localhost:8080";
+export const serveConnection = import.meta.env.VITE_DB_URL
 
 export const setAuthToken = (): HeadersInit => {
     const token = localStorage.getItem(Storage.TOKEN);
