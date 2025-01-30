@@ -1,0 +1,24 @@
+{
+    "home": {
+        "title1": "Nova Chegada",
+        "subTitle1": "Descubra Nossa",
+        "subTitle2": "Nova Coleção",
+        "text1": "Explore nossa mais recente coleção, onde estilo encontra sofisticação. Descubra designs inovadores criados com elegância e conforto.",
+        "btn": "COMPRAR AGORA",
+        "title2": "Explore a Gama",
+        "subTitle3": "Explore uma ampla variedade de produtos por categoria e desbloqueie infinitas oportunidades de crescimento e sucesso.",
+        "title3": "50+ Inspirações de Ambientes Lindos",
+        "subTitle4": "Nossos designers já criaram diversos protótipos de ambientes lindos para te inspirar.",
+        "btn2": "Explorar Mais",
+        "title4": "Compartilhe seu setup com"
+    },
+    "footer": {
+        "titles": {
+            "links": "Links",
+            "help": "Ajuda",
+            "newsletter": "Newsletter"
+        },
+        "reserved": "Todos os direitos reservados",
+        "txt": "Este site foi criado para fins de aprendizado e não representa uma entidade real."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "home": {
+        "title1": "New Arrival",
+        "subTitle1": "Discover Our",
+        "subTitle2": "New Collection",
+        "text1": "Explore our latest collection, where style meets sophistication. Discover fresh designs crafted for elegance and comfort.",
+        "btn": "BUY NOW",
+        "title2": "Browse the Range",
+        "subTitle3": "Explore a wide range of products by category and unlock limitless opportunities for growth and success.",
+        "title3": "50+ Beautiful Room Inspirations",
+        "subTitle4": "Our designers have already created many beautiful room prototypes to inspire you.",
+        "btn2": "Explore More",
+        "title4": "Share your setup with"
+    },
+    "footer": {
+        "titles": {
+            "links": "Links",
+            "help": "Help",
+            "newsletter": "Newsletter"
+        },
+        "reserved": "All rights reserved",
+        "txt": "This website was created for learning purposes and does not represent a real entity."
+    }
+}

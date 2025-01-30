@@ -7,6 +7,7 @@ import './navScroll.styles.sass'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../../context/authContext';
 import { capitalizeWord } from '../../../../shared/utils/capitalizeWord';
+import { SelecContainer } from '../..';
 
 export function NavScroll() {
   const { user } = useAuthContext();
@@ -32,6 +33,7 @@ export function NavScroll() {
             ) : (
               <Nav.Link  as={Link} to={"/profile"} className='text-dark'>Profile</Nav.Link>
             )}
+            <SelecContainer />
           </Nav>
         </Navbar.Collapse>
       </Container>
