@@ -12,8 +12,8 @@ export const SelecContainer = () => {
                 id="selecLiguage"
                 onChange={(e) => i18n.changeLanguage(e.target.value)}
             >
-                <option value="en">EN</option>
-                <option value="pt">PT</option>
+                <option value="en">EN 🇺🇸</option>
+                <option value="pt">PT 🇧🇷</option>
             </select>
         </div>
     )

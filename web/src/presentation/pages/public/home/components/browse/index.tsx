@@ -5,12 +5,14 @@ import { categoriesServiceLocator } from "../../../../../../infra/services/categ
 
 import './browse.styles.sass'
 import { useHandleCategory } from "../../../../../hooks/useHandleCategory";
+import { useTranslation } from "react-i18next";
 
 export const Browse = () => {
     const [categories, setCategories] = useState<ICategory[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
     const handleCategory = useHandleCategory();
+    const { t } = useTranslation();
 
     useEffect(() => {
         async function fetchCategories() {
@@ -30,8 +32,8 @@ export const Browse = () => {
     return (
         <div className="browse_container">
             <div className="browse_title">
-                <p>Browse The Range</p>
-                <span>Explore a wide range of products by category and unlock limitless opportunities for growth and success</span>
+                <p>{t("home.title2")}</p>
+                <span>{t("home.subTitle3")}</span>
             </div>
             {loading ? (
                 <SpinnerComponent />

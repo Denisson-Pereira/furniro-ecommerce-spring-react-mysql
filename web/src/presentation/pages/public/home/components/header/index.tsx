@@ -9,7 +9,7 @@ export const Header = () => {
     to: { opacity: 1 },
     from: { opacity: 0 },
     delay: 200,
-    config: { duration: 1000 }, 
+    config: { duration: 1000 },
   });
 
   const navigate = useNavigate();
@@ -18,19 +18,18 @@ export const Header = () => {
   return (
     <div className="header_container">
       <animated.div className="header_discover" style={props}>
-        <p className="header_title1">{t("home.title1")}New Arrival</p>
-        <p className="header_title2">Discover Our</p>
-        <p className="header_title2">New Collection</p>
+        <p className="header_title1">{t("home.title1")}</p>
+        <p className="header_title2">{t("home.subTitle1")}</p>
+        <p className="header_title2">{t("home.subTitle2")}</p>
         <p className="header_txt">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-          luctus nec ullamcorper mattis.
+          {t("home.text1")}
         </p>
-        <div 
-          className="header_btn" 
+        <div
+          className="header_btn"
           onClick={() => navigate('/shop')}
         >
-          <ButtonCustom 
-            text='BUY NOW'
+          <ButtonCustom
+            text={t("home.btn")}
             sizeText={24}
             type='button'
           />
