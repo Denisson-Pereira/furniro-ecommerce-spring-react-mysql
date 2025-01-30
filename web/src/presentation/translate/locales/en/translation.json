@@ -20,5 +20,14 @@
         },
         "reserved": "All rights reserved",
         "txt": "This website was created for learning purposes and does not represent a real entity."
+    },
+    "navbar": {
+        "home": "Home",
+        "shop": "Shop",
+        "about": "About",
+        "contact": "Contact",
+        "favorities": "Favorities",
+        "cart": "Cart",
+        "profile": "Profile"
     }
 }

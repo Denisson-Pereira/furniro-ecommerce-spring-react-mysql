@@ -20,5 +20,14 @@
         },
         "reserved": "Todos os direitos reservados",
         "txt": "Este site foi criado para fins de aprendizado e não representa uma entidade real."
+    },
+    "navbar": {
+        "home": "Home",
+        "shop": "Loja",
+        "about": "Sobre",
+        "contact": "Contato",
+        "favorities": "Favoritos",
+        "cart": "Carrinho",
+        "profile": "Perfil"
     }
 }

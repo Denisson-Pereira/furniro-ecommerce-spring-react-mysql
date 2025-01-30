@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 import './footer.styles.sass'
 
 export const Footer = () => {
+    const { t } = useTranslation();
   return (
     <div className="footer_container">
         <div className="footer_container_box1">
@@ -12,20 +15,20 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="footer_box2">
-                <p>Links</p>
-                <a href="">Home</a>
-                <a href="">Shop</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
+                <p>{t("footer.titles.links")}</p>
+                <a href="">{t("navbar.home")}</a>
+                <a href="">{t("navbar.shop")}</a>
+                <a href="">{t("navbar.about")}</a>
+                <a href="">{t("navbar.contact")}</a>
             </div>
             <div className="footer_box3">
-                <p>Help</p>
+                <p>{t("footer.titles.help")}</p>
                 <a href="">Payment Options</a>
                 <a href="">Returns</a>
                 <a href="">Privacy Policies</a>
             </div>
             <div className="footer_box4">
-                <p>Newsletter</p>
+                <p>{t("footer.titles.newsletter")}</p>
                 <div className="footer_input">
                     <input 
                         type="text" 
