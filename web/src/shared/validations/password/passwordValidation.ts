@@ -1,4 +1,4 @@
-import { passwordValidationEnums } from "../enums/passwordValidationEnums";
+import { passwordValidationEnums } from "../../enums/passwordValidationEnums";
 
 export const passwordValidation = (password: string): string => {
   switch (true) {
