@@ -5,6 +5,7 @@ import { FaEyeSlash } from 'react-icons/fa';
 import { useAuthContext } from '../../../../../context/authContext';
 import { LoginFormOr, LoginRedes } from '..';
 import { registerServiceLocator } from '../../../../../../infra/services/registerServiceLocator';
+import { passwordValidation } from '../../../../../../shared/validations/passwordValidation';
 
 export const RegisterForm = () => {
   const { loading, setLoading } = useAuthContext();
@@ -32,7 +33,7 @@ export const RegisterForm = () => {
   }
 
   return (
-    <form 
+    <form
       className="registerForm_container"
       onSubmit={(e) => {
         e.preventDefault();
@@ -101,6 +102,20 @@ export const RegisterForm = () => {
             <div className="registerForm_icon_eye" onClick={() => setVisible((prev) => !prev)}>
               {visible ? <IoMdEye /> : <FaEyeSlash />}
             </div>
+          </div>
+          <div className="registerForm_validate">
+            {passwordValidation(password) === "" && (
+              <div className="registerForm_validate_default"></div>
+            )}
+            {passwordValidation(password) === "Weak" && (
+              <div className="registerForm_validate_weak"></div>
+            )}
+            {passwordValidation(password) === "Normal" && (
+              <div className="registerForm_validate_normal"></div>
+            )}
+            {passwordValidation(password) === "Strong" && (
+              <div className="registerForm_validate_strong"></div>
+            )}
           </div>
         </div>
         {loading ? (
