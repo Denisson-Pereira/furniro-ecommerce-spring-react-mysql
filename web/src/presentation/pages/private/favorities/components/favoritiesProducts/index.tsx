@@ -1,8 +1,8 @@
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext'
 import { useHandlePage } from '../../../../../hooks/useHandlePage';
 import './favoritiesProducts.styles.sass'
-import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit';
-import { promotionValue } from '../../../../../../shared/utils/promotionValue';
+import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit/monetaryUnit';
+import { promotionValue } from '../../../../../../shared/utils/promotionValue/promotionValue';
 import { FaHeart } from 'react-icons/fa';
 
 export const FavoritiesProducts = () => {

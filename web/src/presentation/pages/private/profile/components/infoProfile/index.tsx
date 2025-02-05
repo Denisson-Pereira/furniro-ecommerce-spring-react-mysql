@@ -2,7 +2,7 @@ import { useAuthContext } from '../../../../../context/authContext';
 import User from '../../../../../../assets/svg/user.svg'
 
 import './infoProfile.styles.sass';
-import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord';
+import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord/capitalizeWord';
 import { loginServiceLocator } from '../../../../../../infra/services/loginServiceLocator';
 import { ButtonCustom } from '../../../../../components';
 

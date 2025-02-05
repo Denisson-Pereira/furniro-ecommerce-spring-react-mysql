@@ -10,5 +10,4 @@ export class GetProductRepositoryImpl implements IGetProductsRepository {
     getAll(): Promise<IProduct[]> {
         return getAllProducts();
     }
-
 }

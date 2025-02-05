@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { IProduct } from "../../core/models/IProduct";
-import { monetaryUnit } from "../../shared/utils/monetaryUnit";
-import { promotionValue } from "../../shared/utils/promotionValue";
+import { monetaryUnit } from "../../shared/utils/monetaryUnit/monetaryUnit";
+import { promotionValue } from "../../shared/utils/promotionValue/promotionValue";
 import { Props } from "../@types/props";
 
 interface CartContextType {

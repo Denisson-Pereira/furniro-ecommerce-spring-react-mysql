@@ -14,5 +14,7 @@ describe("Password validation function", () => {
         expect(result_normal).toEqual("Normal");
         expect(result_strong).toEqual("Strong");
 
+        expect(result_weak).not.toEqual("weak");
+
     })
 })

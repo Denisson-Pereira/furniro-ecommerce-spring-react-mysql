@@ -6,7 +6,7 @@ import Logo from '../../../../assets/svg/logo.svg'
 import './navScroll.styles.sass'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../../context/authContext';
-import { capitalizeWord } from '../../../../shared/utils/capitalizeWord';
+import { capitalizeWord } from '../../../../shared/utils/capitalizeWord/capitalizeWord';
 import { SelecContainer } from '../..';
 import { useTranslation } from 'react-i18next';
 

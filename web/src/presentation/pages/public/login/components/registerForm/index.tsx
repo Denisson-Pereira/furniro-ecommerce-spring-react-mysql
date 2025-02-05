@@ -5,7 +5,7 @@ import { FaEyeSlash } from 'react-icons/fa';
 import { useAuthContext } from '../../../../../context/authContext';
 import { LoginFormOr, LoginRedes } from '..';
 import { registerServiceLocator } from '../../../../../../infra/services/registerServiceLocator';
-import { passwordValidation } from '../../../../../../shared/validations/password/passwordValidation';
+import { passwordValidation } from '../../../../../../shared/validations';
 
 export const RegisterForm = () => {
   const { loading, setLoading } = useAuthContext();
