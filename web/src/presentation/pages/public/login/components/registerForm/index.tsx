@@ -52,6 +52,7 @@ export const RegisterForm = () => {
                 name='first_name'
                 id='first_name'
                 value={first_name}
+                autoComplete='additional-name'
                 onChange={(e) => setFirst_name(e.target.value)}
                 required
               />
