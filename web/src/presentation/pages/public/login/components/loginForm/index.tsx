@@ -9,9 +9,11 @@ import { useNavigate } from "react-router-dom";
 import { getCredentials } from "../../cache/getCredentials";
 import { setCredentials } from "../../cache/setCredentials";
 import { getCheck } from "../../cache/getCheck";
+import { useTranslation } from "react-i18next"
 
 export const LoginForm = () => {
     const { setUser, loading, setLoading } = useAuthContext();
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [visible, setVisible] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
@@ -75,14 +77,14 @@ export const LoginForm = () => {
                 handleLogin();
             }}
         >
-            <p className="loginForm_title">SIGN IN</p>
+            <p className="loginForm_title">{t("login.signIn")}</p>
             <div className="loginForm_form">
                 <div className="loginForm_email">
-                    <p>Email</p>
+                    <p>{t("login.email")}</p>
                     <div className="login_input">
                         <input
                             type="email"
-                            placeholder="Enter Your Email"
+                            placeholder={t("login.emailInput")}
                             name="email_input"
                             id="email_input"
                             value={email}
@@ -93,7 +95,7 @@ export const LoginForm = () => {
                     </div>
                 </div>
                 <div className="loginForm_password">
-                    <p>Password</p>
+                    <p>{t("login.password")}</p>
                     <div className="login_input">
                         <input
                             type={visible ? "text" : "password"}
@@ -121,10 +123,10 @@ export const LoginForm = () => {
                                 handleCache(e);
                             }}
                         />
-                        <p>Remember me</p>
+                        <p>{t("login.remember")}</p>
                     </div>
                     <div className="loginForm_forgot">
-                        <a>Forgot password?</a>
+                        <a>{t("login.forgot")}</a>
                     </div>
                 </div>
                 <div className="loginfForm_terms">
@@ -133,14 +135,14 @@ export const LoginForm = () => {
                         target="_blank"
                         id="link_pdf"
                     >
-                        I agree to the Terms of Use and Privacy Policy
+                        {t("login.term")}
                     </a>
                 </div>
                 {loading ? (
                     <div className="spinner"></div>
                 ) : (
                     <div className="loginForm_btn">
-                        <button type="submit">SIGN IN</button>
+                        <button type="submit">{t("login.btn")}</button>
                     </div>
                 )}
                 <LoginFormOr />

@@ -29,5 +29,16 @@
         "favorities": "Favorities",
         "cart": "Cart",
         "profile": "Profile"
+    },
+    "login": {
+        "signIn": "SIGN IN",
+        "email": "E-mail",
+        "emailInput": "Enter Your E-mail",
+        "password": "Password",
+        "remember": "Remember me",
+        "forgot": "Forgot password?",
+        "term": "I agree to the Terms of Use and Privacy Policy",
+        "btn": "SIGN IN",
+        "noAccount": "No Account yet?"
     }
 }

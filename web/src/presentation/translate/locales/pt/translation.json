@@ -29,5 +29,16 @@
         "favorities": "Favoritos",
         "cart": "Carrinho",
         "profile": "Perfil"
+    },
+    "login": {
+        "signIn": "Entrar",
+        "email": "E-mail",
+        "emailInput": "Digite Seu E-mail",
+        "password": "Senha",
+        "remember": "Lembre-me",
+        "forgot": "Esqueceu sua senha?",
+        "term": "Eu aceito os Termos de Use e a Politica de privacidade",
+        "btn": "ENTRAR",
+        "noAccount": "Não tem conta?"
     }
 }
