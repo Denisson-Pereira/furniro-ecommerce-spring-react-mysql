@@ -40,5 +40,16 @@
         "term": "I agree to the Terms of Use and Privacy Policy",
         "btn": "SIGN IN",
         "noAccount": "No Account yet?"
+    },
+    "signUp": {
+        "signUp": "SIGN UP",
+        "first": "First Name",
+        "inputName": "Name Here",
+        "last": "Last Name",
+        "inputLast": "Last Name Here",
+        "email": "E-mail",
+        "emailInput": "Enter Your E-mail",
+        "password": "Password",
+        "btn": "SIGN UP"
     }
 }

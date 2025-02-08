@@ -31,7 +31,7 @@
         "profile": "Perfil"
     },
     "login": {
-        "signIn": "Entrar",
+        "signIn": "ENTRAR",
         "email": "E-mail",
         "emailInput": "Digite Seu E-mail",
         "password": "Senha",
@@ -40,5 +40,16 @@
         "term": "Eu aceito os Termos de Use e a Politica de privacidade",
         "btn": "ENTRAR",
         "noAccount": "Não tem conta?"
+    },
+    "signUp": {
+        "signUp": "REGISTRAR",
+        "first": "Nome",
+        "inputName": "Nome Aqui",
+        "last": "Sobrenome",
+        "inputLast": "Sobrenome Aqui",
+        "email": "E-mail",
+        "emailInput": "Digite seu E-mail",
+        "password": "Senha",
+        "btn": "REGISTRAR"
     }
 }

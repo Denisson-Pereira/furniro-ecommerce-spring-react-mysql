@@ -6,9 +6,11 @@ import { useAuthContext } from '../../../../../context/authContext';
 import { LoginFormOr, LoginRedes } from '..';
 import { registerServiceLocator } from '../../../../../../infra/services/registerServiceLocator';
 import { passwordValidation } from '../../../../../../shared/validations';
+import { useTranslation } from 'react-i18next';
 
 export const RegisterForm = () => {
   const { loading, setLoading } = useAuthContext();
+  const { t } = useTranslation();
   const [visible, setVisible] = useState<boolean>(false);
 
   const [first_name, setFirst_name] = useState<string>('')
@@ -40,15 +42,15 @@ export const RegisterForm = () => {
         handleRegister();
       }}
     >
-      <p className='registerForm_title'>SIGN UP</p>
+      <p className='registerForm_title'>{t("signUp.signUp")}</p>
       <div className="registerForm_form">
         <div className="loginForm_name">
           <div className="loginForm_first">
-            <p>First Name</p>
+            <p>{t("signUp.first")}</p>
             <div className="register_input_name">
               <input
                 type="text"
-                placeholder='Name Here'
+                placeholder={t("signUp.inputName")}
                 name='first_name'
                 id='first_name'
                 value={first_name}
@@ -59,11 +61,11 @@ export const RegisterForm = () => {
             </div>
           </div>
           <div className="loginForm_first">
-            <p>Last Name</p>
+            <p>{t("signUp.last")}</p>
             <div className="register_input_name">
               <input
                 type="text"
-                placeholder='Last Name'
+                placeholder={t("signUp.inputLast")}
                 name='last_name'
                 id='last_name'
                 value={last_name}
@@ -74,11 +76,11 @@ export const RegisterForm = () => {
           </div>
         </div>
         <div className="registerForm_email">
-          <p>Email</p>
+          <p>{t("signUp.email")}</p>
           <div className="register_input">
             <input
               type="email"
-              placeholder="Enter Your Email"
+              placeholder={t("signUp.emailInput")}
               name="email_register_input"
               id="email_register_input"
               autoComplete='email'
@@ -89,7 +91,7 @@ export const RegisterForm = () => {
           </div>
         </div>
         <div className="registerForm_email">
-          <p>Password</p>
+          <p>{t("signUp.password")}</p>
           <div className="register_input">
             <input
               type={visible ? "text" : "password"}
@@ -123,7 +125,7 @@ export const RegisterForm = () => {
           <div className="spinner_register"></div>
         ) : (
           <div className="registerForm_btn">
-            <button type='submit'>SIGN UP</button>
+            <button type='submit'>{t("signUp.btn")}</button>
           </div>
         )}
         <LoginFormOr />
