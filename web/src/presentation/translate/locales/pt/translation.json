@@ -18,6 +18,15 @@
             "help": "Ajuda",
             "newsletter": "Newsletter"
         },
+        "help": {
+            "pay": "Opções de Pagamentos",
+            "returns": "Retornar",
+            "privacy": "Políticas de Privacidade"
+        },
+        "new": {
+            "email": "Digite Seu Email",
+            "sub": "ASSINAR"
+        },
         "reserved": "Todos os direitos reservados",
         "txt": "Este site foi criado para fins de aprendizado e não representa uma entidade real."
     },

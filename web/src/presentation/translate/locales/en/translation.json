@@ -18,6 +18,15 @@
             "help": "Help",
             "newsletter": "Newsletter"
         },
+        "help": {
+            "pay": "Payment Options",
+            "returns": "Returns",
+            "privacy": "Privacy Policies"
+        },
+        "new": {
+            "email": "Enter Your Email Address",
+            "sub": "SUBSCRIBE"
+        },
         "reserved": "All rights reserved",
         "txt": "This website was created for learning purposes and does not represent a real entity."
     },

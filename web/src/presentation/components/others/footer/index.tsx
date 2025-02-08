@@ -23,9 +23,9 @@ export const Footer = () => {
             </div>
             <div className="footer_box3">
                 <p>{t("footer.titles.help")}</p>
-                <a href="">Payment Options</a>
-                <a href="">Returns</a>
-                <a href="">Privacy Policies</a>
+                <a href="">{t("footer.help.pay")}</a>
+                <a href="">{t("footer.help.returns")}</a>
+                <a href="">{t("footer.help.privacy")}</a>
             </div>
             <div className="footer_box4">
                 <p>{t("footer.titles.newsletter")}</p>
@@ -34,18 +34,18 @@ export const Footer = () => {
                         type="text" 
                         name="input_footer" 
                         id="input_footer"
-                        placeholder="Enter Your Email Address"
+                        placeholder={t("footer.new.email")}
                     />
-                    <button>SUBSCRIBE</button>
+                    <button>{t("footer.new.sub")}</button>
                 </div>
             </div>
         </div>
         <div className="footer_line"></div>
         <div className="footer_container_box2">
-            <p>2023 furino. All rights reverved</p>
+            <p>2023 furino. {t("footer.reserved")}</p>
         </div>
         <div className="footer_signature">
-            <p>This website is a creation for learning purposes. It does not represent a real entity.</p>
+            <p>{t("footer.txt")}</p>
             <div className="footer_signature_box">
                 <p>&copy; 2025.</p>
                 <span>Denisson Pereira.</span>
