@@ -13,10 +13,12 @@ import './productsShop.styles.sass';
 import { CiHeart, CiSearch } from 'react-icons/ci';
 import { useFavoritiesContext } from '../../../../../context/favoritiesContext';
 import { FiltersProductsEnums } from '../../../../../../shared/enums/filtersProductsEnums';
+import { useTranslation } from 'react-i18next';
 
 export const Products = () => {
     const { loading, setLoading } = useAuthContext();
     const { isFavorite, addFavorite } = useFavoritiesContext();
+    const { t } = useTranslation();
 
     const [products, setProducts] = useState<IProduct[]>([]);
     const [size, setSize] = useState<string>('8');
@@ -102,9 +104,9 @@ export const Products = () => {
                         onChange={(e) => setSelectFilter(e.target.value)}
                         style={{ width: '15vh' }}
                     >
-                        <option value="featured">Featured</option>
-                        <option value="highest">Highest Price</option>
-                        <option value="lowest">Lowest Price</option>
+                        <option value="featured">{t("filter.featured")}</option>
+                        <option value="highest">{t("filter.high")}</option>
+                        <option value="lowest">{t("filter.low")}</option>
                     </select>
                     <div
                         className="products_filter_click"
@@ -123,13 +125,13 @@ export const Products = () => {
                     <div className="products_traco"></div>
                     <div className="products_p_list">
                         <p>
-                            Showing {startIndex + 1}-
-                            {Math.min(endIndex, products.length)} of {products.length} results
+                        {t("filter.showing")} {startIndex + 1}-
+                            {Math.min(endIndex, products.length)} {t("filter.of")} {products.length} {t("filter.results")}
                         </p>
                     </div>
                 </div>
                 <div className="products_box">
-                    <p>Show</p>
+                    <p>{t("filter.show")}</p>
                     <div className="products_box_show">
                         <select
                             name="selec_qnt"

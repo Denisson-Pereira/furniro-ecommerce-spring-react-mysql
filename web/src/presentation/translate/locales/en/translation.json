@@ -70,5 +70,14 @@
         "order": "Order over $150",
         "24": "24/7 Support",
         "delicated": "Dedicated support"
-    }
+    },
+    "filter": {
+        "featured": "Featured",
+        "high": "Highest Price",
+        "low": "Lowest Price",
+        "showing": "Showing",
+        "of": "of",
+        "results": "results",
+        "show": "Show"
+    } 
 }

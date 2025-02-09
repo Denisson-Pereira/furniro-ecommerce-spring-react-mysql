@@ -70,5 +70,15 @@
         "order": "Pedidos acima de $150",
         "24": "Suporte 24/7",
         "delicated": "Suporte dedicado"
+    },
+    "filter": {
+        "featured": "Destaque",
+        "high": "Maior preço",
+        "low": "Menor preço",
+        "showing": "Exibindo",
+        "of": "de",
+        "results": "resultados",
+        "show": "Mostrar"
     }
+    
 }
