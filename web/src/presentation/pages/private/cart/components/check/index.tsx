@@ -6,6 +6,7 @@ import { monetaryUnit } from "../../../../../../shared/utils/monetaryUnit/moneta
 import { promotionValue } from "../../../../../../shared/utils/promotionValue/promotionValue";
 import { useHandlePage } from "../../../../../hooks/useHandlePage";
 import { useTranslation } from "react-i18next";
+import { Storage } from "../../../../../../shared/constants";
 
 export const Check = () => {
     const { cart, totalValue, totalValuePromo, removeCart } = useCartContext();
@@ -13,7 +14,7 @@ export const Check = () => {
     const { t } = useTranslation();
 
     const sendToWhatsApp = () => {
-        const phoneNumber = "5579998310762"; 
+        const phoneNumber = Storage.PHONENUMBER;
 
         if (cart.length === 0) {
             alert("Seu carrinho está vazio!");
