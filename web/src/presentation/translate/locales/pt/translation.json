@@ -80,6 +80,24 @@
         "results": "resultados",
         "show": "Mostrar",
         "search": "Pesquisar produtos"
+    },
+    "contact": {
+        "contact": "Contato",
+        "address": "Endereço",
+        "phone": "Telefone",
+        "mobile": "Celular",
+        "hot": "Linha direta",
+        "work": "Horário de funcionamento",
+        "name": "Seu nome",
+        "email": "Endereço de e-mail",
+        "subject": "Assunto",
+        "subjectInput": "Isso é opcional",
+        "message": "Mensagem",
+        "messageInput": "Oi! Gostaria de perguntar sobre",
+        "img": "Imagem enviada:",
+        "btn": "Enviar",
+        "title": "Entre em Contato Conosco",
+        "description": "Para mais informações sobre nossos produtos e serviços, sinta-se à vontade para nos enviar um e-mail. Nossa equipe estará sempre pronta para ajudá-lo. Não hesite!"
     }
     
 }

@@ -8,10 +8,12 @@ import { useAuthContext } from "../../../../../context/authContext";
 import { SpinnerComponent } from "../../../../../components";
 import { createContactServiceLocator } from "../../../../../../infra/services/createContactServiceLocator";
 import { ButtonCustom } from "../../../../../components/customs";
+import { useTranslation } from "react-i18next";
 
 export const ContactForm = () => {
 
   const { loading, setLoading } = useAuthContext();
+  const { t } = useTranslation();
 
   const [your_name, setYourName] = useState<string>('');
   const [email_address, setEmail_address] = useState<string>('');
@@ -86,22 +88,22 @@ export const ContactForm = () => {
         <div className="contactForm_icons">
           <FaMapMarkerAlt />
           <div className="contactForm_icons_txt">
-            <p className="contactForm_p">Address</p>
+            <p className="contactForm_p">{t("contact.address")}</p>
             <p>236 5th SE Avenue, New York NY10000, United States</p>
           </div>
         </div>
         <div className="contactForm_icons">
           <FaPhoneAlt />
           <div className="contactForm_icons_txt">
-            <p className="contactForm_p">Phone</p>
-            <p>Mobile: +(84) 546-6789</p>
-            <p>Hotline: +(84) 456-6789</p>
+            <p className="contactForm_p">{t("contact.phone")}</p>
+            <p>{t("contact.mobile")}: +(84) 546-6789</p>
+            <p>{t("contact.hot")}: +(84) 456-6789</p>
           </div>
         </div>
         <div className="contactForm_icons">
           <MdAccessTimeFilled />
           <div className="contactForm_icons_txt">
-            <p className="contactForm_p">Working Time</p>
+            <p className="contactForm_p">{t("contact.work")}</p>
             <p>Monday-Friday: 9:00 - 22:00</p>
             <p>Saturday-Sunday: 9:00 - 21:00</p>
           </div>
@@ -114,7 +116,7 @@ export const ContactForm = () => {
           onSubmit={handleFormSubmit} 
         >
           <div className="contactForm_box">
-            <p>Your name</p>
+            <p>{t("contact.name")}</p>
             <div className="contactForm_input">
               <input
                 type="text"
@@ -128,7 +130,7 @@ export const ContactForm = () => {
             </div>
           </div>
           <div className="contactForm_box">
-            <p>Email address</p>
+            <p>{t("contact.email")}</p>
             <div className="contactForm_input">
               <input
                 type="email"
@@ -142,24 +144,25 @@ export const ContactForm = () => {
             </div>
           </div>
           <div className="contactForm_box">
-            <p>Subject</p>
+            <p>{t("contact.subject")}</p>
             <div className="contactForm_input">
               <input
                 type="text"
                 name="your_subject_contact"
                 id="your_subject_contact"
-                placeholder="This is an optional"
+                placeholder={t("contact.subjectInput")}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
             </div>
           </div>
           <div className="contactForm_box">
-            <p>Message</p>
+            <p>{t("contact.message")}</p>
             <div className="contactForm_input">
               <textarea
                 name="txt_area"
-                placeholder="Hi! I'd like to ask about" id="txt_area"
+                placeholder={t("contact.messageInput")} 
+                id="txt_area"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
@@ -176,7 +179,7 @@ export const ContactForm = () => {
           </div>
           {uploadedImgPath && (
             <div className="contactForm_upload_img">
-              <h2>Imagem carregada:</h2>
+              <h2>{t("contact.img")}</h2>
               <img
                 src={uploadedImgPath}  
                 alt="Imagem carregada"
@@ -189,7 +192,7 @@ export const ContactForm = () => {
           ) : (
             <div className="contactForm_btn">
               <ButtonCustom
-                text="Submit"
+                text={t("contact.btn")}
                 sizeText={18}
                 type='submit'
               />

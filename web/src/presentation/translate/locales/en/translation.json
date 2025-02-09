@@ -80,5 +80,23 @@
         "results": "results",
         "show": "Show",
         "search": "Search products"
-    } 
+    },
+    "contact": {
+        "contact": "Contact",
+        "address": "Address",
+        "phone": "Phone",
+        "mobile": "Mobile",
+        "hot": "Hotline",
+        "work": "Working Time",
+        "name": "Your name",
+        "email": "Email address",
+        "subject": "Suject",
+        "subjectInput": "This is an optional",
+        "message": "Message",
+        "messageInput": "Hi! I'd like to ask about",
+        "img": "Uploaded image:",
+        "btn": "Submit",
+        "title": "Get In Touch With Us",
+        "description": "For more information about our products and services, please feel free to drop us an email. Our staff will always be there to help you out. Do not hesitate!"
+    }  
 }
