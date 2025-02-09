@@ -1,0 +1,44 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.descriptionComponent_container
+    @include mixins.flex
+    justify-content: space-between
+    flex-direction: column
+    align-items: center
+    gap: 3vh
+
+.descriptionComponent_txt
+    @include mixins.flex
+    flex-direction: column
+    gap: 3vh
+    padding-left: 50vh
+    padding-right: 50vh
+    margin-top: 2vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+        font-size: 2vh
+
+.descriptionComponent_imgs
+    @include mixins.flex
+    padding-left: 40vh
+    padding-right: 40vh
+    gap: 2vh
+    img
+        width: 50%
+
+@media (max-width: 1000px)
+    .descriptionComponent_txt
+        @include mixins.remover_margens
+        padding: 1vh
+        width: 50vh
+        gap: 0
+        p
+            font-size: 1vh
+    .descriptionComponent_imgs
+        @include mixins.remover_margens
+        @include mixins.center
+        
+        img
+            width: 40%

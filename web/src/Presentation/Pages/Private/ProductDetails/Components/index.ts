@@ -1,0 +1,6 @@
+export * from './Additional'
+export * from './Description'
+export * from './Info'
+export * from './Reviews'
+export * from './Traco'
+export * from './RelatedProducts'

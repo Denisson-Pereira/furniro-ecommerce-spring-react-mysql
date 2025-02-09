@@ -1,0 +1,47 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.beautiful_container
+    @include mixins.center
+    background-color: variables.$secundary
+    height: 100vh
+    width: 100%
+    gap: 3vh
+
+.beautiful_box1
+    @include mixins.center
+    flex-direction: column
+    align-items: flex-start
+    padding-left: 10vh
+    gap: 1vh
+
+    p
+        font-size: 6vh
+        width: 90%
+        text-align: left
+        font-weight: 600
+
+    span
+        font-size: 2vh
+        text-align: left
+
+.beautiful_box2
+    img
+        height: 90vh
+.beautiful_box3
+    img
+        height: 70vh
+        margin-bottom: 20vh
+
+
+
+@media (max-width: 1500px)
+    .beautiful_container
+        flex-direction: column
+        height: auto
+        width: 100%
+        padding-top: 5vh
+        padding-bottom: 5vh
+    
+    .beautiful_box2, .beautiful_box3
+        display: none

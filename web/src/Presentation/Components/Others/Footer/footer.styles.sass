@@ -1,0 +1,113 @@
+@use '../../../Sass/mixins'
+@use '../../../Sass/variables'
+
+@font-face 
+    font-family: 'Autografo'
+    src: url('../../../../Assets/Fonts/Autography.otf') format('opentype')
+    font-weight: normal
+    font-style: normal
+
+.footer_container
+    @include mixins.flex
+    flex-direction: column
+    padding: 7vh 15vh 5vh 15vh
+    border-top: 3px solid #e0e0e0
+    gap: 5vh
+
+.footer_container_box1
+    @include mixins.flex
+    justify-content: space-between
+
+.footer_box1
+    display: flex
+    flex-direction: column
+    p
+        @include mixins.remover_margens
+        font-size: 4vh
+        font-weight: 500
+        margin-bottom: 3vh
+
+    span
+        color: variables.$greyDark
+
+.footer_box_div
+    @include mixins.flex
+    flex-direction: column
+
+.footer_box2, .footer_box3
+    @include mixins.flex
+    flex-direction: column
+    gap: 5vh
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+        margin-bottom: 3vh
+    a
+        text-decoration: none
+        color: variables.$default
+        cursor: pointer
+        &:hover
+            color: variables.$greyDark
+        &:active
+            color: variables.$active
+
+.footer_box4
+    @include mixins.flex
+    flex-direction: column
+    gap: 5vh
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+        margin-bottom: 3vh
+
+.footer_input
+    @include mixins.flex
+    gap: 1vh
+    input
+        border: none
+        border-bottom: 1px solid variables.$default
+        width: 60%
+        letter-spacing: .5px
+    button
+        border: none
+        border-bottom: 1px solid variables.$default
+        background-color: variables.$white
+        font-weight: 400
+
+.footer_line
+    background-color: #e0e0e0
+    height: 2px
+
+.footer_signature
+    @include mixins.center
+    flex-direction: column
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+
+.footer_signature_box
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+    span
+        font-family: 'Autografo', sans-serif
+        color: variables.$greyDark
+        font-size: 3vh
+        padding-top: .5vh
+        
+
+@media (max-width: 600px)
+    .footer_container_box1
+        display: grid
+        grid-template-columns: 1fr 2fr
+
+    .footer_input
+        input
+            letter-spacing: 0px
+            width: 100%
+            font-size: 1.7vh
+
+@media (max-width: 900px)
+    .footer_container
+        padding: 1vh

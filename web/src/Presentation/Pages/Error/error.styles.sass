@@ -1,0 +1,33 @@
+@use '../../Sass/mixins'
+@use '../../Sass/variables'
+
+.error-container
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  text-align: center
+  background-image: url('../../../assets/images/sofa.jpg')
+  background-position: center
+
+.error-content
+  background: rgba(255, 255, 255, 0.671)
+  padding: 2rem
+  border-radius: 12px
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.281)
+  max-width: 500px
+  backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px)
+
+.error-icon
+  color: variables.$primary
+
+.error-title
+  font-size: 24px
+  margin-top: 1rem
+  color: #333
+
+.error-message
+  font-size: 16px
+  color: #666
+  margin-top: 0.5rem

@@ -1,7 +1,7 @@
-import { AuthContextProvider } from './presentation/context/authContext'
-import { CartContextProvider } from './presentation/context/cartContext'
-import { FavoritiesContextProvider } from './presentation/context/favoritiesContext'
-import { RoutesApp } from './presentation/routes/RoutesApp'
+import { AuthContextProvider } from './Presentation/Context/authContext'
+import { CartContextProvider } from './Presentation/Context/cartContext'
+import { FavoritiesContextProvider } from './Presentation/Context/favoritiesContext'
+import { RoutesApp } from './Presentation/Routes/RoutesApp'
 
 function App() {
   return (

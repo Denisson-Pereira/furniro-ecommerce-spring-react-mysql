@@ -1,0 +1,34 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.funiro_container
+    background-image: url('../../../../../../Assets/Images/mosa.png')
+    width: 100%
+    height: 100vh
+    background-size: contain
+    background-repeat: no-repeat
+
+.funiro_title
+    @include mixins.center
+    flex-direction: column
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+    span
+        @include mixins.remover_margens
+        font-size: 5vh
+        font-weight: 600
+
+
+
+@media (max-width: 1500px)
+    .funiro_container
+        height: 100vh
+        background-size: cover
+        background-repeat: no-repeat
+    .funiro_title
+        p
+            font-size: 2vh
+        span
+            font-size: 3vh
+        

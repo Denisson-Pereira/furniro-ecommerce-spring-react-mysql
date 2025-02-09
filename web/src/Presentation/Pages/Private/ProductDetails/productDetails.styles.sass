@@ -1,0 +1,234 @@
+@use '../../../Sass/mixins'
+@use '../../../Sass/variables'
+
+.productsDetails_spinner_box
+    @include mixins.center
+    height: 100vh
+
+.productsDetails_spinner
+    @include mixins.center
+    border: 10px solid variables.$white
+    border-top: 10px solid variables.$primary
+    border-radius: 50%
+    width: 8vh
+    height: 8vh
+    animation: spin 1s linear infinite
+    margin: 0 auto
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
+
+.productsDetails_nav
+    @include mixins.flex
+    align-items: center
+    justify-content: start
+    padding-left: 40vh
+    background-color: variables.$secundary
+    height: 10vh
+    gap: 2vh
+    a
+        text-decoration: none
+        color: variables.$greyDark
+        font-size: 2.5vh
+    p
+        @include mixins.remover_margens
+        font-size: 2.5vh
+    span
+        font-size: 3vh
+        font-weight: 400
+
+.productsDetails_traco
+    background-color: variables.$greyDark
+    height: 4vh
+    width: 2px
+
+.productsDetail_info_container
+    @include mixins.flex
+    margin-top: 5vh
+    padding-left: 40vh
+    padding-right: 40vh
+    gap: 10vh
+
+.productsDetails_info_img
+    position: relative
+    img
+        width: 50vh
+        border-radius: 2vh
+
+.productsDetails_favorities
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
+
+.productsDetails_info
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    p
+        font-size: 5vh
+        font-weight: 500
+        @include mixins.remover_margens
+
+    span
+        font-size: 4vh
+        color: variables.$greyDark
+        font-weight: 500
+
+.productsDetails_info_starts
+    @include mixins.flex
+    align-items: center
+    gap: 1vh
+
+.productsDetails_start
+    svg
+        font-size: 2.8vh
+        color: #FFC700
+
+.productsDetails_customer
+    p
+        @include mixins.remover_margens
+        color: variables.$greyLess
+        font-size: 2vh
+
+.productsDetails_info_descriptions
+    p
+        @include mixins.remover_margens
+        font-size: 1.8vh
+        text-align: justify
+        font-weight: 400
+
+.productsDetails_info_size
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        color: variables.$greyDark
+
+.productsDetails_size
+    @include mixins.flex
+    gap: 2vh
+    @include mixins.remover_margens
+    p
+        @include mixins.center
+        @include mixins.remover_margens
+        background-color: variables.$secundary
+        width: 4vh
+        height: 4vh
+        border-radius: .5vh
+        color: variables.$default
+
+.productsDetails_info_color
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        color: variables.$greyDark
+
+.productsDetails_colors_row
+    @include mixins.flex
+    flex-direction: row
+
+.productsDetails_list_row
+    @include mixins.flex
+    flex-direction: row
+    gap: 2vh
+
+.products_color_1, .products_color_2, .products_color_3
+    width: 4vh
+    height: 4vh
+    border-radius: 50%
+    cursor: pointer
+    &:active
+        background-color: variables.$white
+
+.products_color_1
+    background-color: #816DFA
+
+.products_color_2
+    background-color: variables.$default
+
+.products_color_3
+    background-color: variables.$primary
+
+.productsDetails_btn
+    @include mixins.center
+    height: 10vh
+    button
+        background-color: variables.$white
+        border: 1px solid variables.$default
+        padding: 1vh 5vh 1vh 5vh
+        font-size: 3vh
+        border-radius: 2vh
+        &:hover
+            border: 2px solid variables.$primary
+        &:active
+            border: 2px solid variables.$active
+
+.productsDetails_redes_traco
+    width: 100%
+    height: 1px
+    background-color: variables.$greyLess
+
+.productsDetails_info_redes
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+
+.productsDetails_redes
+    @include mixins.flex
+    align-items: center
+    gap: 2vh
+    span
+        width: 8vh
+        font-size: 2vh
+        font-weight: 400
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        font-weight: 400
+
+.productsDetails_icons
+    @include mixins.flex
+    gap: 1vh
+    svg
+        font-size: 2.5vh
+
+@media (max-width: 1000px)
+    .productsDetails_nav
+        @include mixins.remover_margens
+        @include mixins.center
+        margin-bottom: 5vh
+    .productsDetail_info_container
+        @include mixins.remover_margens
+        @include mixins.center
+        flex-direction: column
+        margin-top: 3vh
+        gap: 2vh
+    .productsDetails_info
+        padding: 2vh
+    .productsDetails_size
+        @include mixins.center
+    .productsDetails_colors_row
+        @include mixins.center
+
+@media (max-width: 1400px)
+    .productsDetail_info_container
+        @include mixins.remover_margens
+        padding: 2vh

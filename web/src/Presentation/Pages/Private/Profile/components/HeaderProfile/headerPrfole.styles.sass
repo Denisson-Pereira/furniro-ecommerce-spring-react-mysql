@@ -1,0 +1,38 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.headerProfile_container
+    @include mixins.center
+    flex-direction: column
+    background-image: url('../../../../../../Assets/Images/shop.png')
+    width: 100%
+    height: 30vh
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+    img
+        width: 7vh
+    p
+        font-size: 5vh
+        font-weight: 600
+
+.headerProfile_links
+    @include mixins.center
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        font-size: 2.5vh
+        font-weight: 400
+
+
+.headerProfile_a
+    font-size: 2.5vh
+    font-weight: 500
+    cursor: pointer
+    text-decoration: none
+    color: variables.$default
+    &:hover
+        color: variables.$hover
+    &:active
+        color: variables.$active

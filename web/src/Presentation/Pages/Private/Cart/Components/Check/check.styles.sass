@@ -1,0 +1,150 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.check_container
+    @include mixins.flex
+    justify-content: center
+    margin-block: 5vh
+    gap: 5vh
+    
+.check_left
+    @include mixins.flex
+    flex-direction: column
+    width: 80vh
+    gap: 5vh
+
+.check_left_nav
+    @include mixins.flex
+    justify-content: space-around
+    background-color: variables.$secundary
+    padding: 1vh
+    p
+        @include mixins.remover_margens
+        font-size: 2.5vh
+        font-weight: 500
+
+.check_left_products
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 100%
+    gap: 1vh
+    
+.check_left_row
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    
+.check_left_product
+    @include mixins.center
+    gap: 2vh
+    cursor: pointer
+    img
+        width: 8vh
+        object-fit: contain
+        border-radius: 1vh
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+        font-size: 2vh
+        
+.check_left_price
+    p
+        @include mixins.remover_margens
+        color: variables.$greyDark
+        font-size: 2vh
+
+.check_left_subtotal
+    @include mixins.center
+    gap: 5vh
+    padding-right: 1vh
+    p
+        @include mixins.remover_margens
+        color: variables.$default
+        font-weight: 400
+        font-size: 2vh      
+    svg
+        font-size: 2vh
+        color: variables.$primary 
+        cursor: pointer
+        &:hover
+            color: variables.$hover
+        &:active
+            color: variables.$active
+        
+.check_left_no_products
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+        @include mixins.center
+        padding: 2vh
+        color: variables.$greyDark
+
+.check_right
+    @include mixins.center
+    padding: 2vh
+    flex-direction: column
+    background-color: variables.$secundary
+    width: 25%
+    gap: 2vh
+    p
+        font-size: 4vh
+        font-weight: 600
+    
+.check_subtotal
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    width: 60%
+    margin-top: 4vh
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        color: variables.$default
+        font-weight: 500
+    span
+        font-size: 2vh
+        color: variables.$greyDark
+
+.check_total
+    @include mixins.flex
+    justify-content: space-between
+    width: 60%
+    margin-bottom: 4vh
+    align-items: center
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        color: variables.$default
+        font-weight: 500
+    span
+        font-size: 3vh
+        color: variables.$primary
+        font-weight: 500
+
+.check_right_btn
+    @include mixins.center
+    button
+        width: 24vh
+        height: 7vh
+        background-color: variables.$secundary
+        color: variables.$default
+        border: 1px solid variables.$default
+        border-radius: 2vh
+        font-size: 2vh
+        &:hover
+            border: 1px solid variables.$hover
+            color: variables.$hover
+        &:active
+            border: 1px solid variables.$active
+            color: variables.$active
+
+@media (max-width: 1100px)
+    .check_container
+        @include mixins.center
+        flex-direction: column
+    .check_left
+        width: 100%
+        padding: 1vh
+    .check_right
+        width: 90%

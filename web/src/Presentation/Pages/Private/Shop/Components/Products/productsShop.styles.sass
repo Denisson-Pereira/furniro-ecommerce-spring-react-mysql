@@ -1,0 +1,335 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.products_container
+    @include mixins.center
+    flex-direction: column
+
+.products_filter, .products_filter_click
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    padding: 1vh 10vh 1vh 10vh
+    background-color: variables.$secundary
+    width: 100%
+    img
+        width: 4vh
+        @include mixins.remover_margens
+
+.products_box
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    p
+        @include mixins.remover_margens
+
+.products_traco
+    background-color: variables.$greyDark
+    width: 2vh
+    height: 5vh
+
+.products_p_list
+    @include mixins.center
+    p
+        @include mixins.remover_margens
+        width: 30vh
+
+.products_box
+    gap: 1vh
+    select
+        border: none
+        height: 5vh
+        width: 7vh
+        text-align: center
+        background-color: variables.$white
+    button
+        border: none
+        padding: 1vh
+        height: 5vh
+        background-color: variables.$white
+        &:active
+            background-color: variables.$secundary
+            color: variables.$greyDark
+
+.products_map_column
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 5vh
+    margin-top: 7vh
+    margin-bottom: 7vh
+
+.products_map_row
+    @include mixins.center
+    flex-direction: column
+    margin-top: 7vh
+    margin-bottom: 7vh
+    gap: 5vh
+
+.products_filter_click
+    @include mixins.remover_margens
+    cursor: pointer
+    margin-left: 2vh
+    margin-right: 2vh
+
+.products_card
+    @include mixins.center
+    flex-direction: column
+    width: 30vh
+    position: relative
+    cursor: pointer
+    img
+        width: 100%
+    &:hover
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06)
+        transition: transform 0.2s ease, box-shadow 0.2s ease
+
+.products_card_row
+    @include mixins.center
+    background-color: variables.$grey
+    padding: 2vh
+    position: relative
+    cursor: pointer
+    img
+        width: 100vh
+        height: 50vh
+        object-fit: cover
+        object-position: top
+
+.product_info
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    background-color: variables.$grey
+    padding: 1vh
+    width: 100%
+    text-align: start
+    p
+        @include mixins.remover_margens
+        font-size: 3vh
+        font-weight: 500
+    span
+        color: variables.$greyDark
+
+.product_info_row
+    @include mixins.flex
+    flex-direction: column
+    gap: 2vh
+    padding: 1vh
+    background-color: variables.$grey
+    text-align: start
+    p
+        @include mixins.remover_margens
+        font-size: 5vh
+        font-weight: 500
+    span
+        font-size: 2vh
+        color: variables.$greyDark
+
+.product_info_price
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    p
+        font-size: 2.5vh
+    span
+        font-size: 2vh
+        text-decoration: line-through
+
+.product_info_price_row
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    @include mixins.remover_margens
+
+    gap: 5vh
+    p
+        font-size: 3.5vh
+    span
+        font-size: 3vh
+        text-decoration: line-through
+
+.products_promotion
+    position: absolute
+    top: 2vh
+    right: 2vh
+    background-color: variables.$green
+    @include mixins.center
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    p
+        @include mixins.remover_margens
+        color: variables.$white
+        font-size: 2vh
+
+.products_favorities
+    @include mixins.center
+    position: absolute
+    top: 2vh
+    left: 2vh
+    width: 5vh
+    height: 5vh
+    border-radius: 50%
+    background-color: #ffffffd8
+    cursor: pointer
+    svg
+        font-size: 3vh
+        color: variables.$red
+
+
+.products_pagination
+    @include mixins.center
+    gap: 3vh
+    margin-bottom: 7vh
+
+.products_pagination_numbers
+    @include mixins.center
+    background-color: variables.$secundary
+    width: 5vh
+    height: 5vh
+    border-radius: 10px
+    cursor: pointer
+    transition: .5s
+    p
+        @include mixins.remover_margens
+        
+.active
+    background-color: variables.$primary
+    color: variables.$white
+
+.products_search_container
+    @include mixins.center
+    flex-direction: column
+    margin-block: 5vh
+    padding-inline: 20vh
+    width: 90%
+    
+.products_search
+    @include mixins.flex
+    width: 100%
+    gap: 1vh
+    border: 1px solid variables.$greyDark
+    padding: 1vh
+    border-radius: 1vh
+    svg
+        font-size: 4vh
+        color: variables.$greyDark
+    input
+        width: 100%
+        border: none
+        outline: none
+
+.products_search_response
+    @include mixins.center
+    flex-direction: column
+    
+.products_search_info_box
+    @include mixins.flex
+    @include mixins.remover_margens
+    justify-content: space-between
+    width: 100vh
+    height: 30vh
+    background-color: #e9e9e92a
+    margin-block: 1vh
+    cursor: pointer
+    img
+        width: 30vh
+        object-fit: contain
+        @include mixins.remover_margens
+
+.products_search_info
+    @include mixins.center
+    flex-direction: column
+
+.products_search_txt_1
+    @include mixins.flex
+    justify-content: space-between
+    width: 100%
+    padding: 1vh
+    align-items: center
+    p
+        text-align: start
+        font-size: 4vh
+        font-weight: 600
+    span
+        font-size: 3vh
+        color: variables.$greyDark
+        font-weight: 500
+
+.products_search_txt_2
+    padding: 1vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+
+#products_not_fount
+    margin-top: 5vh
+    color: variables.$greyDark
+
+
+@media (max-width: 1400px)
+    .products_card
+        width: 40vw
+    .products_map_column
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 5vh
+        margin-top: 5vh
+    .products_card_row
+        padding: 1vh
+        img
+            width: 30vw
+            height: 30vh
+            object-fit: cover
+            object-position: top
+
+
+@media (max-width: 1000px)
+    .products_filter, .products_filter_click
+        @include mixins.flex
+        @include mixins.remover_margens
+        justify-content: space-around
+        align-items: center
+        background-color: variables.$secundary
+        width: 100%
+        img
+            width: 2vh
+            @include mixins.remover_margens
+    .products_box
+        @include mixins.center
+        p
+            font-size: 1.2vh
+            width: 8vh
+            @include mixins.remover_margens
+        button
+            font-size: 1.5vh
+        select
+            width: 4vh
+            height: 4vh
+            font-size: .8vh
+    .products_traco
+        width: 1vh
+    .product_info_price
+        flex-direction: column-reverse
+        span
+            font-size: 1.5vh
+    .products_search_container
+        width: 100%
+    .products_search_container
+        @include mixins.remover_margens
+        padding: 2vh
+    .products_search_info_box
+        width: 100%
+        height: 20vh
+        img
+            width: 20vh
+    .products_search_txt_1
+        p
+            @include mixins.remover_margens
+            font-size: 2vh
+        span
+            font-size: 2vh
+    .products_search_txt_2
+        p
+            @include mixins.remover_margens
+            font-size: 1.5vh

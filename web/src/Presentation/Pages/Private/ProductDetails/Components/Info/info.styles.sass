@@ -1,0 +1,29 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.info_container
+    @include mixins.center
+    flex-direction: column
+
+.info_nav
+    @include mixins.flex
+    gap: 5vh
+    
+.info_nav_txt
+    p
+        font-size: 3vh
+        color: variables.$greyDark
+        cursor: pointer
+        &:hover
+            color: variables.$primary
+        &:active
+            color: variables.$active
+
+.active_info
+    p
+        font-size: 3vh
+        cursor: pointer
+
+@media (max-width: 1000px)
+    .info_container
+        padding: 1vh

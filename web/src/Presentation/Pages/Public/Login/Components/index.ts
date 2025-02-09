@@ -1,0 +1,5 @@
+export * from './ImageLogin'
+export * from './LoginForm'
+export * from './RegisterForm'
+export * from './LoginRedes'
+export * from './LoginFormOr'

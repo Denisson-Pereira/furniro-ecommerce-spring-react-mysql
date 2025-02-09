@@ -1,0 +1,23 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.additional_container
+    @include mixins.flex
+    flex-direction: column
+    gap: 3vh
+    padding-left: 50vh
+    padding-right: 50vh
+    margin-top: 2vh
+    p
+        text-align: justify
+        color: variables.$greyDark
+        font-size: 2vh
+
+@media (max-width: 1000px)
+    .additional_container
+        @include mixins.remover_margens
+        padding: 1vh
+        width: 50vh
+        gap: 0
+        p
+            font-size: 1vh
