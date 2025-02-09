@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import './funiro.styles.sass'
+
+import './Funiro.styles.sass'
 
 export const Funiro = () => {
   const { t } = useTranslation();

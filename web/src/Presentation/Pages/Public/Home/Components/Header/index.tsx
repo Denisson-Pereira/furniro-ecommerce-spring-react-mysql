@@ -1,8 +1,9 @@
 import { useSpring, animated } from '@react-spring/web';
-import './header.styles.sass';
 import { useNavigate } from 'react-router-dom';
 import { ButtonCustom } from '../../../../../Components';
 import { useTranslation } from 'react-i18next';
+
+import './Header.styles.sass';
 
 export const Header = () => {
   const props = useSpring({

@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Funiro Component > should render Funiro component with translated text 1`] = `
+<div>
+  <div
+    class="funiro_container"
+  >
+    <div
+      class="funiro_title"
+    >
+      <p>
+        Share your setup with
+      </p>
+      <span>
+        #FuniroFurniture
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -6,8 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Browse } from ".";
 
 describe("Browse Component", () => {
-    it("", async () => {
-        render(
+    it("should render correctly and match snapshot", async () => {
+        const { container } = render(
             <BrowserRouter>
                 <I18nextProvider i18n={i18n}>
                     <Browse />
@@ -16,7 +16,10 @@ describe("Browse Component", () => {
         );
 
         expect(screen.getByText(/Browse the Range/)).toBeInTheDocument();
+
         const text2 = await screen.findByText(/Living/);
         expect(text2).toBeInTheDocument();
-    })
-})
+
+        expect(container).toMatchSnapshot();
+    });
+});
