@@ -153,7 +153,7 @@ export const Products = () => {
                         type="text"
                         name='input_search'
                         id='input_search'
-                        placeholder='Search products'
+                        placeholder={t("filter.search")}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
