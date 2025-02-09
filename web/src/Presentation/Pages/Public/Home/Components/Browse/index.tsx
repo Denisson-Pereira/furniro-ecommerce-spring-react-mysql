@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { ICategory } from "../../../../../../Core/Models/ICategory"
 import { SpinnerComponent } from "../../../../../Components";
 import { categoriesServiceLocator } from "../../../../../../Infra/Services/categoriesServiceLocator";
-
-import './browse.styles.sass'
 import { useHandleCategory } from "../../../../../Hooks/useHandleCategory";
 import { useTranslation } from "react-i18next";
+
+import './Browse.styles.sass'
 
 export const Browse = () => {
     const [categories, setCategories] = useState<ICategory[]>([]);
