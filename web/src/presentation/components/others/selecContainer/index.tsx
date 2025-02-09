@@ -14,6 +14,11 @@ export const SelecContainer = () => {
             >
                 <option value="en">EN 🇺🇸</option>
                 <option value="pt">PT 🇧🇷</option>
+                <option value="es">ES 🇪🇸</option>
+                <option value="fr">FR 🇫🇷</option>
+                <option value="de">DE 🇩🇪</option>
+                <option value="ja">JA 🇯🇵</option>
+                <option value="zh">ZH 🇨🇳</option>
             </select>
         </div>
     )

@@ -1,0 +1,124 @@
+{
+    "home": {
+        "title1": "新品到货",
+        "subTitle1": "探索我们的",
+        "subTitle2": "新系列",
+        "text1": "探索我们最新的系列，时尚与优雅完美结合。发现专为优雅与舒适设计的新款。",
+        "btn": "立即购买",
+        "title2": "浏览系列",
+        "subTitle3": "按类别浏览各种产品，开启无限的增长与成功机会。",
+        "title3": "50+ 精美的房间灵感",
+        "subTitle4": "我们的设计师已经创建了许多精美的房间原型来启发您。",
+        "btn2": "探索更多",
+        "title4": "与我们分享你的布局"
+    },
+    "footer": {
+        "titles": {
+            "links": "链接",
+            "help": "帮助",
+            "newsletter": "新闻订阅"
+        },
+        "help": {
+            "pay": "支付方式",
+            "returns": "退货",
+            "privacy": "隐私政策"
+        },
+        "new": {
+            "email": "请输入您的电子邮件地址",
+            "sub": "订阅"
+        },
+        "reserved": "版权所有",
+        "txt": "本网站仅用于学习目的，并不代表真实实体。"
+    },
+    "navbar": {
+        "home": "首页",
+        "shop": "购物",
+        "about": "关于",
+        "contact": "联系我们",
+        "favorities": "收藏夹",
+        "cart": "购物车",
+        "profile": "个人资料"
+    },
+    "login": {
+        "signIn": "登录",
+        "email": "电子邮件",
+        "emailInput": "请输入您的电子邮件",
+        "password": "密码",
+        "remember": "记住我",
+        "forgot": "忘记密码?",
+        "term": "我同意使用条款和隐私政策",
+        "btn": "登录",
+        "noAccount": "还没有账户?"
+    },
+    "signUp": {
+        "signUp": "注册",
+        "first": "名字",
+        "inputName": "输入名字",
+        "last": "姓氏",
+        "inputLast": "输入姓氏",
+        "email": "电子邮件",
+        "emailInput": "请输入您的电子邮件",
+        "password": "密码",
+        "btn": "注册"
+    },
+    "highQuality": {
+        "high": "高质量",
+        "crafted": "采用优质材料制作",
+        "warranty": "质保",
+        "over": "超过2年",
+        "free": "免费配送",
+        "order": "订单满$150",
+        "24": "24/7 客服支持",
+        "delicated": "专属支持"
+    },
+    "filter": {
+        "featured": "推荐",
+        "high": "最高价",
+        "low": "最低价",
+        "showing": "显示",
+        "of": "共",
+        "results": "结果",
+        "show": "显示",
+        "search": "搜索产品"
+    },
+    "contact": {
+        "contact": "联系我们",
+        "address": "地址",
+        "phone": "电话",
+        "mobile": "手机",
+        "hot": "热线",
+        "work": "工作时间",
+        "name": "您的名字",
+        "email": "电子邮件地址",
+        "subject": "主题",
+        "subjectInput": "这是可选的",
+        "message": "信息",
+        "messageInput": "您好！我想询问",
+        "img": "上传的图片：",
+        "btn": "提交",
+        "title": "与我们联系",
+        "description": "如需了解更多关于我们产品和服务的信息，请随时给我们发电子邮件。我们的员工将随时为您提供帮助。请不要犹豫！"
+    },
+    "favorities": {
+        "search": "搜索收藏夹产品",
+        "noProducts": "未找到产品！"
+    },
+    "cart": {
+        "product": "产品",
+        "price": "价格",
+        "noProducts": "购物车中没有产品！",
+        "cartTotals": "购物车总额",
+        "subtotal": "小计",
+        "total": "总计",
+        "check": "结账"
+    },
+    "profile": {
+        "hello": "你好",
+        "btn": "登出"
+    },
+    "error": {
+        "ops": "哎呀！出了点问题。",
+        "txt": "您正在查找的页面可能已被删除，暂时不可用，或从未存在。",
+        "btn": "返回首页"
+    }
+}

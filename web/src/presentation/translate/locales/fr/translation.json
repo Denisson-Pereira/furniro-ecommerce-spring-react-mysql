@@ -1,0 +1,73 @@
+{
+    "home": {
+        "title1": "Nouvelle Arrivée",
+        "subTitle1": "Découvrez Notre",
+        "subTitle2": "Nouvelle Collection",
+        "text1": "Explorez notre dernière collection, où le style rencontre l'élégance. Découvrez de nouvelles créations conçues pour le confort et la sophistication.",
+        "btn": "ACHETER MAINTENANT",
+        "title2": "Parcourir la Gamme",
+        "subTitle3": "Explorez une large gamme de produits par catégorie et débloquez d'innombrables opportunités de croissance et de succès.",
+        "title3": "50+ Inspirations de Belles Pièces",
+        "subTitle4": "Nos designers ont déjà créé de magnifiques prototypes de pièces pour vous inspirer.",
+        "btn2": "Explorer Plus",
+        "title4": "Partagez votre configuration avec"
+    },
+    "footer": {
+        "titles": {
+            "links": "Liens",
+            "help": "Aide",
+            "newsletter": "Newsletter"
+        },
+        "help": {
+            "pay": "Options de Paiement",
+            "returns": "Retours",
+            "privacy": "Politiques de Confidentialité"
+        },
+        "new": {
+            "email": "Entrez votre adresse e-mail",
+            "sub": "S'ABONNER"
+        },
+        "reserved": "Tous droits réservés",
+        "txt": "Ce site web a été créé à des fins d'apprentissage et ne représente pas une entité réelle."
+    },
+    "navbar": {
+        "home": "Accueil",
+        "shop": "Boutique",
+        "about": "À Propos",
+        "contact": "Contact",
+        "favorities": "Favoris",
+        "cart": "Panier",
+        "profile": "Profil"
+    },
+    "login": {
+        "signIn": "SE CONNECTER",
+        "email": "E-mail",
+        "emailInput": "Entrez votre e-mail",
+        "password": "Mot de passe",
+        "remember": "Se souvenir de moi",
+        "forgot": "Mot de passe oublié?",
+        "term": "J'accepte les Conditions d'Utilisation et la Politique de Confidentialité",
+        "btn": "SE CONNECTER",
+        "noAccount": "Pas encore de compte?"
+    },
+    "signUp": {
+        "signUp": "S'INSCRIRE",
+        "first": "Prénom",
+        "inputName": "Entrez votre prénom",
+        "last": "Nom",
+        "inputLast": "Entrez votre nom",
+        "email": "E-mail",
+        "emailInput": "Entrez votre e-mail",
+        "password": "Mot de passe",
+        "btn": "S'INSCRIRE"
+    },
+    "cart": {
+        "product": "Produit",
+        "price": "Prix",
+        "noProducts": "Aucun produit dans le panier!",
+        "cartTotals": "Totaux du Panier",
+        "subtotal": "Sous-total",
+        "total": "Total",
+        "check": "Passer à la Caisse"
+    }
+}

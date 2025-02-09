@@ -1,0 +1,124 @@
+{
+    "home": {
+        "title1": "Nueva Llegada",
+        "subTitle1": "Descubre Nuestra",
+        "subTitle2": "Nueva Colección",
+        "text1": "Explora nuestra última colección, donde el estilo se une con la sofisticación. Descubre nuevos diseños creados para la elegancia y comodidad.",
+        "btn": "COMPRAR AHORA",
+        "title2": "Explora la Gama",
+        "subTitle3": "Explora una amplia gama de productos por categoría y desbloquea infinitas oportunidades de crecimiento y éxito.",
+        "title3": "50+ Inspiraciones de Hermosas Habitaciones",
+        "subTitle4": "Nuestros diseñadores han creado muchos hermosos prototipos de habitaciones para inspirarte.",
+        "btn2": "Explorar Más",
+        "title4": "Comparte tu configuración con"
+    },
+    "footer": {
+        "titles": {
+            "links": "Enlaces",
+            "help": "Ayuda",
+            "newsletter": "Boletín"
+        },
+        "help": {
+            "pay": "Opciones de Pago",
+            "returns": "Devoluciones",
+            "privacy": "Políticas de Privacidad"
+        },
+        "new": {
+            "email": "Ingresa tu dirección de correo electrónico",
+            "sub": "SUSCRIBIRSE"
+        },
+        "reserved": "Todos los derechos reservados",
+        "txt": "Este sitio web fue creado con fines educativos y no representa una entidad real."
+    },
+    "navbar": {
+        "home": "Inicio",
+        "shop": "Tienda",
+        "about": "Sobre Nosotros",
+        "contact": "Contacto",
+        "favorities": "Favoritos",
+        "cart": "Carrito",
+        "profile": "Perfil"
+    },
+    "login": {
+        "signIn": "INICIAR SESIÓN",
+        "email": "Correo Electrónico",
+        "emailInput": "Ingresa tu correo electrónico",
+        "password": "Contraseña",
+        "remember": "Recuérdame",
+        "forgot": "¿Olvidaste tu contraseña?",
+        "term": "Acepto los Términos de Uso y la Política de Privacidad",
+        "btn": "INICIAR SESIÓN",
+        "noAccount": "¿Aún no tienes cuenta?"
+    },
+    "signUp": {
+        "signUp": "REGISTRARSE",
+        "first": "Nombre",
+        "inputName": "Ingresa tu nombre",
+        "last": "Apellido",
+        "inputLast": "Ingresa tu apellido",
+        "email": "Correo Electrónico",
+        "emailInput": "Ingresa tu correo electrónico",
+        "password": "Contraseña",
+        "btn": "REGISTRARSE"
+    },
+    "highQuality": {
+        "high": "Alta Calidad",
+        "crafted": "Hecho con los mejores materiales",
+        "warranty": "Protección de Garantía",
+        "over": "Más de 2 años",
+        "free": "Envío Gratis",
+        "order": "Pedidos superiores a $150",
+        "24": "Soporte 24/7",
+        "delicated": "Soporte dedicado"
+    },
+    "filter": {
+        "featured": "Destacados",
+        "high": "Precio Más Alto",
+        "low": "Precio Más Bajo",
+        "showing": "Mostrando",
+        "of": "de",
+        "results": "resultados",
+        "show": "Mostrar",
+        "search": "Buscar productos"
+    },
+    "contact": {
+        "contact": "Contacto",
+        "address": "Dirección",
+        "phone": "Teléfono",
+        "mobile": "Móvil",
+        "hot": "Línea Directa",
+        "work": "Horario de Trabajo",
+        "name": "Tu Nombre",
+        "email": "Correo Electrónico",
+        "subject": "Asunto",
+        "subjectInput": "Esto es opcional",
+        "message": "Mensaje",
+        "messageInput": "¡Hola! Me gustaría preguntar sobre",
+        "img": "Imagen subida:",
+        "btn": "Enviar",
+        "title": "Ponte en Contacto con Nosotros",
+        "description": "Para más información sobre nuestros productos y servicios, envíanos un correo electrónico. Nuestro equipo siempre estará ahí para ayudarte. ¡No dudes en escribirnos!"
+    },
+    "favorities": {
+        "search": "Buscar productos favoritos",
+        "noProducts": "¡Producto no encontrado!"
+    },
+    "cart": {
+        "product": "Producto",
+        "price": "Precio",
+        "noProducts": "¡No hay productos en el carrito!",
+        "cartTotals": "Totales del Carrito",
+        "subtotal": "Subtotal",
+        "total": "Total",
+        "check": "Finalizar Compra"
+    },
+    "profile": {
+        "hello": "Hola",
+        "btn": "Cerrar Sesión"
+    },
+    "error": {
+        "ops": "¡Ups! Algo salió mal.",
+        "txt": "La página que buscas puede haber sido eliminada, estar temporalmente no disponible o nunca haber existido.",
+        "btn": "Volver a la Página de Inicio"
+    }
+}

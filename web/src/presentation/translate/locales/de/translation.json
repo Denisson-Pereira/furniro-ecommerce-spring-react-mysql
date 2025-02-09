@@ -1,0 +1,124 @@
+{
+    "home": {
+        "title1": "Neuzugang",
+        "subTitle1": "Entdecken Sie unsere",
+        "subTitle2": "Neue Kollektion",
+        "text1": "Entdecken Sie unsere neueste Kollektion, bei der Stil auf Raffinesse trifft. Entdecken Sie frische Designs, die für Eleganz und Komfort gefertigt wurden.",
+        "btn": "JETZT KAUFEN",
+        "title2": "Durchsuchen Sie das Sortiment",
+        "subTitle3": "Entdecken Sie eine breite Produktpalette nach Kategorien und eröffnen Sie unbegrenzte Wachstums- und Erfolgsmöglichkeiten.",
+        "title3": "50+ Schöne Raum-Inspirationen",
+        "subTitle4": "Unsere Designer haben bereits viele schöne Raumprototypen geschaffen, die Sie inspirieren werden.",
+        "btn2": "Mehr Entdecken",
+        "title4": "Teilen Sie Ihr Setup mit"
+    },
+    "footer": {
+        "titles": {
+            "links": "Links",
+            "help": "Hilfe",
+            "newsletter": "Newsletter"
+        },
+        "help": {
+            "pay": "Zahlungsoptionen",
+            "returns": "Rücksendungen",
+            "privacy": "Datenschutzrichtlinien"
+        },
+        "new": {
+            "email": "Geben Sie Ihre E-Mail-Adresse ein",
+            "sub": "ABONNIEREN"
+        },
+        "reserved": "Alle Rechte vorbehalten",
+        "txt": "Diese Website wurde zu Lernzwecken erstellt und stellt keine echte Entität dar."
+    },
+    "navbar": {
+        "home": "Startseite",
+        "shop": "Shop",
+        "about": "Über uns",
+        "contact": "Kontakt",
+        "favorities": "Favoriten",
+        "cart": "Warenkorb",
+        "profile": "Profil"
+    },
+    "login": {
+        "signIn": "ANMELDEN",
+        "email": "E-Mail",
+        "emailInput": "Geben Sie Ihre E-Mail-Adresse ein",
+        "password": "Passwort",
+        "remember": "Angemeldet bleiben",
+        "forgot": "Passwort vergessen?",
+        "term": "Ich stimme den Nutzungsbedingungen und der Datenschutzrichtlinie zu",
+        "btn": "ANMELDEN",
+        "noAccount": "Noch kein Konto?"
+    },
+    "signUp": {
+        "signUp": "REGISTRIEREN",
+        "first": "Vorname",
+        "inputName": "Name hier",
+        "last": "Nachname",
+        "inputLast": "Nachname hier",
+        "email": "E-Mail",
+        "emailInput": "Geben Sie Ihre E-Mail-Adresse ein",
+        "password": "Passwort",
+        "btn": "REGISTRIEREN"
+    },
+    "highQuality": {
+        "high": "Hohe Qualität",
+        "crafted": "Aus hochwertigen Materialien gefertigt",
+        "warranty": "Garantie",
+        "over": "Über 2 Jahre",
+        "free": "Kostenloser Versand",
+        "order": "Bestellungen über $150",
+        "24": "24/7 Support",
+        "delicated": "Engagierter Support"
+    },
+    "filter": {
+        "featured": "Hervorgehoben",
+        "high": "Höchster Preis",
+        "low": "Niedrigster Preis",
+        "showing": "Zeige",
+        "of": "von",
+        "results": "Ergebnissen",
+        "show": "Anzeigen",
+        "search": "Produkte suchen"
+    },
+    "contact": {
+        "contact": "Kontakt",
+        "address": "Adresse",
+        "phone": "Telefon",
+        "mobile": "Mobil",
+        "hot": "Hotline",
+        "work": "Arbeitszeiten",
+        "name": "Ihr Name",
+        "email": "E-Mail-Adresse",
+        "subject": "Betreff",
+        "subjectInput": "Dies ist optional",
+        "message": "Nachricht",
+        "messageInput": "Hallo! Ich möchte fragen über",
+        "img": "Hochgeladenes Bild:",
+        "btn": "Absenden",
+        "title": "Kontaktieren Sie uns",
+        "description": "Für weitere Informationen zu unseren Produkten und Dienstleistungen können Sie uns gerne eine E-Mail senden. Unser Team ist immer bereit, Ihnen zu helfen. Zögern Sie nicht!"
+    },
+    "favorities": {
+        "search": "Favoritenprodukte suchen",
+        "noProducts": "Produkt nicht gefunden!"
+    },
+    "cart": {
+        "product": "Produkt",
+        "price": "Preis",
+        "noProducts": "Keine Produkte im Warenkorb!",
+        "cartTotals": "Warenkorb Gesamtsumme",
+        "subtotal": "Zwischensumme",
+        "total": "Gesamt",
+        "check": "Zur Kasse"
+    },
+    "profile": {
+        "hello": "Hallo",
+        "btn": "Abmelden"
+    },
+    "error": {
+        "ops": "Ups! Etwas ist schief gelaufen.",
+        "txt": "Die Seite, die Sie suchen, wurde möglicherweise entfernt, ist vorübergehend nicht verfügbar oder existiert möglicherweise nicht.",
+        "btn": "Zur Startseite zurückkehren"
+    }
+}
