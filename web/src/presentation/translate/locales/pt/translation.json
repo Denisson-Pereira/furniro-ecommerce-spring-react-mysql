@@ -60,5 +60,15 @@
         "emailInput": "Digite seu E-mail",
         "password": "Senha",
         "btn": "REGISTRAR"
+    },
+    "highQuality": {
+        "high": "Alta Qualidade",
+        "crafted": "Fabricado com materiais de alta qualidade",
+        "warranty": "Proteção de Garantia",
+        "over": "Mais de 2 anos",
+        "free": "Frete Grátis",
+        "order": "Pedidos acima de $150",
+        "24": "Suporte 24/7",
+        "delicated": "Suporte dedicado"
     }
 }

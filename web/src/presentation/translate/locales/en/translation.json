@@ -60,5 +60,15 @@
         "emailInput": "Enter Your E-mail",
         "password": "Password",
         "btn": "SIGN UP"
+    },
+    "highQuality": {
+        "high": "High Quality",
+        "crafted": "Crafted from top materials",
+        "warranty": "Warranty Propection",
+        "over": "Over 2 years",
+        "free": "Free Shipping",
+        "order": "Order over $150",
+        "24": "24/7 Support",
+        "delicated": "Dedicated support"
     }
 }
