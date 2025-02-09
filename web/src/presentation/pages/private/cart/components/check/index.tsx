@@ -10,6 +10,28 @@ export const Check = () => {
     const { cart, totalValue, totalValuePromo, removeCart } = useCartContext();
     const handlePage = useHandlePage();
 
+    const sendToWhatsApp = () => {
+        const phoneNumber = "5579998310762"; 
+
+        if (cart.length === 0) {
+            alert("Seu carrinho está vazio!");
+            return;
+        }
+
+        let message = "*Pedido Realizado*%0A%0A";
+
+        cart.forEach((item, index) => {
+            message += `*${index + 1}.* ${item.name} - ${monetaryUnit(item.price)}%0A%0A`;
+        });
+
+        message += `*Subtotal:* ${monetaryUnit(totalValue)}%0A%0A`;
+        message += `*Total com Desconto:* ${totalValuePromo}%0A%0A`;
+        message += `*Forma de pagamento:* Especifique aqui`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, "_blank");
+    };
+
   return (
     <div className="check_container">
         <div className="check_left">
@@ -61,7 +83,7 @@ export const Check = () => {
                 <span>{totalValuePromo}</span>
             </div>
             <div className="check_right_btn">
-                <button onClick={() => alert('Purchase completed successfully')}>Check Out</button>
+                <button onClick={sendToWhatsApp}>Check Out</button>
             </div>
         </div>
     </div>
