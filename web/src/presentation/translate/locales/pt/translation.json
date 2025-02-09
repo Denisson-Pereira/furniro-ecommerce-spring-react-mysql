@@ -115,6 +115,11 @@
     "profile": {
         "hello": "Olá",
         "btn": "Sair"
-    } 
+    },
+    "error": {
+        "ops": "Oops! Algo deu errado.",
+        "txt": "A página que você está procurando pode ter sido removida, estar temporariamente indisponível ou nunca ter existido.",
+        "btn": "Voltar Para Página Inicia"
+    }
         
 }

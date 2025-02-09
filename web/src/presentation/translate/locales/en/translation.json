@@ -115,5 +115,11 @@
     "profile": {
         "hello": "Hello",
         "btn": "Logout"
-    } 
+    },
+    "error": {
+        "ops": "Oops! Something went wrong.",
+        "txt": "The page you are looking for may have been removed, temporarily unavailable, or never existed.",
+        "btn": "Go Back to Home Page"
+    }
+    
 }
