@@ -111,5 +111,9 @@
         "subtotal": "Subtotal",
         "total": "Total",
         "check": "Check Out"
-    }
+    },
+    "profile": {
+        "hello": "Hello",
+        "btn": "Logout"
+    } 
 }

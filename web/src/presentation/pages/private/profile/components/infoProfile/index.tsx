@@ -5,9 +5,11 @@ import './infoProfile.styles.sass';
 import { capitalizeWord } from '../../../../../../shared/utils/capitalizeWord/capitalizeWord';
 import { loginServiceLocator } from '../../../../../../infra/services/loginServiceLocator';
 import { ButtonCustom } from '../../../../../components';
+import { useTranslation } from 'react-i18next';
 
 export const InfoProfile = () => {
     const { user } = useAuthContext();
+    const { t } = useTranslation();
 
     return (
         <div className="infoProfile_container">
@@ -18,7 +20,7 @@ export const InfoProfile = () => {
                 />
             </div>
             <div className="infoProfile_details">
-                <h2>{`Olá, ${capitalizeWord(user.first_name)} ${capitalizeWord(user.last_name)}!`}</h2>
+                <h2>{t("profile.hello")}{`, ${capitalizeWord(user.first_name)} ${capitalizeWord(user.last_name)}!`}</h2>
                 <p>{user.email}</p>
             </div>
             <div
@@ -31,7 +33,7 @@ export const InfoProfile = () => {
                     }}
                 >
                     <ButtonCustom 
-                        text='Logout'
+                        text={t("profile.btn")}
                         sizeText={18}
                         type='button'
                     />

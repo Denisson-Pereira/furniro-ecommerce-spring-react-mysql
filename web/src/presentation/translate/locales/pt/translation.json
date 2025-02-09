@@ -111,6 +111,10 @@
         "subtotal": "Subtotal",
         "total": "Total",
         "check": "Finalizar Compra"
-    }
+    },
+    "profile": {
+        "hello": "Olá",
+        "btn": "Sair"
+    } 
         
 }
