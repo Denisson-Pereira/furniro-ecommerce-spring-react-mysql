@@ -102,6 +102,15 @@
     "favorities": {
         "search": "Buscar produtos favoritos",
         "noProducts": "Produto não encontrado!"
+    },
+    "cart": {
+        "product": "Produto",
+        "Price": "Preço",
+        "noProducts": "Nenhum produto no carrinho!",
+        "cartTotals": "Total do Carrinho",
+        "subtotal": "Subtotal",
+        "total": "Total",
+        "check": "Finalizar Compra"
     }
-    
+        
 }

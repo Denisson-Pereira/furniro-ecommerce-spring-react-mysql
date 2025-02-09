@@ -102,5 +102,14 @@
     "favorities": {
         "search": "Search favorities products",
         "noProducts": "Product not found!"
+    },
+    "cart": {
+        "product": "Product",
+        "price": "Price",
+        "noProducts": "No products in cart!",
+        "cartTotals": "Cart Totals",
+        "subtotal": "Subtotal",
+        "total": "Total",
+        "check": "Check Out"
     }
 }

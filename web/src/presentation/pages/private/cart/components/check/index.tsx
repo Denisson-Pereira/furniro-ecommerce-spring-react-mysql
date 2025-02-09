@@ -5,10 +5,12 @@ import './check.styles.sass'
 import { monetaryUnit } from "../../../../../../shared/utils/monetaryUnit/monetaryUnit";
 import { promotionValue } from "../../../../../../shared/utils/promotionValue/promotionValue";
 import { useHandlePage } from "../../../../../hooks/useHandlePage";
+import { useTranslation } from "react-i18next";
 
 export const Check = () => {
     const { cart, totalValue, totalValuePromo, removeCart } = useCartContext();
     const handlePage = useHandlePage();
+    const { t } = useTranslation();
 
     const sendToWhatsApp = () => {
         const phoneNumber = "5579998310762"; 
@@ -36,9 +38,9 @@ export const Check = () => {
     <div className="check_container">
         <div className="check_left">
             <div className="check_left_nav">
-                <p>Product</p>
-                <p>Price</p>
-                <p>Subtotal</p>
+                <p>{t("cart.product")}</p>
+                <p>{t("cart.price")}</p>
+                <p>{t("cart.subtotal")}</p>
             </div>
             <div className="check_left_products_box">
                 {cart.length > 0 ? (
@@ -67,23 +69,23 @@ export const Check = () => {
                     </div>
                 ) : (
                     <div className="check_left_no_products">
-                        <p>No products in cart!</p>
+                        <p>{t("cart.noProducts")}</p>
                     </div>
                 )}
             </div>
         </div>
         <div className="check_right">
-            <p>Cart Totals</p>
+            <p>{t("cart.cartTotals")}</p>
             <div className="check_subtotal">
-                <p>Subtotal</p>
+                <p>{t("cart.subtotal")}</p>
                 <span>{monetaryUnit(totalValue)}</span>
             </div>
             <div className="check_total">
-                <p>Total</p>
+                <p>{t("cart.total")}</p>
                 <span>{totalValuePromo}</span>
             </div>
             <div className="check_right_btn">
-                <button onClick={sendToWhatsApp}>Check Out</button>
+                <button onClick={sendToWhatsApp}>{t("cart.check")}</button>
             </div>
         </div>
     </div>
