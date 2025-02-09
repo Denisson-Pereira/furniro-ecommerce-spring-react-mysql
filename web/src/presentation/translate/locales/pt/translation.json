@@ -98,6 +98,10 @@
         "btn": "Enviar",
         "title": "Entre em Contato Conosco",
         "description": "Para mais informações sobre nossos produtos e serviços, sinta-se à vontade para nos enviar um e-mail. Nossa equipe estará sempre pronta para ajudá-lo. Não hesite!"
+    },
+    "favorities": {
+        "search": "Buscar produtos favoritos",
+        "noProducts": "Produto não encontrado!"
     }
     
 }

@@ -4,10 +4,11 @@ import './searchFavorities.styles.sass'
 import { IProduct } from '../../../../../../core/models/IProduct';
 import { monetaryUnit } from '../../../../../../shared/utils/monetaryUnit/monetaryUnit';
 import { CiSearch } from 'react-icons/ci';
+import { useTranslation } from 'react-i18next';
 
 export const SearchFavorities = () => {
     const { favorities } = useFavoritiesContext();
-
+    const { t } = useTranslation();
     const [searchInput, setSearchInput] = useState<string>('');
     const [searchProducts, setSearchProducts] = useState<IProduct[]>([]);
 
@@ -33,7 +34,7 @@ export const SearchFavorities = () => {
                     type="text"
                     name='inputFavorities_search'
                     id='inputFavorities_search'
-                    placeholder='Search favorities products'
+                    placeholder={t("favorities.search")}
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                 />
@@ -59,7 +60,7 @@ export const SearchFavorities = () => {
                             </div>
                         ))
                     ) : (
-                        <p id='products_not_fount'>Product not found!</p>
+                        <p id='products_not_fount'>{t("favorities.noProducts")}</p>
                     )
                 ) : null}
 

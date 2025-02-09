@@ -98,5 +98,9 @@
         "btn": "Submit",
         "title": "Get In Touch With Us",
         "description": "For more information about our products and services, please feel free to drop us an email. Our staff will always be there to help you out. Do not hesitate!"
-    }  
+    },
+    "favorities": {
+        "search": "Search favorities products",
+        "noProducts": "Product not found!"
+    }
 }
