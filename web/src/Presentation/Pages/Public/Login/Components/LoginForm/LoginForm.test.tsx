@@ -39,7 +39,7 @@ describe("LoginForm Component", () => {
         })
     });
 
-    it("", async () => {
+    it("should login successfully", async () => {
         const { container } = render(
             <AuthContextProvider>
             <BrowserRouter>
