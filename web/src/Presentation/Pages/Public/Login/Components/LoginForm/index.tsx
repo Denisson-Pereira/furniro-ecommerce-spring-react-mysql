@@ -2,14 +2,15 @@ import { useLayoutEffect, useState } from "react";
 import { LoginFormOr, LoginRedes } from "..";
 import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
-import "./loginForm.styles.sass";
 import { loginServiceLocator } from "../../../../../../Infra/Services/loginServiceLocator";
 import { useAuthContext } from "../../../../../Context/authContext";
 import { useNavigate } from "react-router-dom";
 import { getCredentials } from "../../Cache/getCredentials";
 import { setCredentials } from "../../Cache/setCredentials";
 import { getCheck } from "../../Cache/getCheck";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
+
+import './LoginForm.styles.sass'
 
 export const LoginForm = () => {
     const { setUser, loading, setLoading } = useAuthContext();

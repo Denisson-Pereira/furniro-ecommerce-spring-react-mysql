@@ -1,0 +1,553 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LoginForm Component >  1`] = `
+<div>
+  <form
+    class="loginForm_container"
+  >
+    <p
+      class="loginForm_title"
+    >
+      SIGN IN
+    </p>
+    <div
+      class="loginForm_form"
+    >
+      <div
+        class="loginForm_email"
+      >
+        <p>
+          E-mail
+        </p>
+        <div
+          class="login_input"
+        >
+          <input
+            autocomplete="email"
+            id="email_input"
+            name="email_input"
+            placeholder="Enter Your E-mail"
+            required=""
+            type="email"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="loginForm_password"
+      >
+        <p>
+          Password
+        </p>
+        <div
+          class="login_input"
+        >
+          <input
+            id="password_input"
+            name="password_input"
+            placeholder="******"
+            required=""
+            type="password"
+            value=""
+          />
+          <div
+            class="loginForm_icon_eye"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 640 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="loginForm_check_box"
+      >
+        <div
+          class="loginForm_check"
+        >
+          <input
+            id="check_login"
+            name="check_login"
+            type="checkbox"
+          />
+          <p>
+            Remember me
+          </p>
+        </div>
+        <div
+          class="loginForm_forgot"
+        >
+          <a>
+            Forgot password?
+          </a>
+        </div>
+      </div>
+      <div
+        class="loginfForm_terms"
+      >
+        <a
+          href="/src/assets/pdfs/terms.pdf"
+          id="link_pdf"
+          target="_blank"
+        >
+          I agree to the Terms of Use and Privacy Policy
+        </a>
+      </div>
+      <div
+        class="spinner"
+      />
+      <div
+        class="loginFormOr_container"
+      >
+        <div
+          class="loginForm_line"
+        />
+        <div
+          class="loginForm_txt_or"
+        >
+          <p>
+            OR
+          </p>
+        </div>
+        <div
+          class="loginForm_line"
+        />
+      </div>
+      <div
+        class="loginRedes_container"
+      >
+        <div
+          class="loginRedes_icons"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 488 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+            />
+          </svg>
+        </div>
+        <div
+          class="loginRedes_icons"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 320 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+            />
+          </svg>
+        </div>
+        <div
+          class="loginRedes_icons"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    class="home_container"
+  >
+    <nav
+      class="bg-white navbar navbar-expand-lg navbar-light"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="bootstrap_img"
+        >
+          <img
+            alt="logo"
+            src="/src/Assets/Svg/logo.svg"
+          />
+          <p>
+            Furniro
+          </p>
+        </div>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="me-auto pt-2 fs-4 gap-5 navbar-nav"
+          >
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/"
+            >
+              Home
+            </a>
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/shop"
+            >
+              Shop
+            </a>
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/contact"
+            >
+              Contact
+            </a>
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/favorities"
+            >
+              Favorities
+            </a>
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/cart"
+            >
+              Cart
+            </a>
+            <a
+              class="text-dark nav-link"
+              data-discover="true"
+              href="/profile"
+            >
+              Profile
+            </a>
+            <div
+              class="selecContainer_container"
+            >
+              <select
+                id="selecLiguage"
+                name="selecLanguage"
+              >
+                <option
+                  value="en"
+                >
+                  EN 🇺🇸
+                </option>
+                <option
+                  value="pt"
+                >
+                  PT 🇧🇷
+                </option>
+                <option
+                  value="es"
+                >
+                  ES 🇪🇸
+                </option>
+                <option
+                  value="fr"
+                >
+                  FR 🇫🇷
+                </option>
+                <option
+                  value="de"
+                >
+                  DE 🇩🇪
+                </option>
+                <option
+                  value="ja"
+                >
+                  JA 🇯🇵
+                </option>
+                <option
+                  value="zh"
+                >
+                  ZH 🇨🇳
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="header_container"
+    >
+      <div
+        class="header_discover"
+        style="opacity: 0;"
+      >
+        <p
+          class="header_title1"
+        >
+          New Arrival
+        </p>
+        <p
+          class="header_title2"
+        >
+          Discover Our
+        </p>
+        <p
+          class="header_title2"
+        >
+          New Collection
+        </p>
+        <p
+          class="header_txt"
+        >
+          Explore our latest collection, where style meets sophistication. Discover fresh designs crafted for elegance and comfort.
+        </p>
+        <div
+          class="header_btn"
+        >
+          <div
+            class="buttonCustom_container"
+          >
+            <button
+              style="font-size: 24px;"
+              type="button"
+            >
+              BUY NOW
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="browse_container"
+    >
+      <div
+        class="browse_title"
+      >
+        <p>
+          Browse the Range
+        </p>
+        <span>
+          Explore a wide range of products by category and unlock limitless opportunities for growth and success.
+        </span>
+      </div>
+      <div
+        class="spinner-border"
+        role="status"
+      >
+        <span
+          class="visually-hidden"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+    <div
+      class="beautiful_container"
+    >
+      <div
+        class="beautiful_box1"
+      >
+        <p>
+          50+ Beautiful Room Inspirations
+        </p>
+        <span>
+          Our designers have already created many beautiful room prototypes to inspire you.
+        </span>
+        <div
+          class="buttonCustom_container"
+        >
+          <button
+            style="font-size: 18px;"
+            type="button"
+          >
+            Explore More
+          </button>
+        </div>
+      </div>
+      <div
+        class="beautiful_box2"
+      >
+        <img
+          src="/src/Assets/Images/room.png"
+        />
+      </div>
+      <div
+        class="beautiful_box3"
+      >
+        <img
+          src="/src/Assets/Images/home.png"
+        />
+      </div>
+    </div>
+    <div
+      class="funiro_container"
+    >
+      <div
+        class="funiro_title"
+      >
+        <p>
+          Share your setup with
+        </p>
+        <span>
+          #FuniroFurniture
+        </span>
+      </div>
+    </div>
+    <div
+      class="footer_container"
+    >
+      <div
+        class="footer_container_box1"
+      >
+        <div
+          class="footer_box1"
+        >
+          <p>
+            Funiro.
+          </p>
+          <div
+            class="footer_box_div"
+          >
+            <span>
+              400 University Drive Suite 200 Coral Gables,
+            </span>
+            <span>
+              FL 33134 USA
+            </span>
+          </div>
+        </div>
+        <div
+          class="footer_box2"
+        >
+          <p>
+            Links
+          </p>
+          <a
+            href=""
+          >
+            Home
+          </a>
+          <a
+            href=""
+          >
+            Shop
+          </a>
+          <a
+            href=""
+          >
+            About
+          </a>
+          <a
+            href=""
+          >
+            Contact
+          </a>
+        </div>
+        <div
+          class="footer_box3"
+        >
+          <p>
+            Help
+          </p>
+          <a
+            href=""
+          >
+            Payment Options
+          </a>
+          <a
+            href=""
+          >
+            Returns
+          </a>
+          <a
+            href=""
+          >
+            Privacy Policies
+          </a>
+        </div>
+        <div
+          class="footer_box4"
+        >
+          <p>
+            Newsletter
+          </p>
+          <div
+            class="footer_input"
+          >
+            <input
+              id="input_footer"
+              name="input_footer"
+              placeholder="Enter Your Email Address"
+              type="text"
+            />
+            <button>
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer_line"
+      />
+      <div
+        class="footer_container_box2"
+      >
+        <p>
+          2023 furino. 
+          All rights reserved
+        </p>
+      </div>
+      <div
+        class="footer_signature"
+      >
+        <p>
+          This website was created for learning purposes and does not represent a real entity.
+        </p>
+        <div
+          class="footer_signature_box"
+        >
+          <p>
+            © 2025.
+          </p>
+          <span>
+            Denisson Pereira.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
