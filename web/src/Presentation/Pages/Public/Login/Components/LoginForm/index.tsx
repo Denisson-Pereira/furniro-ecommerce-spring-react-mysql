@@ -143,7 +143,7 @@ export const LoginForm = () => {
                     <div className="spinner"></div>
                 ) : (
                     <div className="loginForm_btn">
-                        <button type="submit">{t("login.btn")}</button>
+                        <button type="submit" data-testid="login-button" >{t("login.btn")}</button>
                     </div>
                 )}
                 <LoginFormOr />

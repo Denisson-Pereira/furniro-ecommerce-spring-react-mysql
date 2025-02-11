@@ -59,9 +59,7 @@ describe("LoginForm Component", () => {
             target: { value: Storage.PASSWORDTEST },
         });
 
-        const buttonSubmit = screen.getByRole('button', {
-            name: i18n.t("login.btn")
-        });
+        const buttonSubmit = screen.getByTestId("login-button");
         fireEvent.click(buttonSubmit);
 
         await waitFor(async () => {
@@ -70,7 +68,7 @@ describe("LoginForm Component", () => {
 
             const erroMessage = await screen.findByText(i18n.t("login.btn"));
             expect(erroMessage).toBeInTheDocument();
-        }, { timeout: 10000 });
+        });
 
         expect(container).toMatchSnapshot();
     })
