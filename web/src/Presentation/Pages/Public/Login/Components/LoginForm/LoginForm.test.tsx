@@ -28,9 +28,7 @@ describe("LoginForm Component", () => {
             target: { value: "wrongPassword" },
         });
 
-        const buttonSubmit = screen.getByRole('button', {
-            name: i18n.t("login.btn")
-        });
+        const buttonSubmit = screen.getByTestId("login-button");
         fireEvent.click(buttonSubmit);
 
         await waitFor(async () => {
