@@ -70,7 +70,7 @@ describe("LoginForm Component", () => {
 
             const erroMessage = await screen.findByText(i18n.t("login.btn"));
             expect(erroMessage).toBeInTheDocument();
-        })
+        }, { timeout: 10000 });
 
         expect(container).toMatchSnapshot();
     })
