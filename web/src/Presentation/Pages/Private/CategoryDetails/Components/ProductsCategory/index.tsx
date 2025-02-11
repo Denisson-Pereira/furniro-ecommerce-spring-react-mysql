@@ -25,7 +25,7 @@ export const ProductsCategories = () => {
         async function fetchProducts() {
             setLoading(true);
             try {
-                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
+                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute("products");
                 setProducts(response);
             } catch (error) {
                 console.error('Error fetching products:', error);

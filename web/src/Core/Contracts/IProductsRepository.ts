@@ -1,6 +1,6 @@
 import { IProduct } from "../Models/IProduct";
 
-export interface IGetProductsRepository {
-    getAll(): Promise<IProduct[]>;
+export interface IProductsRepository {
+    getAll(rota: string): Promise<IProduct[]>;
     getById(id: number): Promise<IProduct>;
 }

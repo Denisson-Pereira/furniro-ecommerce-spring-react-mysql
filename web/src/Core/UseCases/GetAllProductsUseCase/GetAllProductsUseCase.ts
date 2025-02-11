@@ -1,16 +1,18 @@
-
-import { IGetProductsRepository } from "../../Contracts/IGetProductsRepository";
-import { ProductExeptions } from "../../Exeptions/ProductExeptions";
+import { IProductsRepository } from "../../Contracts/IProductsRepository";
 import { IProduct } from "../../Models/IProduct";
+import { GetAllBaseUseCase } from "../Bases/GetAllBaseUseCase";
 
-export class GetAllProductsUseCase {
-    constructor(private readonly repository: IGetProductsRepository) {}
+export class GetAllProductsUseCase extends GetAllBaseUseCase<IProduct> {
 
-    async execute(): Promise<IProduct[]> {
-        try {
-            return this.repository.getAll();
-        } catch (error) {
-            throw new ProductExeptions();
-        }
+    constructor(private readonly repository: IProductsRepository) {
+        super();
     }
+
+    getAll(rota: string): Promise<IProduct[]> {
+        return this.repository.getAll(rota);
+    }
+    getName(): string {
+        return "products";
+    }
+
 }

@@ -1,15 +1,15 @@
 import { describe, vi } from "vitest";
 import { ICategory } from "../../Models/ICategory";
 import { GetAllCategoriesUseCase } from "./GetAllCategoriesUseCase";
-import { IGetAllCategoriesRepository } from "../../Contracts/IGetAllCategoriesRepository";
+import { ICategoriesRepository } from "../../Contracts/ICategoriesRepository";
 
 describe("GetAllCategories", () => {
-    let mockRepository: IGetAllCategoriesRepository; 
+    let mockRepository: ICategoriesRepository; 
     let getAllCategories: GetAllCategoriesUseCase;
 
     beforeEach(() => {
         mockRepository = {
-            api: vi.fn() 
+            getAll: vi.fn() 
         };
 
         getAllCategories = new GetAllCategoriesUseCase(mockRepository);
@@ -31,11 +31,11 @@ describe("GetAllCategories", () => {
             }
         ];
 
-        (mockRepository.api as any).mockResolvedValue(category);
+        (mockRepository.getAll as any).mockResolvedValue(category);
 
         const result = await getAllCategories.execute("route");
 
-        expect(mockRepository.api).toHaveBeenCalledTimes(1);
+        expect(mockRepository.getAll).toHaveBeenCalledTimes(1);
         expect(result).toEqual(category);
     });
 });

@@ -22,7 +22,7 @@ export const RelatedProducts = () => {
         setLoading(true);
         async function fetchProducts() {
             try {
-                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
+                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute("products");
                 setProducts(response);
             } catch (error) {
                 console.log(error);

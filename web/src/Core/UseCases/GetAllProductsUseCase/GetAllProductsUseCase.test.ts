@@ -1,10 +1,10 @@
 import { describe, vi } from "vitest";
 import { GetAllProductsUseCase } from "./GetAllProductsUseCase";
-import { IGetProductsRepository } from "../../Contracts/IGetProductsRepository";
+import { IProductsRepository } from "../../Contracts/IProductsRepository";
 import { IProduct } from "../../Models/IProduct";
 
 describe("GetAllProducts", () => {
-    let mockRepository: IGetProductsRepository;
+    let mockRepository: IProductsRepository;
     let getAllProducts: GetAllProductsUseCase;
 
     beforeEach(() => {
@@ -38,7 +38,7 @@ describe("GetAllProducts", () => {
 
         (mockRepository.getAll as any).mockResolvedValue(products);
 
-        const result = await getAllProducts.execute();
+        const result = await getAllProducts.execute("products");
 
         expect(mockRepository.getAll).toHaveBeenCalledTimes(1);
         expect(result).toEqual(products);

@@ -1,8 +1,8 @@
 import { serveConnection, setAuthToken } from "../Connection";
 
-export const getAllProducts = async () => {
+export const getAllProducts = async (rota: string) => {
     try {
-        const response = await fetch(`${serveConnection}/private/products`, {
+        const response = await fetch(`${serveConnection}/private/${rota}`, {
             method: 'GET',
             headers: setAuthToken()
         });

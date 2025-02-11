@@ -36,7 +36,7 @@ export const Products = () => {
         setLoading(true);
         async function fetchProducts() {
             try {
-                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute();
+                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute("products");
                 switch (selecFilter) {
                     case FiltersProductsEnums.featured:
                         setProducts(response);

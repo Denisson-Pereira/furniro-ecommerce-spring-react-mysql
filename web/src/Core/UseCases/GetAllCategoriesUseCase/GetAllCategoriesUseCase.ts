@@ -1,15 +1,18 @@
-import { IGetAllCategoriesRepository } from "../../Contracts/IGetAllCategoriesRepository";
-import { CategoryExeptions } from "../../Exeptions/CategoryExeptions";
+import { ICategoriesRepository } from "../../Contracts/ICategoriesRepository";
 import { ICategory } from "../../Models/ICategory";
+import { GetAllBaseUseCase } from "../Bases/GetAllBaseUseCase";
 
-export class GetAllCategoriesUseCase {
-    constructor(private readonly repository: IGetAllCategoriesRepository) {}
+export class GetAllCategoriesUseCase extends GetAllBaseUseCase<ICategory> {
 
-    execute(rota: string): Promise<ICategory[]> {
-        try {
-            return this.repository.api(rota);
-        } catch (error) {
-            throw new CategoryExeptions();
-        }
+    constructor(private readonly repository: ICategoriesRepository) {
+        super();
     }
+
+    getAll(rota: string): Promise<ICategory[]> {
+        return this.repository.getAll(rota);
+    }
+    getName(): string {
+        return "categories";
+    }
+
 }
