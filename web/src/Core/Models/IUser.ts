@@ -10,4 +10,5 @@ export interface IUser {
     city: string
     street: string
     image: string
+    role: string
 }

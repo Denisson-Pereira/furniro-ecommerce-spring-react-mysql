@@ -27,6 +27,7 @@ public class RegisterUser {
         user.setLast_name(registerDTO.last_name());
         user.setEmail(registerDTO.email());
         user.setPassword(passwordEncoder.encode(registerDTO.password()));
+        user.setRole(registerDTO.role());
 
         return userRepository.save(user);
     }

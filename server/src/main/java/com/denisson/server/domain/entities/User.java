@@ -20,12 +20,20 @@ public class User implements UserDetails {
     private String city;
     private String street;
     private String image;
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public User() {
     }
 
-    public User(Long id, String first_name, String last_name, String email, String password, String phone,
-            String country, String state, String city, String street, String image) {
+    public User(Long id, String first_name, String last_name, String email, String password, String phone, String country, String state, String city, String street, String image, String role) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -37,6 +45,7 @@ public class User implements UserDetails {
         this.city = city;
         this.street = street;
         this.image = image;
+        this.role = role;
     }
 
     
@@ -128,6 +137,7 @@ public class User implements UserDetails {
     public void setImage(String image) {
         this.image = image;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

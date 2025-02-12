@@ -28,7 +28,8 @@ public class RepositoryUserImpl implements IRepositoryUser{
         rs.getString("state"),
         rs.getString("city"),
         rs.getString("street"),
-        rs.getString("image")
+        rs.getString("image"),
+        rs.getString("role")
     );
 
     @Override
@@ -48,8 +49,8 @@ public class RepositoryUserImpl implements IRepositoryUser{
 
     @Override
     public User save(User user) {
-        String sql = "INSERT INTO users (first_name, last_name, email, password, phone, country, state, city, street, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, user.getFirst_name(), user.getLast_name(), user.getEmail(), user.getPassword(), user.getPhone(), user.getCountry(), user.getState(), user.getCity(), user.getStreet(), user.getImage());
+        String sql = "INSERT INTO users (first_name, last_name, email, password, phone, country, state, city, street, image, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, user.getFirst_name(), user.getLast_name(), user.getEmail(), user.getPassword(), user.getPhone(), user.getCountry(), user.getState(), user.getCity(), user.getStreet(), user.getImage(), user.getRole());
 
         return user;
     }

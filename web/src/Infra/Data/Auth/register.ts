@@ -12,7 +12,8 @@ export async function register(data: IRegisterDTO) {
                 first_name: data.first_name,
                 last_name: data.last_name,
                 email: data.email,
-                password: data.password
+                password: data.password,
+                role: 'user'
              }),
         });
 
