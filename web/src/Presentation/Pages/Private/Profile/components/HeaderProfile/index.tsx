@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../../../../../Assets/Images/logo.png'
-
 import './headerPrfole.styles.sass'
 import { useAuthContext } from '../../../../../Context/authContext'
 import { capitalizeWord } from '../../../../../../Shared/Utils/capitalizeWord/capitalizeWord'
