@@ -13,7 +13,7 @@ export const HeaderAdmin = () => {
   return (
     <div className="headerAdmin_container">
         <img src={Logo} alt="logo" />
-        <p>Admin</p>
+        <p>{t("profile.adm")}</p>
         <div className="headerAdmin_lilnks">
             <Link className='headerAdmin_a' to={'/'}>{t("navbar.home")}</Link>
             <p>&gt;</p>
