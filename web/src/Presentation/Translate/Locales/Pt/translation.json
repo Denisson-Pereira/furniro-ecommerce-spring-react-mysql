@@ -114,7 +114,8 @@
     },
     "profile": {
         "hello": "Olá",
-        "btn": "Sair"
+        "btn": "Sair",
+        "adm": "Painel do Administrador"
     },
     "error": {
         "ops": "Oops! Algo deu errado.",

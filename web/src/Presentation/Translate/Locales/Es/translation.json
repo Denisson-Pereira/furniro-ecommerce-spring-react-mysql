@@ -114,7 +114,8 @@
     },
     "profile": {
         "hello": "Hola",
-        "btn": "Cerrar Sesión"
+        "btn": "Cerrar Sesión",
+        "adm": "Página del Administrador"
     },
     "error": {
         "ops": "¡Ups! Algo salió mal.",

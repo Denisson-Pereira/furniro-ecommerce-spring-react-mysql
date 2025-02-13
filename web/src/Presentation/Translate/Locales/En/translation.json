@@ -114,7 +114,8 @@
     },
     "profile": {
         "hello": "Hello",
-        "btn": "Logout"
+        "btn": "Logout",
+        "adm": "Administrator Page"
     },
     "error": {
         "ops": "Oops! Something went wrong.",

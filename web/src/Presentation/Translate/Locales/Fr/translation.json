@@ -69,5 +69,15 @@
         "subtotal": "Sous-total",
         "total": "Total",
         "check": "Passer à la Caisse"
+    },
+    "profile": {
+        "hello": "Bonjour",
+        "btn": "Déconnexion",
+        "adm": "Page de l'Administrateur"
+    },
+    "error": {
+        "ops": "Oups ! Quelque chose s'est mal passé.",
+        "txt": "La page que vous recherchez a peut-être été supprimée, est temporairement indisponible ou n'a jamais existé.",
+        "btn": "Retour à la Page d'Accueil"
     }
 }

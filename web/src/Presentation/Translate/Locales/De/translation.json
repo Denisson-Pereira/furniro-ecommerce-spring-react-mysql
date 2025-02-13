@@ -114,7 +114,8 @@
     },
     "profile": {
         "hello": "Hallo",
-        "btn": "Abmelden"
+        "btn": "Abmelden",
+        "adm": "Administratorseite"
     },
     "error": {
         "ops": "Ups! Etwas ist schief gelaufen.",
