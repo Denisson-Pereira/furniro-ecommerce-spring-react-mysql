@@ -5,7 +5,7 @@ import { getCredentials } from "../../Cache/getCredentials";
 import { getCheck } from "../../Cache/getCheck";
 import { setCredentials } from "../../Cache/setCredentials";
 import { loginServiceLocator } from "../../../../../../Infra/Services/loginServiceLocator";
-import { useLoginFormModel } from "./LoginFormModel";
+import { useLoginFormModel } from "./useLoginFormModel";
 import { vi } from "vitest"; 
 
 vi.mock("../../../../../Context/authContext", () => ({
