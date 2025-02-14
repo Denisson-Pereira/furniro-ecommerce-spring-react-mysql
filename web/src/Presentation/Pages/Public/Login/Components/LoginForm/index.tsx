@@ -1,5 +1,5 @@
-import { useLoginFormModel } from "./model"
-import { LoginFormView } from "./view";
+import { useLoginFormModel } from "./LoginFormModel"
+import { LoginFormView } from "./LoginFormView";
 
 export const LoginForm = () => {
     const loginFormModel = useLoginFormModel();

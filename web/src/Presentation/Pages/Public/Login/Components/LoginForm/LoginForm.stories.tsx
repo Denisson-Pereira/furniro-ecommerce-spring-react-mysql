@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { LoginForm } from "./view";
+import { LoginForm } from "./LoginFormView";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../../../Translate";
 import { Meta, StoryObj } from "@storybook/react";
