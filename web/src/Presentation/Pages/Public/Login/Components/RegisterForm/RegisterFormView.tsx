@@ -4,7 +4,7 @@ import { LoginFormOr, LoginRedes } from '..';
 import { passwordValidation } from '../../../../../../Shared/Validations';
 import { IRegisterFormProps } from './IRegisterFormProps';
 
-import './RegisterFormStyles.sass'
+import './RegisterForm.styles.sass'
 
 export const RegisterFormView = ({ handleRegister, first_name, setFirst_name, last_name, setLast_name, email, setEmail, visible, password, setPassword, setVisible, loading, t } : IRegisterFormProps) => {
 

@@ -3,7 +3,7 @@ import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
 import { ILoginFormViewProps } from "./ILoginFormProps";
 
-import './LoginFormStyles.sass'
+import './LoginForm.styles.sass'
 
 export const LoginFormView = ({ t, email, setEmail, handleLogin, visible, password, setPassword, check, setCheck, handleCache, setVisible, loading }: ILoginFormViewProps) => {
 

@@ -1,5 +1,5 @@
 import { I18nextProvider } from "react-i18next";
-import { Browse } from ".";
+import { Browse } from "./BrowseView";
 import i18n from "../../../../../Translate";
 import { Meta, StoryObj } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";

@@ -21,3 +21,4 @@ describe("Browse Component", () => {
         expect(text2).toBeInTheDocument();
     });
 });
+
