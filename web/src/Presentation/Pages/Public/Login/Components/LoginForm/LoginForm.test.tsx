@@ -4,8 +4,8 @@ import { AuthContextProvider } from "../../../../../Context/authContext";
 import { BrowserRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../../../Translate";
-import { LoginForm } from ".";
 import { Storage } from "../../../../../../Shared/Constants";
+import { LoginForm } from ".";
 
 describe("LoginForm Component", () => {
     it("should show login process", async () => {
