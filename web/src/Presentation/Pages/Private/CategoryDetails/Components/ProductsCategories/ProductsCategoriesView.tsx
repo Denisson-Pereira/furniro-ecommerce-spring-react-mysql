@@ -1,40 +1,20 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import './productsCategories.styles.sass';
-import { useAuthContext } from '../../../../../Context/authContext';
-import { getAllProductsServiceLocator } from '../../../../../../Infra/Services/getProductsServiceLocator';
-import { IProduct } from '../../../../../../Core/Models/IProduct';
+import { useEffect } from 'react';
 import { useFavoritiesContext } from '../../../../../Context/favoritiesContext';
 import { FaHeart } from 'react-icons/fa';
 import { monetaryUnit } from '../../../../../../Shared/Utils/monetaryUnit/monetaryUnit';
 import { promotionValue } from '../../../../../../Shared/Utils/promotionValue/promotionValue';
 import { useHandlePage } from '../../../../../Hooks/useHandlePage';
 import { CiHeart } from 'react-icons/ci';
+import { IProductsCategoriesProps } from './IProductsCategoriesProps';
 
-export const ProductsCategories = () => {
+import './productsCategories.styles.sass';
+
+export const ProductsCategoriesView = ({ products, filteredProducts, setFilteredProducts, loading }: IProductsCategoriesProps) => {
     const navigate = useNavigate();
     const { category } = useParams();
     const handlePage = useHandlePage();
-    const { loading, setLoading } = useAuthContext();
     const { addFavorite, isFavorite } = useFavoritiesContext();
-
-    const [products, setProducts] = useState<IProduct[]>([]);
-    const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
-
-    useEffect(() => {
-        async function fetchProducts() {
-            setLoading(true);
-            try {
-                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute("products");
-                setProducts(response);
-            } catch (error) {
-                console.error('Error fetching products:', error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchProducts();
-    }, []);
 
     useEffect(() => {
         if (category) {

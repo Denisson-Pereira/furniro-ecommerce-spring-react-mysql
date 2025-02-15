@@ -1,2 +1,2 @@
-export * from './ProductsCategory'
 export * from './HeaderCategory'
+export * from './ProductsCategories'
