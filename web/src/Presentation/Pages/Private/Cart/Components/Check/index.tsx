@@ -1,6 +1,5 @@
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../../../../../Context/cartContext"
-
 import './check.styles.sass'
 import { monetaryUnit } from "../../../../../../Shared/Utils/monetaryUnit/monetaryUnit";
 import { promotionValue } from "../../../../../../Shared/Utils/promotionValue/promotionValue";

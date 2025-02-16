@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
 import { useHandlePage } from "../../../../../Hooks/useHandlePage";
-import { getAllProductsServiceLocator } from "../../../../../../Infra/Services/getProductsServiceLocator";
 import { FiltersProductsEnums } from "../../../../../../Shared/Enums/filtersProductsEnums";
+import { productServiceLocator } from "../../../../../../Infra/Services/productServiceLocator";
 
 export const useProductsModel = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -22,7 +22,7 @@ export const useProductsModel = () => {
     async function fetchProducts() {
       try {
         const response =
-          await getAllProductsServiceLocator.getAllProductsUseCase.execute(
+          await productServiceLocator.getAllProductsUseCase.execute(
             "products"
           );
         switch (selecFilter) {

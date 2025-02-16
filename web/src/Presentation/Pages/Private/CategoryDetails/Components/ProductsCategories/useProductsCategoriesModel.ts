@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
-import { getAllProductsServiceLocator } from "../../../../../../Infra/Services/getProductsServiceLocator";
+import { productServiceLocator } from "../../../../../../Infra/Services/productServiceLocator";
 
 export const useProductsCategoriesModel = () => {
 
@@ -12,7 +12,7 @@ export const useProductsCategoriesModel = () => {
         async function fetchProducts() {
             setLoading(true);
             try {
-                const response = await getAllProductsServiceLocator.getAllProductsUseCase.execute("products");
+                const response = await productServiceLocator.getAllProductsUseCase.execute("products");
                 setProducts(response);
             } catch (error) {
                 console.error('Error fetching products:', error);

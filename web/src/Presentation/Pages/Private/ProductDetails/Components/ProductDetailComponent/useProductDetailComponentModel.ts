@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
-import { getProductByIdServiceLocator } from "../../../../../../Infra/Services/getProductsServiceLocator";
+import { productServiceLocator } from "../../../../../../Infra/Services/productServiceLocator";
 
 export const useProductDetailComponentModel = (id: string | undefined) => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -11,7 +11,7 @@ export const useProductDetailComponentModel = (id: string | undefined) => {
       async function fetchProduct() {
         try {
           if (id) {
-            const response = await getProductByIdServiceLocator.getProductUseCase.execute(parseInt(id));
+            const response = await productServiceLocator.getProductByIdUseCase.execute(parseInt(id));
             setProduct(response);
           }
         } catch (error) {
