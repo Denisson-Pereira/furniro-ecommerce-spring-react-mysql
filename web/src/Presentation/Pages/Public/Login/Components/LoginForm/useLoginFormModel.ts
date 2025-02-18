@@ -5,9 +5,13 @@ import { useLayoutEffect, useState } from "react";
 import { getCredentials } from "../../Cache/getCredentials";
 import { getCheck } from "../../Cache/getCheck";
 import { setCredentials } from "../../Cache/setCredentials";
-import { loginServiceLocator } from "../../../../../../Infra/Services/loginServiceLocator";
+import { LoginRepositoryImpl } from "../../../../../../Infra/Repositories/LoginRepositoryImpl";
+import { LoginUseCase } from "../../../../../../Core/UseCases/LoginUseCase/LoginUseCase";
 
 export const useLoginFormModel = () => {
+    const repository = new LoginRepositoryImpl();
+    const loginUseCase = new LoginUseCase(repository);
+
     const { setUser, loading, setLoading } = useAuthContext();
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -52,7 +56,7 @@ export const useLoginFormModel = () => {
     async function handleLogin() {
         setLoading(true)
         try {
-            const response = await loginServiceLocator.loginUseCase.execute({ email, password });
+            const response = await loginUseCase.execute({ email, password });
             if (response) {
                 setUser(response);
                 navigate('/shop');

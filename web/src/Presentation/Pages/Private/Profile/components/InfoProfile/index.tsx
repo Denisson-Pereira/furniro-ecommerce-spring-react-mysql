@@ -1,13 +1,17 @@
 import { useAuthContext } from '../../../../../Context/authContext';
 import User from '../../../../../../Assets/Svg/user.svg'
-
-import './infoProfile.styles.sass';
 import { capitalizeWord } from '../../../../../../Shared/Utils/capitalizeWord/capitalizeWord';
-import { loginServiceLocator } from '../../../../../../Infra/Services/loginServiceLocator';
 import { ButtonCustom } from '../../../../../Components';
 import { useTranslation } from 'react-i18next';
+import { LogoutUseCase } from '../../../../../../Core/UseCases/LogoutUseCase/LogoutUseCase';
+import { LoginRepositoryImpl } from '../../../../../../Infra/Repositories/LoginRepositoryImpl';
+
+import './infoProfile.styles.sass';
 
 export const InfoProfile = () => {
+    const repository = new LoginRepositoryImpl();
+    const logoutUseCase = new LogoutUseCase(repository);
+
     const { user } = useAuthContext();
     const { t } = useTranslation();
 
@@ -28,7 +32,7 @@ export const InfoProfile = () => {
             >
                 <div
                     onClick={() => {
-                        loginServiceLocator.logoutUseCase.execute();
+                        logoutUseCase.execute();
                         window.location.reload();
                     }}
                 >

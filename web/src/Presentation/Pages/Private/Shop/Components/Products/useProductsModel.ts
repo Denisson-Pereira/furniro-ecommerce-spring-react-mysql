@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
 import { useHandlePage } from "../../../../../Hooks/useHandlePage";
 import { FiltersProductsEnums } from "../../../../../../Shared/Enums/filtersProductsEnums";
-import { productServiceLocator } from "../../../../../../Infra/Services/productServiceLocator";
+import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
+import { GetAllProductsUseCase } from "../../../../../../Core/UseCases/GetAllProductsUseCase/GetAllProductsUseCase";
 
 export const useProductsModel = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -15,6 +16,9 @@ export const useProductsModel = () => {
   const [productsSearch, setProductsSearch] = useState<IProduct[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  const repository = new GetProductRepositoryImpl();
+  const getAllProductsUseCase = new GetAllProductsUseCase(repository);
+
   const handlePage = useHandlePage();
 
   useEffect(() => {
@@ -22,7 +26,7 @@ export const useProductsModel = () => {
     async function fetchProducts() {
       try {
         const response =
-          await productServiceLocator.getAllProductsUseCase.execute(
+          await getAllProductsUseCase.execute(
             "products"
           );
         switch (selecFilter) {

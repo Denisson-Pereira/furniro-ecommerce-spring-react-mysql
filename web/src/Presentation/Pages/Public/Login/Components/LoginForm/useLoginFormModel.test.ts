@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { getCredentials } from "../../Cache/getCredentials";
 import { getCheck } from "../../Cache/getCheck";
 import { setCredentials } from "../../Cache/setCredentials";
-import { loginServiceLocator } from "../../../../../../Infra/Services/loginServiceLocator";
 import { useLoginFormModel } from "./useLoginFormModel";
+import { LoginUseCase } from "../../../../../../Core/UseCases/LoginUseCase/LoginUseCase";
 import { vi } from "vitest"; 
 
 vi.mock("../../../../../Context/authContext", () => ({
@@ -28,34 +28,38 @@ vi.mock("../../Cache/setCredentials", () => ({
   setCredentials: vi.fn(),
 }));
 
-vi.mock("../../../../../../Infra/Services/loginServiceLocator", () => ({
-  loginServiceLocator: {
-    loginUseCase: {
+vi.mock("../../../../../../Core/UseCases/LoginUseCase/LoginUseCase", () => {
+  return {
+    LoginUseCase: vi.fn().mockImplementation(() => ({
       execute: vi.fn(),
-    },
-  },
-}));
+    })),
+  };
+});
 
 describe("useLoginFormModel", () => {
   let mockSetUser: ReturnType<typeof vi.fn>;
   let mockSetLoading: ReturnType<typeof vi.fn>;
   let mockNavigate: ReturnType<typeof vi.fn>;
+  let mockLoginUseCase: { execute: ReturnType<typeof vi.fn> };
 
   beforeEach(() => {
     mockSetUser = vi.fn();
     mockSetLoading = vi.fn();
     mockNavigate = vi.fn();
+    mockLoginUseCase = { execute: vi.fn() }; 
 
-    (useAuthContext as jest.Mock).mockReturnValue({
+    (useAuthContext as unknown as jest.Mock).mockReturnValue({
       setUser: mockSetUser,
       loading: false,
       setLoading: mockSetLoading,
     });
 
-    (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
+    (useNavigate as unknown as jest.Mock).mockReturnValue(mockNavigate);
+
+    (LoginUseCase as unknown as jest.Mock).mockImplementation(() => mockLoginUseCase);
   });
 
-  it("should return the correct initial states", () => {
+  it("deve retornar os estados iniciais corretos", () => {
     const { result } = renderHook(() => useLoginFormModel());
 
     expect(result.current.email).toBe("");
@@ -65,12 +69,12 @@ describe("useLoginFormModel", () => {
     expect(result.current.loading).toBe(false);
   });
 
-  it("should load credentials from cache when the hook is mounted", async () => {
-    (getCredentials as jest.Mock).mockResolvedValue({ email: "teste@email.com", password: "123456" });
-    (getCheck as jest.Mock).mockResolvedValue("true");
-  
+  it("deve carregar credenciais do cache ao montar o hook", async () => {
+    (getCredentials as unknown as jest.Mock).mockResolvedValue({ email: "teste@email.com", password: "123456" });
+    (getCheck as unknown as jest.Mock).mockResolvedValue("true");
+
     const { result } = renderHook(() => useLoginFormModel());
-  
+
     await waitFor(() => {
       expect(result.current.email).toBe("teste@email.com");
       expect(result.current.password).toBe("123456");
@@ -78,7 +82,7 @@ describe("useLoginFormModel", () => {
     });
   });
 
-  it("should update the check state and save credentials when handleCache is called", () => {
+  it("deve atualizar o estado check e salvar credenciais ao chamar handleCache", () => {
     const { result } = renderHook(() => useLoginFormModel());
 
     act(() => {
@@ -89,8 +93,8 @@ describe("useLoginFormModel", () => {
     expect(result.current.check).toBe(true);
   });
 
-  it("should log in with correct credentials", async () => {
-    (loginServiceLocator.loginUseCase.execute as jest.Mock).mockResolvedValue({ id: 1, name: "User" });
+  it("deve fazer login com credenciais corretas", async () => {
+    mockLoginUseCase.execute.mockResolvedValue({ id: 1, name: "User" });
 
     const { result } = renderHook(() => useLoginFormModel());
 
@@ -104,14 +108,14 @@ describe("useLoginFormModel", () => {
     });
 
     expect(mockSetLoading).toHaveBeenCalledWith(true);
-    expect(loginServiceLocator.loginUseCase.execute).toHaveBeenCalledWith({ email: "user@email.com", password: "password123" });
+    expect(mockLoginUseCase.execute).toHaveBeenCalledWith({ email: "user@email.com", password: "password123" });
     expect(mockSetUser).toHaveBeenCalledWith({ id: 1, name: "User" });
     expect(mockNavigate).toHaveBeenCalledWith("/shop");
     expect(mockSetLoading).toHaveBeenCalledWith(false);
   });
 
-  it("should show an error if login fails", async () => {
-    (loginServiceLocator.loginUseCase.execute as jest.Mock).mockRejectedValue(new Error("Login falhou"));
+  it("deve exibir erro ao falhar no login", async () => {
+    mockLoginUseCase.execute.mockRejectedValue(new Error("Login falhou"));
 
     const alertMock = vi.spyOn(window, "alert").mockImplementation(() => {});
 

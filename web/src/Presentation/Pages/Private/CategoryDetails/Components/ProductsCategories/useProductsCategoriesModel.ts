@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
-import { productServiceLocator } from "../../../../../../Infra/Services/productServiceLocator";
+import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
+import { GetAllProductsUseCase } from "../../../../../../Core/UseCases/GetAllProductsUseCase/GetAllProductsUseCase";
 
 export const useProductsCategoriesModel = () => {
+    const repository = new GetProductRepositoryImpl();
+    const getAllProductsUseCase = new GetAllProductsUseCase(repository);
 
     const [products, setProducts] = useState<IProduct[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
@@ -12,7 +15,7 @@ export const useProductsCategoriesModel = () => {
         async function fetchProducts() {
             setLoading(true);
             try {
-                const response = await productServiceLocator.getAllProductsUseCase.execute("products");
+                const response = await getAllProductsUseCase.execute("products");
                 setProducts(response);
             } catch (error) {
                 console.error('Error fetching products:', error);

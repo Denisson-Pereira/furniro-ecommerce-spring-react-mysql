@@ -1,9 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useAuthContext } from "../../../../../Context/authContext";
 import { useState } from "react";
-import { registerServiceLocator } from "../../../../../../Infra/Services/registerServiceLocator";
+import { LoginRepositoryImpl } from "../../../../../../Infra/Repositories/LoginRepositoryImpl";
+import { RegisterUseCase } from "../../../../../../Core/UseCases/RegisterUseCase/RegisterUseCase";
 
 export const useRegisterFormModel = () => {
+  const repository = new LoginRepositoryImpl();
+  const regsterUseCase = new RegisterUseCase(repository);
+
     const { loading, setLoading } = useAuthContext();
     const { t } = useTranslation();
     const [visible, setVisible] = useState<boolean>(false);
@@ -16,7 +20,7 @@ export const useRegisterFormModel = () => {
     async function handleRegister() {
       setLoading(true);
       try {
-        const respose = await registerServiceLocator.regsterUseCase.execute({ first_name, last_name, email, password });
+        const respose = await regsterUseCase.execute({ first_name, last_name, email, password });
         if (respose) {
           alert("User created successfully!");
           location.reload();
