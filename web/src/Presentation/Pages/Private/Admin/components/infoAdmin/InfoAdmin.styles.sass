@@ -1,0 +1,38 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.infoAdmin_container
+    @include mixins.center
+    border-radius: 8px
+    padding: 20px
+    flex-direction: column
+    margin-block: 10vh
+
+.infoAdmin_image
+    @include mixins.center
+    margin-bottom: 15px
+
+    img
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        object-fit: cover
+
+.infoAdmin_details
+    text-align: center
+    margin-bottom: 15px
+
+    h2
+        margin: 0
+        font-size: 1.5rem
+        color: #333
+
+    p
+        margin: 5px 0
+        font-size: 1rem
+        color: #666
+
+.infoAdmin_logout
+    @include mixins.center
+    cursor: pointer
+
