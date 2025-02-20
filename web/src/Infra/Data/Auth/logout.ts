@@ -1,9 +1,9 @@
-import { Storage } from "../../../Shared/Constants";
+import { Constants } from "../../../Shared/Constants";
 
 export function logout(): void {
     try {
-        localStorage.removeItem(Storage.USER);
-        localStorage.removeItem(Storage.TOKEN);
+        localStorage.removeItem(Constants.USER);
+        localStorage.removeItem(Constants.TOKEN);
 
     } catch (error) {
         console.error('Erro ao realizar logout:', error);

@@ -4,8 +4,8 @@ import { AuthContextProvider } from "../../../../../Context/authContext";
 import { BrowserRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../../../Translate";
-import { Storage } from "../../../../../../Shared/Constants";
 import { LoginForm } from ".";
+import { Constants } from "../../../../../../Shared/Constants";
 
 describe("LoginForm Component", () => {
     it("should show login process", async () => {
@@ -20,7 +20,7 @@ describe("LoginForm Component", () => {
         );
 
         fireEvent.change(screen.getByPlaceholderText(i18n.t("login.emailInput")), {
-            target: { value: Storage.EMAILTEST },
+            target: { value: Constants.EMAIL_TEST },
         });
 
         fireEvent.change(screen.getByPlaceholderText("******"), {

@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { IUser } from "../../Core/Models/IUser";
-import { Storage } from "../../Shared/Constants";
 import { Props } from "../@Types/props";
+import { Constants } from "../../Shared/Constants";
 
 interface AuthContextType {
     user: IUser;
@@ -22,10 +22,10 @@ export const AuthContextProvider = ({ children }: Props) => {
 
     useEffect(() => {
         const loaderUser = async () => {
-            const getUserStore = localStorage.getItem(Storage.USER);
+            const getUserStore = localStorage.getItem(Constants.USER);
             const userStore: IUser = getUserStore ? JSON.parse(getUserStore) : undefined;
     
-            const getTokenStore = localStorage.getItem(Storage.TOKEN);
+            const getTokenStore = localStorage.getItem(Constants.TOKEN);
     
             if (userStore && userStore.id && getTokenStore) {
                 setUser(userStore);

@@ -1,4 +1,4 @@
-import { Storage } from "../../../Shared/Constants";
+import { Constants } from "../../../Shared/Constants";
 import { ILoginDTO } from "../../Dtos/ILoginDTO";
 import { serveConnection } from "../Connection";
 
@@ -21,8 +21,8 @@ export async function login(data: ILoginDTO) {
 
         const { user, token } = await response.json();
 
-        localStorage.setItem(Storage.USER, JSON.stringify(user));
-        localStorage.setItem(Storage.TOKEN, JSON.stringify(token)); 
+        localStorage.setItem(Constants.USER, JSON.stringify(user));
+        localStorage.setItem(Constants.TOKEN, JSON.stringify(token)); 
 
         return user;
     } catch (error) {
