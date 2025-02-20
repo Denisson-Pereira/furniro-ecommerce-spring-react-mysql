@@ -4,7 +4,7 @@ import { useAuthContext } from '../../../../../Context/authContext'
 import { capitalizeWord } from '../../../../../../Shared/Utils/capitalizeWord/capitalizeWord'
 import { useTranslation } from 'react-i18next'
 
-import './HeaderPrfole.styles.sass'
+import './HeaderProfile.styles.sass'
 
 export const HeaderProfile = () => {
   const { user } = useAuthContext();
