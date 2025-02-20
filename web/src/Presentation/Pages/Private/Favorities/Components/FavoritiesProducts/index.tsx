@@ -1,9 +1,10 @@
 import { useFavoritiesContext } from '../../../../../Context/favoritiesContext'
 import { useHandlePage } from '../../../../../Hooks/useHandlePage';
-import './favoritiesProducts.styles.sass'
 import { monetaryUnit } from '../../../../../../Shared/Utils/monetaryUnit/monetaryUnit';
 import { promotionValue } from '../../../../../../Shared/Utils/promotionValue/promotionValue';
 import { FaHeart } from 'react-icons/fa';
+
+import './FavoritiesProducts.styles.sass'
 
 export const FavoritiesProducts = () => {
     const { favorities, isFavorite, addFavorite } = useFavoritiesContext();

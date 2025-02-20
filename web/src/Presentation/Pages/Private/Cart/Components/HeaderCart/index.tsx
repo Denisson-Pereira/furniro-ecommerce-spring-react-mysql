@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../../../../../Assets/Images/logo.png'
-
-import './headerCart.styles.sass'
 import { useTranslation } from 'react-i18next'
+
+import './HeaderCart.styles.sass'
 
 export const HeaderCart = () => {
     const { t } = useTranslation();

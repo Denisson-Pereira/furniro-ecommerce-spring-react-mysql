@@ -1,4 +1,4 @@
-import './loginFormOr.styles.sass'
+import './LoginFormOr.styles.sass'
 
 export const LoginFormOr = () => {
     return (

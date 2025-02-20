@@ -4,11 +4,12 @@ import { HighQuality } from '../../../../../Components';
 import Grid from '../../../../../../Assets/Icons/grid.png';
 import List from '../../../../../../Assets/Icons/list.png';
 import { FaHeart } from "react-icons/fa";
-import './productsShop.styles.sass';
 import { CiHeart, CiSearch } from 'react-icons/ci';
 import { useFavoritiesContext } from '../../../../../Context/favoritiesContext';
 import { useTranslation } from 'react-i18next';
 import { IProductsProps } from './IProductsProps';
+
+import './ProductsShop.styles.sass';
 
 export const ProductsView = ({ loading, selecFilter, setSelectFilter, setProductsList, startIndex, endIndex, products, size, setSize, searchTerm, setSearchTerm, productsSearch, handlePage, productsList, visibleProducts, pages, currentPage, setCurrentPage }: IProductsProps) => {
     const { isFavorite, addFavorite } = useFavoritiesContext();

@@ -8,7 +8,7 @@ import { useHandlePage } from '../../../../../Hooks/useHandlePage';
 import { CiHeart } from 'react-icons/ci';
 import { IProductsCategoriesProps } from './IProductsCategoriesProps';
 
-import './productsCategories.styles.sass';
+import './ProductsCategories.styles.sass';
 
 export const ProductsCategoriesView = ({ products, filteredProducts, setFilteredProducts, loading }: IProductsCategoriesProps) => {
     const navigate = useNavigate();

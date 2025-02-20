@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Additional, Description, Reviews } from "..";
 
-import './info.styles.sass'
+import './Info.styles.sass'
 
 export const Info = () => {
     const [activeSection, setActiveSection] = useState<"description" | "additional" | "reviews">("description");

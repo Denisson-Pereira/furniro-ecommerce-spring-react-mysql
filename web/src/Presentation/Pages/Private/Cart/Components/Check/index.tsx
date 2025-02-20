@@ -1,11 +1,12 @@
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../../../../../Context/cartContext"
-import './check.styles.sass'
 import { monetaryUnit } from "../../../../../../Shared/Utils/monetaryUnit/monetaryUnit";
 import { promotionValue } from "../../../../../../Shared/Utils/promotionValue/promotionValue";
 import { useHandlePage } from "../../../../../Hooks/useHandlePage";
 import { useTranslation } from "react-i18next";
 import { Constants } from "../../../../../../Shared/Constants";
+
+import './Check.styles.sass'
 
 export const Check = () => {
     const { cart, totalValue, totalValuePromo, removeCart } = useCartContext();

@@ -1,4 +1,4 @@
-import './reviews.styles.sass'
+import './Reviews.styles.sass'
 
 export const Reviews = () => {
   return (

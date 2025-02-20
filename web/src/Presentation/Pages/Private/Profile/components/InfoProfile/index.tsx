@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { LogoutUseCase } from '../../../../../../Core/UseCases/LogoutUseCase/LogoutUseCase';
 import { LoginRepositoryImpl } from '../../../../../../Infra/Repositories/LoginRepositoryImpl';
 
-import './infoProfile.styles.sass';
+import './InfoProfile.styles.sass';
 
 export const InfoProfile = () => {
     const repository = new LoginRepositoryImpl();

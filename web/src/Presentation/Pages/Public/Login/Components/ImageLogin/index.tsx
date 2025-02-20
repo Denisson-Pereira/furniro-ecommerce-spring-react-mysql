@@ -1,4 +1,4 @@
-import './imageLogin.styles.sass'
+import './ImageLogin.styles.sass'
 
 export const ImageLogin = () => {
   return (

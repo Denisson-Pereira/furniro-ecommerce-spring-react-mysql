@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import './getInTouch.styles.sass'
+
+import './GetInTouch.styles.sass'
 
 export const GetInTouch = () => {
   const { t } = useTranslation();

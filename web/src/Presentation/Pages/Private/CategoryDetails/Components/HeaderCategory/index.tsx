@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import Logo from '../../../../../../Assets/Images/logo.png'
 
-import './headerCategory,styles.sass'
+import './HeaderCategory,styles.sass'
 
 export const HeaderCategory = () => {
     const { category } = useParams();

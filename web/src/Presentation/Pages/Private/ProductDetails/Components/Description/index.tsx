@@ -1,6 +1,6 @@
 import Sofa from '../../../../../../Assets/Images/sofa.png'
 
-import './description.styles.sass'
+import './Description.styles.sass'
 
 export const Description = () => {
   return (

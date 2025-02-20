@@ -3,7 +3,7 @@ import Warranty from '../../../../Assets/Icons/warranty.png'
 import Free from '../../../../Assets/Icons/free.png'
 import Image from '../../../../Assets/Icons/24.png'
 
-import './highQuality.styles.sass'
+import './HighQuality.styles.sass'
 import { useTranslation } from 'react-i18next'
 
 export const HighQuality = () => {

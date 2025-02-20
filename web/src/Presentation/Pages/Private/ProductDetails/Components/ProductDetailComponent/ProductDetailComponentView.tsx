@@ -8,8 +8,9 @@ import { useCartContext } from '../../../../../Context/cartContext';
 import { useFavoritiesContext } from '../../../../../Context/favoritiesContext';
 import { NavScroll } from '../../../../../Components';
 import { monetaryUnit, promotionValue } from '../../../../../../Shared/Utils';
-import './productDetailComponent.styles.sass'
 import { IProductDetailComponentProps } from './IProductDetailComponentProps';
+
+import './ProductDetailComponent.styles.sass'
 
 export const ProductDetailComponentView = ({ loading, product }: IProductDetailComponentProps) => {
   const { addCart } = useCartContext();

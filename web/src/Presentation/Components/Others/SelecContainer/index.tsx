@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import './selecContainer.styles.sass'
+import './SelecContainer.styles.sass'
 
 export const SelecContainer = () => {
     const { i18n } = useTranslation();

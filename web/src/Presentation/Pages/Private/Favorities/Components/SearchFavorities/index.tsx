@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useFavoritiesContext } from '../../../../../Context/favoritiesContext'
-import './searchFavorities.styles.sass'
 import { IProduct } from '../../../../../../Core/Models/IProduct';
 import { monetaryUnit } from '../../../../../../Shared/Utils/monetaryUnit/monetaryUnit';
 import { CiSearch } from 'react-icons/ci';
 import { useTranslation } from 'react-i18next';
+
+import './SearchFavorities.styles.sass'
 
 export const SearchFavorities = () => {
     const { favorities } = useFavoritiesContext();

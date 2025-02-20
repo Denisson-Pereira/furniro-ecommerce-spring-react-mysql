@@ -8,7 +8,7 @@ import { useHandlePage } from '../../../../../Hooks/useHandlePage'
 import { useNavigate } from 'react-router-dom'
 import { IRelatedProductsProps } from './IRelatedProductsProps'
 
-import './relatedProducts.styles.sass'
+import './RelatedProducts.styles.sass'
 
 export const RelatedProductsView = ({ products, loading }: IRelatedProductsProps) => {
     const navigate = useNavigate();

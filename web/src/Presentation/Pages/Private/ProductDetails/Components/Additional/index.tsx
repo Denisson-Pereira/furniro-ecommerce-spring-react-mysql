@@ -1,4 +1,4 @@
-import './additional.styles.sass'
+import './Additional.styles.sass'
 
 export const Additional = () => {
   return (

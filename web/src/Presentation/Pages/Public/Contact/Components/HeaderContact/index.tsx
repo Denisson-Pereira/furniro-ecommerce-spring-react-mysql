@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../../../../../Assets/Images/logo.png'
-
-import './headerContact.styles.sass'
 import { useTranslation } from 'react-i18next'
+
+import './HeaderContact.styles.sass'
 
 export const HeaderContact = () => {
   const { t } = useTranslation();

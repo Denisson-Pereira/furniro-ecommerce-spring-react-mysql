@@ -1,4 +1,4 @@
-import './traco.styles.sass'
+import './Traco.styles.sass'
 
 export const TracoComponent = () => {
   return (

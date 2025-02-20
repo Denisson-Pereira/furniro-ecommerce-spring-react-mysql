@@ -1,4 +1,4 @@
-import './buttonCustom.styles.sass'
+import './ButtonCustom.styles.sass'
 
 export const ButtonCustom = ({ text, sizeText, type }: { text: string, sizeText: number, type: "button" | "submit" }) => {
   return (

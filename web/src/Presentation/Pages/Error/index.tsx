@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { AlertCircle } from "lucide-react";
 import { ButtonCustom } from "../../Components";
-
-import "./error.styles.sass";
 import { useTranslation } from "react-i18next";
+
+import './Error.styles.sass'
 
 export const ErrorPage = () => {
   const navigate = useNavigate();
