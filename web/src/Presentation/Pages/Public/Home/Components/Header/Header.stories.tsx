@@ -1,12 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../../../Translate";
 import { Meta, StoryObj } from "@storybook/react";
-import { LoginForm } from ".";
+import { BrowserRouter } from "react-router-dom";
+import { Header } from ".";
 
 export default {
-    title: 'Login/Components/LoginForm',
-    component: LoginForm,
+    title: 'Home/Components/Header',
+    component: Header,
     decorators: [
         (Story) => {
             return (
