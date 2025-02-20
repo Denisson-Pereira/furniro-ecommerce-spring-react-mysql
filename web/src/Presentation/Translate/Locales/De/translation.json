@@ -115,7 +115,13 @@
     "profile": {
         "hello": "Hallo",
         "btn": "Abmelden",
-        "adm": "Administratorseite"
+        "adm": "Administratorseite",
+        "title": "Neues Produkt Erstellen",
+        "name": "Name",
+        "description": "Beschreibung",
+        "image": "Bild",
+        "chose": "Wähle eine Kategorie:",
+        "create": "Erstellen"
     },
     "error": {
         "ops": "Ups! Etwas ist schief gelaufen.",

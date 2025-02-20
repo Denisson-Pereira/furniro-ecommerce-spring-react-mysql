@@ -115,7 +115,13 @@
     "profile": {
         "hello": "Hola",
         "btn": "Cerrar Sesión",
-        "adm": "Página del Administrador"
+        "adm": "Página del Administrador",
+        "title": "Crear Nuevo Producto",
+        "name": "Nombre",
+        "description": "Descripción",
+        "image": "Imagen",
+        "chose": "Elige una categoría:",
+        "create": "Crear"
     },
     "error": {
         "ops": "¡Ups! Algo salió mal.",

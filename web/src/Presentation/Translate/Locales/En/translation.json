@@ -115,7 +115,13 @@
     "profile": {
         "hello": "Hello",
         "btn": "Logout",
-        "adm": "Administrator Page"
+        "adm": "Administrator Page",
+        "title": "Create New Product",
+        "name": "Name",
+        "description": "Description",
+        "image": "Image",
+        "chose": "Choose a category:",
+        "create": "Create"
     },
     "error": {
         "ops": "Oops! Something went wrong.",

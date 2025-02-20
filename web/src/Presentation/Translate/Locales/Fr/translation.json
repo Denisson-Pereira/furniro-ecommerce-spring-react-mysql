@@ -73,7 +73,13 @@
     "profile": {
         "hello": "Bonjour",
         "btn": "Déconnexion",
-        "adm": "Page de l'Administrateur"
+        "adm": "Page de l'Administrateur",
+        "title": "Créer un Nouveau Produit",
+        "name": "Nom",
+        "description": "Description",
+        "image": "Image",
+        "chose": "Choisissez une catégorie :",
+        "create": "Créer"
     },
     "error": {
         "ops": "Oups ! Quelque chose s'est mal passé.",

@@ -105,7 +105,7 @@
     },
     "cart": {
         "product": "Produto",
-        "Price": "Preço",
+        "price": "Preço",
         "noProducts": "Nenhum produto no carrinho!",
         "cartTotals": "Total do Carrinho",
         "subtotal": "Subtotal",
@@ -115,7 +115,13 @@
     "profile": {
         "hello": "Olá",
         "btn": "Sair",
-        "adm": "Painel do Administrador"
+        "adm": "Painel do Administrador",
+        "title": "Criar Novo Produto",
+        "name": "Nome",
+        "description": "Descrição",
+        "image": "Imagem",
+        "chose": "Escolha uma categoria:",
+        "create": "Criar"
     },
     "error": {
         "ops": "Oops! Algo deu errado.",

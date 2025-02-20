@@ -115,7 +115,13 @@
     "profile": {
         "hello": "你好",
         "btn": "登出",
-        "adm": "管理员页面"
+        "adm": "管理员页面",
+        "title": "创建新产品",
+        "name": "名称",
+        "description": "描述",
+        "image": "图片",
+        "chose": "选择一个类别：",
+        "create": "创建"
     },
     "error": {
         "ops": "哎呀！出了点问题。",
