@@ -1,6 +1,5 @@
 import { Footer, NavScroll } from "../../../Components"
-import { HeaderAdmin, InfoAdmin } from "./components"
-
+import { CreateProduct, HeaderAdmin, InfoAdmin } from "./components"
 
 export const Admin = () => {
   return (
@@ -8,6 +7,7 @@ export const Admin = () => {
         <NavScroll />
         <HeaderAdmin />
         <InfoAdmin />
+        <CreateProduct />
         <Footer />
     </div>
   )

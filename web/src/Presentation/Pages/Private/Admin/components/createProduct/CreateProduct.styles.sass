@@ -1,0 +1,31 @@
+@use '../../../../../Sass/mixins'
+@use '../../../../../Sass/variables'
+
+.createProduct_container
+    display: flex
+    justify-content: center
+
+.createProduct_form
+    @include mixins.flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 2vh
+
+
+.createProduct_input
+    border: 1px solid variables.$greyDark
+    border-radius: 2vh
+    padding: 1vh
+    p
+        @include mixins.remover_margens
+        text-align: start
+        font-size: 2vh
+        font-weight: 500
+    input
+        width: 40vh
+        height: 6vh
+        border: none
+        outline: none
+        font-size: 2.5vh
+        outline: none

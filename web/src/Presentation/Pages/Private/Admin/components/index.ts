@@ -1,2 +1,3 @@
 export * from './HeaderAdmin'
-export * from './infoAdmin'
+export * from './InfoAdmin'
+export * from './createProduct'
