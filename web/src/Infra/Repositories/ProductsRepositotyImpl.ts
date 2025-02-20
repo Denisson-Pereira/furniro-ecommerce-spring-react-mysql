@@ -5,7 +5,7 @@ import { getAllProducts } from "../Data/Api/getAllProducts";
 import { getProductById } from "../Data/Api/getProductById";
 import { IProductDTO } from "../Dtos/IProductDTO";
 
-export class GetProductRepositoryImpl implements IProductsRepository {
+export class ProductRepositoryImpl implements IProductsRepository {
     create(product: IProductDTO): Promise<IProduct> {
         return createProduct(product)
     }

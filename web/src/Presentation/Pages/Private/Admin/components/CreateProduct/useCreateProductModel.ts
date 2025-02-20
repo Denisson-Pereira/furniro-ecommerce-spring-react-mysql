@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { CreateProductUseCase } from "../../../../../../Core/UseCases/CreateProductUseCase/CreateProductUseCase";
-import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
+import { ProductRepositoryImpl } from "../../../../../../Infra/Repositories/ProductsRepositotyImpl";
 
 export const useCreateProductModel = () => {
-  const repository = new GetProductRepositoryImpl();
+  const repository = new ProductRepositoryImpl();
   const createProductUseCase = new CreateProductUseCase(repository);
 
   const [name, setName] = useState<string>("");

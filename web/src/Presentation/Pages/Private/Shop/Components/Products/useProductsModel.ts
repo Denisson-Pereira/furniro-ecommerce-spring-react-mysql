@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
 import { useHandlePage } from "../../../../../Hooks/useHandlePage";
 import { FiltersProductsEnums } from "../../../../../../Shared/Enums/filtersProductsEnums";
-import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
 import { GetAllProductsUseCase } from "../../../../../../Core/UseCases/GetAllProductsUseCase/GetAllProductsUseCase";
+import { ProductRepositoryImpl } from "../../../../../../Infra/Repositories/ProductsRepositotyImpl";
 
 export const useProductsModel = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -16,7 +16,7 @@ export const useProductsModel = () => {
   const [productsSearch, setProductsSearch] = useState<IProduct[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const repository = new GetProductRepositoryImpl();
+  const repository = new ProductRepositoryImpl();
   const getAllProductsUseCase = new GetAllProductsUseCase(repository);
 
   const handlePage = useHandlePage();

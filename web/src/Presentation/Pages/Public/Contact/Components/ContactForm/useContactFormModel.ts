@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useAuthContext } from "../../../../../Context/authContext";
-import { CreateContactRepositoryImpl } from "../../../../../../Infra/Repositories/CreateContactRepositoryImpl";
 import { CreateContactUseCase } from "../../../../../../Core/UseCases/CreateContactUseCase/CreateContactUseCase";
+import { ContactRepositoryImpl } from "../../../../../../Infra/Repositories/ContactRepositoryImpl";
 
 export const useContactFormModel = () => {
-  const repository = new CreateContactRepositoryImpl();
+  const repository = new ContactRepositoryImpl();
   const createContactUseCase = new CreateContactUseCase(repository);
 
   const { loading, setLoading } = useAuthContext();

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
-import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
 import { GetAllProductsUseCase } from "../../../../../../Core/UseCases/GetAllProductsUseCase/GetAllProductsUseCase";
+import { ProductRepositoryImpl } from "../../../../../../Infra/Repositories/ProductsRepositotyImpl";
 
 export const useRelatedProductsModel = () => {
-    const repository = new GetProductRepositoryImpl();
+    const repository = new ProductRepositoryImpl();
     const getAllProductsUseCase = new GetAllProductsUseCase(repository);
 
     const [products, setProducts] = useState<IProduct[]>([])

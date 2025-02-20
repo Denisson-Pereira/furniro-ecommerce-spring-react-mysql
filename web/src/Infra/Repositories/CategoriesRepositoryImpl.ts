@@ -2,7 +2,7 @@ import { ICategoriesRepository } from "../../Core/Contracts/ICategoriesRepositor
 import { ICategory } from "../../Core/Models/ICategory";
 import { getCategories } from "../Data/Api/getCategories";
 
-export class GetAllCategoriesRepositoryImpl implements ICategoriesRepository {
+export class CategoriesRepositoryImpl implements ICategoriesRepository {
     getAll(rota: string): Promise<ICategory[]> {
         return getCategories(rota);
     }

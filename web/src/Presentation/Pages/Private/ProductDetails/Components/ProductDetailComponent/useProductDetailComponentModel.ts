@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../../../../../Core/Models/IProduct";
-import { GetProductRepositoryImpl } from "../../../../../../Infra/Repositories/GetProductsRepositotyImpl";
 import { GetProductByIdUseCase } from "../../../../../../Core/UseCases/GetProductByIdUseCase/GetProductByIdUseCase";
+import { ProductRepositoryImpl } from "../../../../../../Infra/Repositories/ProductsRepositotyImpl";
 
 export const useProductDetailComponentModel = (id: string | undefined) => {
-  const repository = new GetProductRepositoryImpl();
+  const repository = new ProductRepositoryImpl();
   const getProductByIdUseCase = new GetProductByIdUseCase(repository);
 
   const [loading, setLoading] = useState<boolean>(false);

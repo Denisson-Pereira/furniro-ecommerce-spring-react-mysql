@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { ICategory } from "../../../../../../Core/Models/ICategory";
-import { GetAllCategoriesRepositoryImpl } from "../../../../../../Infra/Repositories/GetAllCategoriesRepositoryImpl";
 import { GetAllCategoriesUseCase } from "../../../../../../Core/UseCases/GetAllCategoriesUseCase/GetAllCategoriesUseCase";
+import { CategoriesRepositoryImpl } from "../../../../../../Infra/Repositories/CategoriesRepositoryImpl";
 
 export const useBrowseModel = () => {
-    const repository = new GetAllCategoriesRepositoryImpl();
+    const repository = new CategoriesRepositoryImpl();
     const categoriesUseCase = new GetAllCategoriesUseCase(repository);
 
 
