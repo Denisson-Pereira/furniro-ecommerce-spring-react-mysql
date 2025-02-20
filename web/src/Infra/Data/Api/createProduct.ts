@@ -11,7 +11,7 @@ export const createProduct = async (product: IProductDTO) => {
                 description: product.description,
                 image: product.image,
                 category: product.category,
-                price: product.image
+                price: product.price
             })
         });
 

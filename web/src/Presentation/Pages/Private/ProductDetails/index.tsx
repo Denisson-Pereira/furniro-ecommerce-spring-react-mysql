@@ -1,5 +1,4 @@
-import { Info } from "lucide-react"
-import { ProductDetailComponent, RelatedProducts, TracoComponent } from "./Components"
+import { Info, ProductDetailComponent, RelatedProducts, TracoComponent } from "./Components"
 import { Footer } from "../../../Components"
 import { useParams } from "react-router-dom";
 

@@ -2,8 +2,17 @@
 @use '../../../../../Sass/variables'
 
 .createProduct_container
+    @include mixins.center
+    flex-direction: column
+    margin-block: 5vh
+    h1
+        margin-bottom: 5vh
+
+.createProduct_form_create
     display: flex
     justify-content: center
+    flex-direction: row
+    gap: 5vh
 
 .createProduct_form
     @include mixins.flex
@@ -29,3 +38,55 @@
         outline: none
         font-size: 2.5vh
         outline: none
+
+.createProduct_product_box
+
+
+.createProduct_product
+    @include mixins.center
+    flex-direction: column
+    width: 30vh
+    position: relative
+    cursor: pointer
+    img
+        width: 30vh
+        height: 30vh
+    &:hover
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06)
+        transition: transform 0.2s ease, box-shadow 0.2s ease
+
+.createProduct_info
+    @include mixins.flex
+    flex-direction: column
+    gap: 1vh
+    background-color: variables.$grey
+    padding: 1vh
+    width: 100%
+    text-align: start
+    p
+        @include mixins.remover_margens
+        font-size: 3vh
+        font-weight: 500
+    span
+        color: variables.$greyDark
+
+.createProduct_info_price
+    @include mixins.flex
+    justify-content: space-between
+    align-items: center
+    p
+        font-size: 2.5vh
+    span
+        font-size: 2vh
+        text-decoration: line-through
+
+.createProduct_select
+    @include mixins.center
+    gap: 1vh
+    p
+        @include mixins.remover_margens
+        font-size: 2vh
+        font-weight: 400
+    select
+        font-size: 2vh
+        font-weight: 400
