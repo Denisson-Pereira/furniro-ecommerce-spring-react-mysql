@@ -63,42 +63,18 @@ ${SENHA_BANCO}
 ```
 
 
-### 💾 Estrutura do Banco de Dados
+## 💾 Estrutura do Banco de Dados
 
-O banco de dados `foodhub` contém três tabelas principais: `category`, `product` e `user`.
-
-### Tabela: category
-
-| Campo   | Tipo         | Descrição                               |
-|---------|--------------|-----------------------------------------|
-| id      | int       | Identificador único da categoria        |
-| name    | varchar(255) | Nome da categoria                       |
-| image   | varchar(255) | URL da imagem da categoria              |
-
-
-### Tabela: product
+O banco de dados **furniro** é composto por quatro tabelas, com `products` sendo a principal responsável por fornecer os produtos da loja.
 
 | Campo          | Tipo         | Descrição                          |
 |----------------|--------------|------------------------------------|
 | id             | int       | Identificador único do produto      |
-| name           | varchar(255) | Nome do produto                    |
-| evaluation     | varchar(255) | Avaliação do produto               |
-| description    | varchar(255) | Descrição do produto               |
-| price          | varchar(255) | Preço do produto                   |
-| category       | varchar(255) | Categoria do produto               |
-| establishment   | varchar(255) | Estabelecimento onde o produto está disponível |
+| name           | varchar(100) | Nome do produto                    |
+| description    | text | Descrição do produto               |
 | image          | varchar(255) | URL da imagem do produto           |
-
-
-### Tabela: user
-
-| Campo   | Tipo         | Descrição                               |
-|---------|--------------|-----------------------------------------|
-| id      | int       | Identificador único do usuário          |
-| name    | varchar(255) | Nome do usuário                         |
-| login   | varchar(255) | Login do usuário                        |
-| password| varchar(255) | Senha do usuário                       |
-
+| category       | varchar(100) | Categoria do produto               |
+| price          | varchar(20) | Preço do produto                   |
 
 ## • Frontend
 
@@ -118,9 +94,9 @@ O banco de dados `foodhub` contém três tabelas principais: `category`, `produc
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 
-O aplicativo foi desenvolvido utilizando **React Native**, uma abordagem que permite a construção de plataformas para **iOS** e **Android** de forma eficiente e integrada. Para alinhar com a **Clean Architecture** do *backend*, adotou-se o padrão **MVVM**, que promove a separação entre a lógica de negócios e os componentes da interface do usuário. Essa escolha reflete a intenção de minimizar o uso de *frameworks* e bibliotecas, criando uma plataforma robusta e escalável para o futuro.
+A parte *web* do projeto foi desenvolvida com **React** em **TypeScript**, seguindo o padrão **MVVM (Model-View-ViewModel)**, que separa a lógica da interface para melhor organização e manutenção do código. Além disso, foram aplicados os princípios da **Clean Architecture**, **Repository Pattern** e **Arquitetura Hexagonal**, garantindo modularidade, escalabilidade e fácil substituição de dependências. Para assegurar a qualidade do código, foram implementados testes automatizados com **Jest**, **Vitest** e **Cypress**, com automação via **GitHub Actions**. O gerenciamento de estado global foi realizado com **Context API**, e a internacionalização foi implementada com **i18n**, suportando sete idiomas. A documentação dos componentes foi feita com **Storybook**, e *generics* foram utilizados para otimizar casos de uso semelhantes.
 
-Além disso, o aplicativo faz uso do **Context API** para gerenciar diversos aspectos do sistema, como o controle de usuários, informações de produtos e estabelecimentos, autenticação de usuários com rotas privadas, cadastro e login de usuários, e o gerenciamento do carrinho de compras, que inclui a funcionalidade de cupons de desconto. Essa estrutura foi pensada para garantir uma experiência de uso fluida e um gerenciamento eficiente dos dados.
+O *design* da aplicação foi cuidadosamente planejado para garantir responsividade, utilizando **SASS** para estilizações avançadas, além de **Bootstrap** para facilitar a construção da interface. Todas as requisições foram feitas utilizando o **fetch** nativo do **React**, garantindo leveza e controle sobre as chamadas à *API*. A navegação foi estruturada com **React Router DOM**, e a paginação dos itens da loja foi implementada de forma nativa, sem o uso de bibliotecas externas. O projeto também foi containerizado com **Docker** e utilizou variáveis de ambiente para maior flexibilidade e segurança na configuração.
 
 ## • Design
 
@@ -128,7 +104,7 @@ Além disso, o aplicativo faz uso do **Context API** para gerenciar diversos asp
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 [![Canvas](https://img.shields.io/badge/Canvas-%2300599C.svg?style=for-the-badge&logo=canvas&logoColor=white)](https://canvas.instructure.com/)
 
-O **Adobe Photoshop** foi empregado para a edição e manipulação de imagens, garantindo qualidade e profissionalismo. Além disso, **Figma** foi utilizado para criar protótipos e layouts, facilitando a visualização e a colaboração no design da interface. Para capturas de tela e materiais educacionais, recorreu-se ao **Canvas**, que oferece uma plataforma intuitiva para a criação e compartilhamento de conteúdos visuais.
+O projeto **Furniro** foi inspirado em um *design* previamente criado no **Figma** pelo autor **UI-UX Expert (Aashifa) @uiux_expert**, servindo como referência para a interface e experiência do usuário. Além disso, algumas imagens foram criadas e editadas utilizando **Adobe Photoshop** e **Canvas**, garantindo um acabamento visual refinado e alinhado com a identidade do projeto.
 
 # ⚙ Pré-requisitos
 
@@ -143,7 +119,7 @@ Antes de mais nada, é necessário verificar se o Java 17 está instalado em sua
 ## 👯 Clonar repositório git
 
 ```
-git clone https://github.com/Denisson-Pereira/foodhub-app
+git clone https://github.com/Denisson-Pereira/furniro-ecommerce-spring-react-mysql
 ```
 
 ## 🏧 Acessar Backend
@@ -151,7 +127,7 @@ git clone https://github.com/Denisson-Pereira/foodhub-app
 Após clonar o repositório, para acessar o backend, basta digitar o seguinte comando no terminal:
 
 ```
-cd backend
+cd server
 ```
 
 Você pode rodar a aplicação com o seguinte comando:
@@ -162,27 +138,23 @@ mvn spring-boot:run
 
 Esse comando irá compilar e rodar a aplicação diretamente no terminal.
 
-![Web 1](./github/projetofood.gif) 
 
-## Rodar o Mobile
+## Rodar o Frontend
 
-Após clonar o repositório, para acessar o mobile, basta digitar o seguinte comando no terminal:
+Após clonar o repositório, para acessar o frontend, basta digitar o seguinte comando no terminal:
 
 ```
-cd mobile
+cd web
 ```
 
 Para ver o projeto, certifique-se de que o backend está rodando e digite:
 
 ```
-npx expo start
+npm run dev
 ```
 
-Esse comando é usado para iniciar um projeto desenvolvido com Expo.
 
-![Web 2](./github/expo.gif) 
-
-Lembre-se de que os dados do banco estão localizados, a partir da raiz do projeto, em `database/Dump20240831.sql`.
+Lembre-se de que os dados do banco estão localizados, a partir da raiz do projeto, em `database/Dump20250212.sql`.
 
 ## 📱 Documentação
 
