@@ -1,0 +1,6 @@
+{
+    "url_base": "http://localhost:5173",
+    "url_profile": "http://localhost:5173/profile",
+    "email": "denis@email.com",
+    "password": "123456"
+  }
