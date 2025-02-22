@@ -33,10 +33,11 @@
 
 # 📑 Sobre o projeto 
 
+<img src="./assets/clean.png" min-width="100px" max-width="100px" width="300px" align="right" alt="Computador iuriCode">
+
 O **Furniro** é um projeto *fullstack* de *e-commerce* baseado em um design do **Figma** desenvolvido com **Clean Architecture** em todas as suas camadas, tanto no *backend* quanto no *frontend*, seguindo os princípios do **SOLID** e do **Clean Code**. O servidor, construído em **Java** com **Spring Boot**, utiliza **JDBC** e **MySQL** para a persistência de dados, garantindo eficiência e escalabilidade. Além disso, conta com um robusto sistema de autenticação, implementado com **Spring Security**, **JWT** e **BCrypt**, proporcionando mais segurança. Para maior flexibilidade, o projeto também incorpora um mecanismo avançado de **upload** de arquivos, tornando a experiência ainda mais completa e segura.
 
 O *frontend* foi desenvolvido com **React**, **TypeScript** e o padrão **MVVM**, garantindo uma interface moderna e performática. Para assegurar a qualidade do código, foram utilizadas ferramentas como **Jest** e **Vitest** para testes automatizados, além do **Storybook** para a documentação dos componentes. Ademais, o projeto conta com **Docker** e internacionalização via **i18n**, suportando **sete** idiomas.
-
 
 # 📚 Stack Tecnológica e Descrições
 
@@ -189,13 +190,13 @@ npm run storybook
 
 # 💻 Software em Ação
 
-Um tour pela aplicação:
+## • Um tour pela aplicação:
 ![Mob 1](./assets/tur.gif) 
 
-Criando uma mensagem de contato e enviando uma imagem para o backend:
+## • Criando uma mensagem de contato e enviando uma imagem para o backend:
 ![Mob 1](./assets/backend.gif) 
 
-Finalizando a compra:
+## • Finalizando a compra:
 ![Mob 1](./assets/check.gif) 
 
 
