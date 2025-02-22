@@ -1,4 +1,4 @@
-![Web 1](./assets/tumb.jpg) 
+![Web 1](./assets/tamb.png) 
 
 <p align="center">
   <a href="https://github.com/Denisson-Pereira/furniro-ecommerce-spring-react-mysql"><img src="https://img.shields.io/github/languages/top/Denisson-Pereira/furniro-ecommerce-spring-react-mysql?color=blue" alt="Primary Language"></a>
