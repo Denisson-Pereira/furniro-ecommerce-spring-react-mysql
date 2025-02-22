@@ -198,6 +198,8 @@ npm run storybook
 ## • Finalizando a compra:
 ![Mob 1](./assets/check.gif) 
 
+## • Testes com Cypress
+![Mob 1](./assets/login.cy.js.gif) 
 
 # 📺 Edição
 
