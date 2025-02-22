@@ -64,7 +64,6 @@ ${USERNAME_BANCO}
 ${SENHA_BANCO}
 ```
 
-
 ## 💾 Estrutura do Banco de Dados
 
 O banco de dados **furniro** é composto por quatro tabelas, com `products` sendo a principal responsável por fornecer os produtos da loja.
